@@ -1,0 +1,216 @@
+'use strict';
+const $=s=>document.querySelector(s);
+const clone=x=>JSON.parse(JSON.stringify(x));
+const fmt=(x,n=3)=>!Number.isFinite(x)?(x===-Infinity?'−∞':'—'):(Math.abs(x)<1e-9?0:x).toFixed(n).replace(/\.?0+$/,'')||'0';
+const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+const transpose=a=>a[0].map((_,i)=>a.map(r=>r[i]));
+const mm=(a,b)=>a.map(r=>transpose(b).map(c=>dot(r,c)));
+const add=(a,b)=>a.map((r,i)=>r.map((v,j)=>v+b[i][j]));
+const softmax=a=>{const mx=Math.max(...a),e=a.map(v=>v===-Infinity?0:Math.exp(v-mx)),s=e.reduce((p,v)=>p+v,0);return e.map(v=>v/s)};
+const norm=(x,g=1,b=0)=>{const mean=x.reduce((a,v)=>a+v,0)/x.length,variance=x.reduce((a,v)=>a+(v-mean)**2,0)/x.length;return {mean,variance,z:x.map(v=>(v-mean)/Math.sqrt(variance+1e-5)),y:x.map(v=>g*(v-mean)/Math.sqrt(variance+1e-5)+b)}};
+function attention(q,k,v,scaled=true,mask=false){const raw=mm(q,transpose(k)),scores=raw.map((r,i)=>r.map((x,j)=>mask&&j>i?-Infinity:x/(scaled?Math.sqrt(k[0].length):1))),weights=scores.map(softmax);return {raw,scores,weights,out:mm(weights,v)}}
+const words=['货拉拉','拉不拉','拉布拉多'];
+const X=[[2,1,0],[1,2,1],[0,1,2]];
+const projections={Q:[[1,0,1],[0,1,0],[1,0,-1]],K:[[1,1,0],[0,1,1],[1,0,1]],V:[[.5,0,1],[0,1,.5],[1,.5,0]]};
+const HQ=[[[1,0],[0,1],[.5,-.5]],[[0,1],[1,0],[-.5,.5]]];
+const HK=[[[.5,0],[0,1],[1,.5]],[[1,.5],[0,-1],[.5,1]]];
+const HV=[[[1,0],[0,.5],[.5,1]],[[0,1],[1,.5],[.5,0]]];
+const WO=[[.6,.1,0],[0,.7,.2],[.3,0,.6],[.1,.2,.4]];
+function multi(q,k=q,v=k,masked=false){const heads=HQ.map((w,h)=>{const Q=mm(q,w),K=mm(k,HK[h]),V=mm(v,HV[h]);return {Q,K,V,...attention(Q,K,V,true,masked)}}),concat=q.map((_,i)=>heads.flatMap(h=>h.out[i]));return {heads,concat,out:mm(concat,WO)}}
+const W1=[[1,-1,.5,0],[.5,1,0,-.5],[0,.5,1,1]],B1=[.1,-.2,.3,0],W2=[[.7,0,.2],[0,.5,-.5],[.4,.2,.3],[-.2,.6,.4]],B2=[.1,0,-.1];
+function ffn(x,relu=true){const hidden=mm([x],W1)[0].map((v,i)=>v+B1[i]),activated=hidden.map(v=>relu?Math.max(0,v):v),out=mm([activated],W2)[0].map((v,i)=>v+B2[i]);return {hidden,activated,out}}
+function encode(n){let input=clone(X),layers=[];for(let i=0;i<n;i++){const att=multi(input),res1=add(input,att.out),n1=res1.map(v=>norm(v).y),f=n1.map(v=>ffn(v).out),res2=add(n1,f),n2=res2.map(v=>norm(v).y);layers.push({input,att,res1,n1,f,res2,n2});input=n2}return layers}
+const target=['〈BOS〉','Can','Huolala','carry','a','Labrador','?'];
+const targetX=[[1,0,.2],[.4,1,-.2],[1,.3,.5],[-.3,1,.8],[.2,.1,1],[.7,-.3,1],[0,.8,.5]];
+const memory=encode(2)[1].n2;
+function decode(){const self=multi(targetX,targetX,targetX,true),n1=add(targetX,self.out).map(v=>norm(v).y),cross=multi(n1,memory,memory),n2=add(n1,cross.out).map(v=>norm(v).y),f=n2.map(v=>ffn(v).out),n3=add(n2,f).map(v=>norm(v).y),vocabW=[[.4,.8,-.3,.2,1,-.2,.3],[.7,-.2,.5,.4,-.4,.9,.1],[-.1,.5,.8,-.3,.6,.2,.7]],logits=mm(n3,vocabW),prob=logits.map(softmax);return {self,n1,cross,n2,f,n3,logits,prob}}
+function vec(v,selected=-1){return `<div class="vector">${v.map((x,i)=>`<div class="vcell ${selected===i?'selected':''}">${fmt(x)}<span>维 ${i+1}</span></div>`).join('')}</div>`}
+function matrix(a,name,opts={}){return `<div class="matrix-wrap"><table class="matrix"><caption>${name} <span class="small">${a.length} × ${a[0].length}</span></caption><thead><tr><th></th>${a[0].map((_,j)=>`<th>${opts.cols?.[j]??'列 '+(j+1)}</th>`).join('')}</tr></thead><tbody>${a.map((r,i)=>`<tr><th>${opts.rows?.[i]??'行 '+(i+1)}</th>${r.map((x,j)=>{const hot=opts.row===i||opts.col===j||(opts.cell?.[0]===i&&opts.cell?.[1]===j);const heat=opts.heat?`style="background:rgba(57,122,112,${.07+.7*x});color:${x>.6?'#fff':'#192f34'}"`:'';return `<td class="${hot?'hot ':''}${x===-Infinity?'masked':''}" ${heat}>${opts.edit?`<button data-cell="${opts.edit},${i},${j}" aria-label="选择 ${opts.edit} 第${i+1}行第${j+1}列，值 ${fmt(x)}">${fmt(x)}</button>`:fmt(x)}</td>`}).join('')}</tr>`).join('')}</tbody></table></div>`}
+function bars(labels,values){return values.map((v,i)=>`<div class="bar-row"><span>${labels[i]}</span><div class="track"><div class="bar" style="width:${v*100}%"></div></div><b>${(v*100).toFixed(1)}%</b></div>`).join('')}
+function tokens(labels,current=-1,future=Infinity){return `<div class="tokenline">${labels.map((t,i)=>`<span class="token ${i===current?'current':''} ${i>future?'future':''}">${t}</span>`).join('')}</div>`}
+function box(label,values,active=false){return `<div class="block ${active?'active':''}"><span class="role">${label}</span>${Array.isArray(values)?vec(values):`<strong>${values}</strong>`}</div>`}
+function flow(labels,active,click=false){return `<div class="flow">${labels.map((s,i)=>`${i?'<span class="arrow" aria-hidden="true">→</span>':''}<${click?'button':'div'} ${click?`data-stage="${i}"`:''} class="${click?'':'node '}${active===i?'active':''}">${s}</${click?'button':'div'}>`).join('')}</div>`}
+const callout=t=>`<div class="callout">${t}</div>`;
+const eq=t=>`<div class="equation">${t}</div>`;
+const range=(id,label,v,min=-3,max=3,step=.1)=>`<label class="control"><span class="label">${label}<output data-value="${id}">${fmt(v)}</output></span><input id="${id}" data-param="${id}" type="range" min="${min}" max="${max}" step="${step}" value="${v}"></label>`;
+const select=(id,label,options,value)=>`<label class="control"><span class="label">${label}</span><select id="${id}" data-param="${id}">${options.map((x,i)=>`<option value="${Array.isArray(x)?x[0]:i}" ${String(Array.isArray(x)?x[0]:i)===String(value)?'selected':''}>${Array.isArray(x)?x[1]:x}</option>`).join('')}</select></label>`;
+const check=(id,label,on)=>`<label class="check"><input id="${id}" data-param="${id}" type="checkbox" ${on?'checked':''}>${label}</label>`;
+let state,step=0,timer=null,lastAudit={};
+const modules={};
+modules.token={
+ initial:()=>({word:0,position:0}),
+ steps:()=>['词块','编号','查表','位置编码','相加'],
+ controls:s=>select('word','选择词块',words,s.word)+range('position','所在位置',s.position,0,12,1),
+ hint:'这里把短句分成三个词块，仅用于教学；真实分词器可能切得更细。Embedding 的各维通常没有预先指定的语义标签。',
+ render(s,t){const ids=[17,42,93],x=X[s.word],pe=x.map((_,i)=>i%2?Math.cos(s.position/10000**((i-1)/3)):Math.sin(s.position/10000**(i/3))),y=x.map((v,i)=>v+pe[i]);
+ const descriptions=['先把文本拆成词表能够识别的单位。一个词、一个字或一个子词，都可能成为 Token。','编号只用于定位词表条目。编号相近，并不意味着语义相近。','用编号查找 Embedding 表的一行，得到一个稠密向量。这里用 3 维方便逐项查看。','同样的词出现在不同位置，位置编码会变化。正弦和余弦使用不同频率，让向量携带顺序信息。','逐维相加，不拼接维度。这个 3 维结果将作为后续注意力层的输入。'];
+ let visual=tokens(words,s.word)+flow(['词块','Token ID','Embedding','＋位置编码'],Math.min(t,3));
+ if(t===0)visual+=callout('教学分词：货拉拉 / 拉不拉 / 拉布拉多');
+ if(t>=1)visual+=`<div class="cards">${box('当前词块',words[s.word],true)}${box('词表编号',ids[s.word])}</div>`;
+ if(t===2)visual+=matrix(X,'Embedding 表（节选）',{rows:words.map((v,i)=>v+' / '+ids[i]),row:s.word});
+ if(t>=3)visual+=`<div class="cards">${box('Embedding',x)}${box('位置 '+s.position+' 的编码',pe,t===3)}${t===4?box('相加后的输入',y,true):''}</div>`+eq('PE(pos,2i) = sin(pos / 10000^(2i/d))<br>PE(pos,2i+1) = cos(pos / 10000^(2i/d))'+(t===4?`<br>x[1] = ${fmt(x[0])} + ${fmt(pe[0])} = ${fmt(y[0])}`:''));
+ return {visual,title:this.steps()[t],text:descriptions[t],audit:{x,pe,y}};}
+};
+modules.qkv={
+ initial:()=>({word:1,role:'Q',component:0,row:0,col:0,X:clone(X),W:clone(projections)}),
+ steps:()=>['输入向量','投影矩阵','第 1 项','第 2 项','第 3 项','得到一维','三个角色'],
+ controls:s=>select('word','选择词块',words,s.word)+select('role','查看投影',[['Q','Q · 查询'],['K','K · 键'],['V','V · 内容']],s.role)+select('component','输入分量',['x₁','x₂','x₃'],s.component)+range('inputValue','输入值',s.X[s.word][s.component])+select('row','权重行',['第 1 行','第 2 行','第 3 行'],s.row)+select('col','权重列 / 输出维度',['第 1 列','第 2 列','第 3 列'],s.col)+range('weightValue','选中权重',s.W[s.role][s.row][s.col]),
+ change(s,k,v){if(k==='inputValue')s.X[s.word][s.component]=v;else if(k==='weightValue')s.W[s.role][s.row][s.col]=v;else s[k]=v;},
+ hint:'点击矩阵单元格也能选中权重。矩阵的列决定一个输出维度；同一套投影参数用于每个词块。Q/K 决定关注权重，V 提供被混合的内容。',
+ render(s,t){const x=s.X[s.word],w=s.W[s.role],all=Object.fromEntries(['Q','K','V'].map(r=>[r,mm(s.X,s.W[r])])),out=all[s.role][s.word],terms=x.map((v,i)=>v*w[i][s.col]);const roles={Q:'我在寻找怎样的关联',K:'我以哪些特征供别人匹配',V:'我能贡献哪些内容'};
+ let visual=`<div class="split-title"><strong>${words[s.word]} → ${s.role}</strong><span class="badge">1 × 3 · 3 × 3 → 1 × 3</span></div>`;
+ visual+=flow(['输入 x',`乘 W${s.role}`,`输出 ${s.role}`],t===0?0:t<6?1:2);
+ if(t===0)visual+=vec(x,s.component)+callout('同一个输入 x，分别进入三套不同的可学习投影。Q、K、V 并不是把输入切成三份。');
+ else if(t<6){visual+=`<div class="row"><div><h3>输入 x</h3>${vec(x,t>=2&&t<=4?t-2:s.component)}<p class="small">${words[s.word]} · 行向量</p></div>${matrix(w,'W'+s.role,{col:s.col,cell:[s.row,s.col],edit:'W'})}</div>`;
+ visual+=eq(`${s.role}[${s.col+1}] = `+terms.map((v,i)=>`<span class="term ${t===i+2?'lit':''}">${fmt(x[i])} × ${fmt(w[i][s.col])}</span>`).join(' + ')+(t>=5?` = <b>${fmt(out[s.col])}</b>`:''));
+ if(t>=2&&t<=4)visual+=callout(`第 ${t-1} 项：${fmt(x[t-2])} × ${fmt(w[t-2][s.col])} = ${fmt(terms[t-2])}；累加到这里为 ${fmt(terms.slice(0,t-1).reduce((a,b)=>a+b,0))}。`);
+ if(t===5)visual+=vec(out,s.col);
+ }else visual+=`<div class="cards">${['Q','K','V'].map(r=>`<div class="block ${r===s.role?'active':''}"><span class="role">${r} = xW${r}</span>${vec(all[r][s.word])}<p class="small">${roles[r]}</p></div>`).join('')}</div>`+callout('Q 和 K 必须有相同的特征维度，才能做点积；V 的维度可以不同。此处三者都用 3 维，便于比较。');
+ const texts=['输入向量编码词块的特征，尚未决定查询、匹配和传递内容这三种用途。','选择矩阵的一列，把输入的每一维乘上这一列对应的权重。试着移动权重滑块，输出会立即改变。','第一维输入乘上第一行权重。这是所选输出维度的第一个贡献。','第二维输入乘上第二行权重，与第一项相加。负权重可以抵消正向贡献。','第三维输入乘上第三行权重。所有输入维度都可以影响当前输出维度。','把三个乘积求和，就得到所选列对应的输出。对每一列重复相同操作，得到完整向量。','三套独立投影让同一个词块扮演不同角色。这里展示固定教学参数；训练时这些权重会从数据中学习。'];
+ return {visual,title:this.steps()[t],text:texts[t],audit:{x,w,out,terms,all}};}
+};
+modules.attention={
+ initial:()=>({query:1,kind:'Q',row:1,col:0,scaled:true,Q:[[1,0,1],[1,2,1],[0,1,1]],K:[[2,2,2],[1,4,2],[1,1,1]],V:[[1,0,2],[0,2,1],[2,1,0]]}),
+ steps:()=>['Q 与 K','逐项点积','分数矩阵','缩放','Softmax','加权 V','求和','全部输出'],
+ controls:s=>select('query','当前查询词',words,s.query)+select('kind','编辑矩阵',[['Q','Q · 查询'],['K','K · 键'],['V','V · 内容']],s.kind)+select('row','编辑哪一行',words,s.row)+select('col','编辑哪一维',['维 1','维 2','维 3'],s.col)+range('cellValue','选中数值',s[s.kind][s.row][s.col],-4,6,.1)+check('scaled','除以 √dₖ（标准缩放）',s.scaled),
+ change(s,k,v){if(k==='cellValue')s[s.kind][s.row][s.col]=v;else s[k]=v;},
+ hint:'默认“拉不拉”的点积分数为 [8, 11, 4]。先改 Q 或 K 看权重，再只改 V：权重不变，但混合后的内容改变。dₖ = 3。',
+ render(s,t){const a=attention(s.Q,s.K,s.V,s.scaled),i=s.query,w=a.weights[i],parts=s.V.map((v,j)=>v.map(x=>x*w[j]));let visual='';
+ if(t===0)visual=`<div class="row">${matrix(s.Q,'Q · 查询',{row:i,rows:words,edit:'Q'})}${matrix(s.K,'K · 被匹配',{rows:words,edit:'K'})}</div>`+eq(`q${i+1} = [${s.Q[i].map(x=>fmt(x)).join(', ')}]；依次与 k₁、k₂、k₃ 做点积。`);
+ if(t===1)visual=words.map((word,j)=>eq(`q${i+1} · k${j+1}（${word}）<br>${s.Q[i].map((v,c)=>`${fmt(v)} × ${fmt(s.K[j][c])}`).join(' + ')} = <b>${fmt(a.raw[i][j])}</b>`)).join('');
+ if(t===2)visual=matrix(a.raw,'QKᵀ · 全部点积分数',{rows:words,cols:words,row:i})+callout('行是“谁在查询”，列是“参考谁”。每个查询都与所有键比较，得到 3 × 3 分数矩阵。');
+ if(t===3)visual=`<div class="cards">${box('点积分数',a.raw[i])}${box(s.scaled?'除以 √3 ≈ 1.732':'关闭缩放 · 对照实验',a.scores[i],true)}</div>`+eq(a.raw[i].map((v,j)=>`${fmt(v)} / ${s.scaled?'√3':'1'} = ${fmt(a.scores[i][j])}`).join('<br>'));
+ if(t===4){const m=Math.max(...a.scores[i]),ex=a.scores[i].map(x=>Math.exp(x-m)),sum=ex.reduce((a,b)=>a+b,0);visual=bars(words,w)+eq(`稳定计算：先减最大值 ${fmt(m)}<br>exp(sⱼ − max) = [${ex.map(v=>fmt(v,5)).join(', ')}]<br>总和 = ${fmt(sum,5)}<br>权重 = exp(sⱼ − max) / 总和`)+callout(`权重之和 = ${w.reduce((a,b)=>a+b,0).toFixed(6)}。Softmax 比较的是一整行，改变一个分数也会改变其他权重。`);}
+ if(t===5)visual=matrix(s.V,'V · 待混合内容',{rows:words,edit:'V'})+`<div class="cards">${parts.map((v,j)=>box(`${fmt(w[j])} × V${j+1}`,v,true)).join('')}</div>`;
+ if(t===6)visual=eq(a.out[i].map((v,c)=>`H${i+1}[${c+1}] = ${parts.map(r=>fmt(r[c])).join(' + ')} = <b>${fmt(v)}</b>`).join('<br>'))+vec(a.out[i])+callout('输出是对内容向量的加权和，不是挑出一个词，也不是直接得到一个单词。');
+ if(t===7)visual=`<div class="row">${matrix(a.weights,'注意力权重 A',{rows:words,cols:words,row:i,heat:true})}${matrix(a.out,'输出 H = AV',{rows:words,row:i})}</div>`+eq('Attention(Q,K,V) = softmax(QKᵀ / √dₖ)V');
+ const texts=['先明确 Q、K、V 的来源和尺寸。此例直接给出三个矩阵，以便独立研究注意力运算。','逐维相乘，再求和。点积受向量方向和长度共同影响，不等同于纯粹的语义相似度。','将所有查询的分数排成矩阵。高亮行对应右侧选择的查询词。','缩放减轻维度较大时点积分数过大造成的 Softmax 饱和。开关用于对照；标准公式使用 √dₖ。','把一行分数转成非负、和为 1 的权重。减去最大值只提高数值稳定性，不改变结果。','把第 j 个权重乘到 V 的第 j 行，每个内容维度都使用同一权重。','将所有加权后的 V 逐维相加，得到当前词融合上下文后的表示。','每个查询都重复这一过程，最终得到每个词对应的输出行。矩阵写法把这些操作一次表达出来。'];
+ return {visual,title:this.steps()[t],text:texts[t],audit:{...a,parts,query:i}};}
+};
+modules.multihead={
+ initial:()=>({head:0,query:1,gain:1}),steps:()=>['独立投影','各头注意力','各头输出','拼接','输出投影'],
+ controls:s=>select('head','查看注意力头',['头 1','头 2'],s.head)+select('query','当前查询词',words,s.query)+range('gain','当前查询的输入倍率',s.gain,.2,2,.1),
+ hint:'两个头的 WQ、WK、WV 各不相同。图中差异由矩阵计算产生，不预设“语法头”或“语义头”的固定职责。',
+ render(s,t){const x=X.map((r,i)=>r.map(v=>i===s.query?v*s.gain:v)),a=multi(x),h=a.heads[s.head];let visual=flow(['两组投影','并行注意力','Concat','Wᴼ'],t<2?t:t===2?1:t-1);
+ if(t===0)visual+=`<div class="row">${matrix(HQ[s.head],`头 ${s.head+1} · WQ`)}${matrix(h.Q,'Q = XWQ',{rows:words,row:s.query})}</div>`+`<div class="row">${matrix(HK[s.head],'WK')}${matrix(HV[s.head],'WV')}</div>`;
+ if(t===1)visual+=`<div class="row">${a.heads.map((h,i)=>matrix(h.weights,`头 ${i+1} · 权重`,{rows:words,cols:words,row:s.query,heat:true})).join('')}</div>`;
+ if(t===2)visual+=`<div class="cards">${a.heads.map((h,i)=>box(`头 ${i+1} · 2 维输出`,h.out[s.query],i===s.head)).join('')}</div>`;
+ if(t===3)visual+=`<div class="cards">${a.heads.map((h,i)=>box(`头 ${i+1}`,h.out[s.query])).join('')}</div>`+eq('Concat：保留各头结果的顺序，沿特征维拼接。')+vec(a.concat[s.query]);
+ if(t===4)visual+=`<div class="row">${matrix(WO,'Wᴼ · 4 → 3')}<div><h3>当前词的输出</h3>${vec(a.out[s.query])}</div></div>`+eq('MultiHead(X) = Concat(head₁, head₂)Wᴼ');
+ return {visual,title:this.steps()[t],text:['每个头把同一输入投影到自己的子空间。本例 d_model = 3，每头 dₖ = dᵥ = 2。','各头分别执行缩放点积注意力。选择查询词，比较两张热力图的同一行。','每个头得到一个 2 维上下文向量；这里没有把头之间的权重平均。','两个 2 维输出拼成 4 维。拼接保持各头的信息，交给下一步混合。','乘以 4 × 3 的 Wᴼ，返回 3 维模型空间，以便后续残差相加。'][t],audit:a};}
+};
+modules.norm={
+ initial:()=>({component:0,x:[1,2,-1,4],sub:[.5,-1,2,0],gamma:1,beta:0}),steps:()=>['输入与更新','Add','均值与方差','标准化','γ 与 β'],
+ controls:s=>select('component','调整维度',['维 1','维 2','维 3','维 4'],s.component)+range('xValue','原始输入',s.x[s.component],-5,5)+range('subValue','子层输出',s.sub[s.component],-5,5)+range('gamma','γ · 缩放',s.gamma,-2,2)+range('beta','β · 平移',s.beta,-2,2),
+ change(s,k,v){if(k==='xValue')s.x[s.component]=v;else if(k==='subValue')s.sub[s.component]=v;else s[k]=v},
+ hint:'归一化沿同一个词的特征维计算，不跨词、也不跨样本。为便于操作，γ 和 β 的各维在此共用一个滑块；实际参数可以逐维不同。ε = 0.00001。',
+ render(s,t){const sum=s.x.map((v,i)=>v+s.sub[i]),n=norm(sum,s.gamma,s.beta);let visual=`<div class="cards">${box('原始输入 x',s.x,t===0)}${box('子层输出 f(x)',s.sub,t===0)}${t>=1?box('残差和 r = x + f(x)',sum,t===1):''}</div>`;
+ if(t===1)visual+=eq(sum.map((v,i)=>`${fmt(s.x[i])} + ${fmt(s.sub[i])} = ${fmt(v)}`).join('　 /　'));
+ if(t>=2)visual+=eq(`μ = (${sum.map(v=>fmt(v)).join(' + ')}) / 4 = ${fmt(n.mean)}<br>σ² = Σ(rᵢ − μ)² / 4 = ${fmt(n.variance)}`);
+ if(t>=3)visual+=`<div class="cards">${box('z = (r − μ) / √(σ² + ε)',n.z,t===3)}${t===4?box('y = γz + β',n.y,true):''}</div>`;
+ if(t===4)visual+=callout('LayerNorm 不会把数值压进 0～1。负值很正常；加上可学习的 γ、β 后，输出均值和方差也可改变。');
+ return {visual,title:this.steps()[t],text:['子层产生新的信息，残差路径保留进入子层前的表示。两者必须同维。','沿每个特征维相加。残差提供一条直接传递输入和梯度的路径。','用当前词的全部特征计算均值和总体方差。试着只改一个维度，观察其他维度也如何受到影响。','减去均值，再除以标准差。ε 防止方差为 0 时除零；标准化后的方差因此略小于 1。','最后进行可学习的缩放和平移。原始 Transformer 使用先残差相加、再归一化的 Post-LN 顺序。'][t],audit:{sum,...n}};}
+};
+function network(input,hidden,out,t){const layers=[input,hidden,out],xs=[65,275,485],ys=a=>a.map((_,i)=>50+i*190/Math.max(1,a.length-1));let shapes='';for(let l=0;l<2;l++)for(let i=0;i<layers[l].length;i++)for(let j=0;j<layers[l+1].length;j++)shapes+=`<line class="${(t===1&&l===0)||(t===3&&l===1)?'on':''}" x1="${xs[l]}" y1="${ys(layers[l])[i]}" x2="${xs[l+1]}" y2="${ys(layers[l+1])[j]}"></line>`;layers.forEach((a,l)=>a.forEach((v,i)=>{const y=ys(a)[i];shapes+=`<circle class="${(t===0&&l===0)||((t===1||t===2)&&l===1)||(t===3&&l===2)?'on':''}" cx="${xs[l]}" cy="${y}" r="27"></circle><text text-anchor="middle" x="${xs[l]}" y="${y+4}">${fmt(v,2)}</text>`}));return `<svg class="network" viewBox="0 0 550 290" role="img" aria-label="3 维输入通过 4 个隐藏神经元变为 3 维输出">${shapes}<text class="nlabel" text-anchor="middle" x="65" y="282">输入 · 3 维</text><text class="nlabel" text-anchor="middle" x="275" y="282">隐藏 · 4 维</text><text class="nlabel" text-anchor="middle" x="485" y="282">输出 · 3 维</text></svg>`}
+modules.ffn={
+ initial:()=>({word:1,component:0,X:clone(X),relu:true}),steps:()=>['输入','升维','ReLU','降维','共享参数'],
+ controls:s=>select('word','当前位置',words,s.word)+select('component','输入维度',['维 1','维 2','维 3'],s.component)+range('inputValue','输入值',s.X[s.word][s.component],-3,3)+check('relu','启用 ReLU 非线性',s.relu),
+ change(s,k,v){if(k==='inputValue')s.X[s.word][s.component]=v;else s[k]=v},
+ hint:'FFN 对每个位置分别计算，不在这一步混合不同词的信息。各位置共享 W₁、b₁、W₂、b₂。注意力中的 Softmax 和 LayerNorm 本身也有非线性。',
+ render(s,t){const x=s.X[s.word],a=ffn(x,s.relu);let visual=network(x,t>=2?a.activated:a.hidden,a.out,t);
+ if(t===0)visual+=eq(`x = [${x.map(v=>fmt(v)).join(', ')}]`);
+ if(t===1)visual+=eq('h = xW₁ + b₁')+vec(a.hidden)+`<details><summary class="small">查看教学参数</summary>${matrix(W1,'W₁')}${vec(B1)}</details>`;
+ if(t===2)visual+=eq(s.relu?'ReLU(hᵢ) = max(0,hᵢ)':'对照：去掉 ReLU，保留 h')+`<div class="cards">${box('激活前',a.hidden)}${box('激活后',a.activated,true)}</div>`;
+ if(t===3)visual+=eq('y = ReLU(xW₁ + b₁)W₂ + b₂')+vec(a.out)+`<details><summary class="small">查看降维参数</summary>${matrix(W2,'W₂')}${vec(B2)}</details>`;
+ if(t===4)visual=matrix(s.X,'三个位置的输入',{rows:words,row:s.word})+flow(['同一 W₁、b₁','逐位置激活','同一 W₂、b₂'],1)+matrix(s.X.map(r=>ffn(r,s.relu).out),'逐位置输出',{rows:words,row:s.word});
+ return {visual,title:this.steps()[t],text:['选一个词的位置作为输入。修改其分量，其他位置的 FFN 输入保持不变。','第一次仿射变换把 3 维映射为 4 维。这里为了清晰仅增加一个维度；经典模型通常扩展得更多。','ReLU 将负数置零、保留正数。开关对照能看出哪些隐藏特征被关闭。','第二次仿射变换把结果映射回模型维度，方便后续残差连接。关闭激活后，两次仿射可以合并为一次。','网络参数共享，输入不同所以输出不同。跨位置的信息混合由注意力承担。'][t],audit:{x,...a}};}
+};
+modules.encoder={
+ initial:()=>({word:1,layers:2}),steps:s=>Array.from({length:s.layers},(_,i)=>['自注意力','Add & Norm','FFN','Add & Norm'].map(n=>`${i+1}层 ${n}`)).flat(),
+ controls:s=>select('word','追踪词块',words,s.word)+range('layers','编码层数',s.layers,1,6,1),
+ hint:'每一层包含两个子层和两次残差归一化。为便于比较，本教学计算复用相同参数；实际模型的不同层通常拥有各自的参数。',
+ render(s,t){const layers=encode(s.layers),l=Math.floor(t/4),phase=t%4,a=layers[l],values=[a.att.out,a.n1,a.f,a.n2][phase];let visual=`<div class="layer-stack">${layers.map((_,i)=>`<button data-stage="${i*4}" class="${i===l?'active':''}">编码层 ${i+1}</button>`).join('')}</div>`+flow(['多头自注意力','Add & Norm','逐位置 FFN','Add & Norm'],phase)+`<div class="cards">${box('本层输入 · '+words[s.word],a.input[s.word])}${box(['注意力输出','第一次归一化','FFN 输出','本层输出'][phase],values[s.word],true)}</div>`;
+ if(phase===0)visual+=matrix(a.att.heads[0].weights,'头 1 · 上下文权重',{rows:words,cols:words,row:s.word,heat:true});
+ if(phase===1)visual+=eq('LayerNorm(本层输入 + 自注意力输出)')+vec(a.res1[s.word]);
+ if(phase===2)visual+=eq('FFN(x) = ReLU(xW₁ + b₁)W₂ + b₂');
+ if(phase===3)visual+=eq('LayerNorm(第一次归一化结果 + FFN 输出)')+callout(l===s.layers-1?'最后一层的所有位置输出共同构成编码器记忆，供解码器的交叉注意力读取。':'本层输出作为下一层的输入，继续更新每个位置的表示。');
+ return {visual,title:`第 ${l+1} 层 · ${['自注意力','第一次 Add & Norm','前馈网络','第二次 Add & Norm'][phase]}`,text:['每个位置读取完整输入序列，融合其他位置的信息。这里用两个头进行真实的小矩阵计算。','把注意力输出加回进入注意力前的输入，再沿每个位置的特征维做 LayerNorm。','每个位置使用同一套前馈参数，进一步变换已经融合上下文的特征。','把 FFN 输出加回其输入，再次归一化。一层结束，表示传到下一层或作为最终编码器输出。'][phase],audit:{layer:l,phase,values,layers}};}
+};
+const generated=['Can','Huolala','carry','a','Labrador','?','〈EOS〉'];
+const candidates=[['Can','Does','Is'],['Huolala','a','the'],['carry','drag','see'],['a','the','this'],['Labrador','box','cat'],['?','.','!'],['〈EOS〉','and','again']];
+const baseProb=[[.72,.18,.1],[.83,.1,.07],[.7,.22,.08],[.76,.18,.06],[.86,.09,.05],[.92,.06,.02],[.96,.03,.01]];
+modules.generation={
+ initial:()=>({temperature:1}),steps:()=>['起始符','Can','Huolala','carry','a','Labrador','?','结束'],
+ controls:s=>range('temperature','示意温度',s.temperature,.3,2,.1),
+ hint:'使用预设教学概率，不连接真实语言模型。采用贪心选择：每次选最高概率候选。温度改变分布的尖锐程度，不改变此示例的最高概率词。',
+ render(s,t){const done=t===7,i=Math.min(t,6),p=softmax(baseProb[i].map(v=>Math.log(v)/s.temperature));let visual=`<h3>已经生成 · ${t} 个 Token</h3>`+tokens(['〈BOS〉',...generated.slice(0,t)],t)+flow(['已有前缀','预测分布','选最高概率','回填输入'],done?3:t%4)+(!done?`<h3>下一步候选</h3>${bars(candidates[i],p)}${eq(`下一个：${generated[i]} → 加到当前前缀末尾`)}`:callout('遇到结束符，生成停止。最终文本：Can Huolala carry a Labrador?'));
+ return {visual,title:done?'生成结束':`预测第 ${t+1} 个 Token`,text:done?'结束符是控制生成终止的特殊 Token，通常不显示在最终文本里。点击重置可以重新观察整个循环。':`当前只使用已经生成的前缀。点“下一步”提交 ${generated[i]}，然后用更新后的前缀再次预测。回退会撤回最后一次提交。`,audit:{prob:p,prefix:generated.slice(0,t),done}};}
+};
+modules.mask={
+ initial:()=>({position:2,masked:true,head:0}),steps:()=>['右移输入','原始分数','因果掩码','Softmax','上下文输出'],
+ controls:s=>select('position','当前预测位置',generated.map((w,i)=>`位置 ${i+1} → ${w}`),s.position)+select('head','注意力头',['头 1','头 2'],s.head)+check('masked','启用因果掩码',s.masked),
+ hint:'训练时可以同时处理所有行，但每行只能看到自己及此前的输入位置。输入右移一位，所以当前行的输入也不是正在预测的目标词。',
+ render(s,t){const Q=mm(targetX,HQ[s.head]),K=mm(targetX,HK[s.head]),V=mm(targetX,HV[s.head]),a=attention(Q,K,V,true,s.masked),i=s.position;let visual='';
+ if(t===0)visual=`<h3>输入（右移后）</h3>${tokens(target,i,s.masked?i:Infinity)}<h3>各位置的预测目标</h3>${tokens(generated,i)}${callout(`位置 ${i+1}：输入 ${target[i]}，预测 ${generated[i]}；可读取的前缀截止到 ${target[i]}。`)}`;
+ if(t===1)visual=matrix(a.raw,'QKᵀ · 未遮挡分数',{rows:target,cols:target,row:i});
+ if(t===2)visual=matrix(a.scores,s.masked?'缩放后 + 因果掩码':'对照：未加掩码的缩放分数',{rows:target,cols:target,row:i})+callout(s.masked?'未来位置设为 −∞；Softmax 后其权重严格为 0。':'关闭掩码会使训练时的当前行看到未来输入，其中可能包含预测答案。');
+ if(t===3)visual=matrix(a.weights,'注意力权重',{rows:target,cols:target,row:i,heat:true})+bars(target,a.weights[i]);
+ if(t===4)visual=bars(target,a.weights[i])+`<div class="cards">${box('所选头 · 加权输出',a.out[i],true)}</div>`;
+ return {visual,title:this.steps()[t],text:['先分清输入和目标：BOS 用于预测第一个词，Can 用于预测第二个词，依次类推。','先按普通注意力计算分数；若没有掩码，每个位置会看到整条训练序列。','掩码作用于 Softmax 之前。下三角包含对角线，对角线在右移后的输入中仍是已知信息。','被屏蔽的位置权重为 0，其余允许位置重新归一化为和为 1 的分布。','每个头用自己的权重混合内容，再按多头注意力的方式拼接和投影。这里展示所选头的结果。'][t],audit:a};}
+};
+modules.cross={
+ initial:()=>({position:2,head:0,gain:1}),steps:()=>['两条序列','各自投影','跨序列匹配','加权读取','多头融合'],
+ controls:s=>select('position','预测目标词',generated,s.position)+select('head','注意力头',['头 1','头 2'],s.head)+range('gain','当前查询强度',s.gain,.2,2,.1),
+ hint:'源序列 3 个词块，目标序列 7 个位置。交叉注意力的矩阵可以是长方形。K/V 来自编码器，Q 来自解码器；这里不对完整源句加因果掩码。',
+ render(s,t){const dec=decode(),q=dec.n1.map((r,i)=>r.map(v=>i===s.position?v*s.gain:v)),a=multi(q,memory,memory),h=a.heads[s.head],i=s.position;let visual='';
+ if(t===0)visual=`<div class="lane"><h3>源端 · 编码器记忆</h3>${tokens(words)}${vec(memory[1])}</div><div class="lane"><h3>目标端 · 解码器查询</h3>${tokens(generated,i)}${vec(q[i])}</div>`;
+ if(t===1)visual=`<div class="cards">${box('Q ← 解码器',h.Q[i],true)}${box('K ← 编码器（行 2）',h.K[1])}${box('V ← 编码器（行 2）',h.V[1])}</div>`+eq('Q：7 × 2；K：3 × 2；V：3 × 2<br>QKᵀ：7 × 3');
+ if(t===2)visual=matrix(h.weights,'目标位置 × 源词块',{rows:generated,cols:words,row:i,heat:true});
+ if(t===3)visual=bars(words,h.weights[i])+`<div class="cards">${box('所选头读取的中文信息',h.out[i],true)}</div>`+eq(h.out[i].map((v,c)=>`${h.weights[i].map((w,j)=>`${fmt(w)} × ${fmt(h.V[j][c])}`).join(' + ')} = ${fmt(v)}`).join('<br>'));
+ if(t===4)visual=`<div class="cards">${a.heads.map((h,j)=>box(`头 ${j+1}`,h.out[i],j===s.head)).join('')}</div>`+flow(['拼接 4 维','Wᴼ','返回 3 维'],2)+vec(a.out[i]);
+ return {visual,title:this.steps()[t],text:['解码器根据已有目标前缀形成当前状态，编码器提供源句所有位置的上下文表示。','两路状态分别进入投影：查询来自目标端，键和值来自源端。它们不需要有相同的序列长度。','一行对应一个目标查询，三列对应三个源词块。选择不同目标词或注意力头，观察对齐权重。','用匹配权重读取源端 V 的内容。教学参数未训练，权重用于说明运算，不代表真实翻译语义对齐。','各头读取不同投影下的信息，经拼接和输出投影后交给解码器后续子层。'][t],audit:a};}
+};
+modules.decoder={
+ initial:()=>({position:2}),steps:()=>['掩码自注意力','Add & Norm ①','交叉注意力','Add & Norm ②','FFN','Add & Norm ③','词表投影','Softmax'],
+ controls:s=>select('position','追踪预测位置',generated.map((w,i)=>`${i+1} → ${w}`),s.position),
+ hint:'此处展示一层解码器；完整模型可堆叠多层，词表投影通常放在最后一层之后。全部数值来自未训练的教学参数，因此最高概率词不保证是正确译文。',
+ render(s,t){const a=decode(),i=s.position,values=[a.self.out,a.n1,a.cross.out,a.n2,a.f,a.n3,a.logits,a.prob][t];let visual=flow(['掩码自注意力','Add & Norm','交叉注意力','Add & Norm','FFN','Add & Norm','Linear','Softmax'],t)+`<div class="lane"><h3>目标前缀</h3>${tokens(target.slice(0,i+1),i)}</div>`;
+ if(t===2||t===3)visual+=`<div class="lane"><h3>另一条路径：编码器记忆 → 交叉注意力 K/V</h3>${tokens(words)}${matrix(a.cross.heads[0].weights.slice(i,i+1),'当前查询 · 头 1 权重',{rows:[generated[i]],cols:words,heat:true})}</div>`;
+ if(t===0)visual+=bars(target,a.self.heads[0].weights[i]);
+ if(t<6)visual+=vec(values[i]);
+ if(t===1)visual+=eq('LayerNorm(目标输入 + 掩码自注意力输出)');
+ if(t===3)visual+=eq('LayerNorm(第一次归一化输出 + 交叉注意力输出)');
+ if(t===4)visual+=eq('FFN(x) = ReLU(xW₁ + b₁)W₂ + b₂');
+ if(t===5)visual+=eq('LayerNorm(第二次归一化输出 + FFN 输出)');
+ if(t===6)visual+=matrix([a.logits[i]],'7 个教学词表条目的 logits',{cols:generated,rows:['当前位置']});
+ if(t===7)visual+=bars(generated,a.prob[i])+callout('这里的概率是当前小矩阵模型实际计算的结果；它没有经过训练。逐词生成模块另用预设概率来演示正确译文的生成循环。');
+ return {visual,title:this.steps()[t],text:['先从已有目标前缀中提取上下文，未来位置的权重为 0。','把自注意力更新加回输入，再归一化。','用当前目标状态作为 Q，读取编码器输出作为 K/V，融合源语言信息。','以交叉注意力的输入为残差起点，再相加、归一化。','前馈网络逐位置加工融合后的特征。','第三次残差归一化完成一个解码层。若还有下一层，整条表示序列继续向上传递。','最后一层的表示经过线性投影，从模型维度映射到词表大小；数值称为 logits。','Softmax 把词表 logits 转成下一 Token 的概率。选出一个 Token 后，将它回填到前缀，再进行下一次预测。'][t],audit:{...a,position:i}};}
+};
+const architectureRoutes={both:['源句 Embedding + 位置编码','编码器 × N','目标前缀 Embedding + 位置编码','解码器 × N','Linear + Softmax','选择 Token','回填前缀'],encoder:['输入 Embedding + 位置编码','双向编码器 × N','任务输出层'],decoder:['前缀 Embedding + 位置编码','因果解码层 × N','Linear + Softmax','选择 Token','回填前缀']};
+modules.architecture={
+ initial:()=>({mode:'both',layers:2}),steps:s=>architectureRoutes[s.mode],
+ controls:s=>select('mode','架构形式',[['both','编码器—解码器'],['encoder','仅编码器'],['decoder','仅解码器']],s.mode)+range('layers','堆叠层数 N',s.layers,1,6,1),
+ hint:'点击图中组件可以跳到对应步骤。仅编码器常用于理解任务；仅解码器常用于续写生成；编码器—解码器适合源序列到目标序列的转换。此页展示结构与数据流。',
+ render(s,t){let visual='',text='';const route=architectureRoutes[s.mode];
+ if(s.mode==='both'){
+ visual=`<div class="lane"><h3>源端 · 货拉拉 / 拉不拉 / 拉布拉多</h3><div class="flow"><button data-stage="0" class="${t===0?'active':''}">Embedding<br>＋位置编码</button><span class="arrow">→</span><button data-stage="1" class="${t===1?'active':''}">编码器 × ${s.layers}<br><span class="small">自注意力 → FFN</span></button></div></div><div class="callout">编码器所有位置的最终输出 ──→ 每层解码器的交叉注意力 K/V</div><div class="lane"><h3>目标端 · 〈BOS〉 Can Huolala …</h3><div class="flow">${[2,3,4,5,6].map((n,j)=>`${j?'<span class="arrow">→</span>':''}<button data-stage="${n}" class="${t===n?'active':''}">${n===3?'解码器 × '+s.layers:route[n]}</button>`).join('')}</div></div>`;
+ text=['源词块查表并加上位置编码，形成编码器输入。','每个编码层包含自注意力和 FFN，各子层之后都有残差相加与归一化。编码器输出供所有解码层读取。','目标输入是已知前缀，并包含位置编码。训练时目标序列右移一位；生成时逐步增长。','每层依次执行带掩码自注意力、交叉注意力、FFN，并各接 Add & Norm。Q 来自目标端，交叉注意力的 K/V 来自源端。','最终解码器表示投影到词表，经 Softmax 得到下一个 Token 的分布。','根据概率选择 Token。贪心、采样等不同策略影响输出；结束符表示完成。','若尚未结束，把所选 Token 加入前缀，再次进入目标端。源句不变，编码器记忆可复用。'][t];
+ }else {visual=flow(route,t,true)+`<div class="cards">${box('输入',s.mode==='encoder'?'完整文本':'已有前缀',t===0)}${box('堆叠深度',s.layers+' 层',t===1)}${box('输出',s.mode==='encoder'?'任务所需表示':'下一个 Token',t>=2)}</div>`;
+ text=s.mode==='encoder'?['把输入词块转为带位置信息的向量。','双向自注意力能够使用完整输入。各层结合 FFN 与残差归一化，产生上下文表示。','接分类、序列标注等任务输出层。仅编码器结构本身不包含这里的自回归回填循环。'][t]:['将已知前缀变成向量，不需要独立的源端编码器。','因果自注意力只读取当前及过去的输入位置，随后经过 FFN。标准仅解码器结构没有编码器—解码器交叉注意力。','最后位置的表示经词表投影和 Softmax，预测下一个 Token。','选择一个 Token，检查是否为结束符。','将 Token 加回前缀，继续生成；这一循环具有自回归性。'][t];}
+ if(s.mode!=='encoder'&&t===route.length-1)visual+=eq('已知前缀 → 新 Token → 更长的前缀 ↻');
+ return {visual,title:route[t],text,audit:{mode:s.mode,layers:s.layers,stage:t}};}
+};
+const mod=modules[CONFIG.key];
+function stop(){if(timer)clearInterval(timer);timer=null;$('#play').textContent='▶ 播放';$('#play').setAttribute('aria-label','播放');}
+function renderControls(){const root=$('#parameters');root.innerHTML=mod.controls(state);root.querySelectorAll('[data-param]').forEach(el=>{const handler=()=>{stop();const k=el.dataset.param;let value=el.type==='checkbox'?el.checked:el.value;if(el.type!=='checkbox'&&!Number.isNaN(Number(value)))value=Number(value);if(mod.change)mod.change(state,k,value);else state[k]=value;step=Math.min(step,mod.steps(state).length-1);const out=root.querySelector(`[data-value="${k}"]`);if(out)out.textContent=fmt(value);render();if(el.tagName==='SELECT')renderControls();};el.addEventListener(el.type==='range'?'input':'change',handler)});}
+function render(){const steps=mod.steps(state);step=Math.max(0,Math.min(step,steps.length-1));const result=mod.render(state,step);lastAudit=result.audit;$('#steps').innerHTML=steps.map((s,i)=>`<button data-stage="${i}" aria-pressed="${step===i}" class="${i<step?'done':''}">${s}</button>`).join('');$('#visual').innerHTML=`<div class="reveal">${result.visual}</div>`;$('#explanation').innerHTML=`<h2>${result.title}</h2><p>${result.text}</p>`;$('#prev').disabled=step===0;$('#next').disabled=step===steps.length-1;$('#counter').textContent=`${step+1} / ${steps.length}`;}
+function go(n){stop();step=n;render();}
+function play(){if(timer){stop();return}if(step===mod.steps(state).length-1)step=0;render();$('#play').textContent='Ⅱ 暂停';$('#play').setAttribute('aria-label','暂停');timer=setInterval(()=>{step++;render();if(step===mod.steps(state).length-1)stop()},Number($('#speed').value));}
+function reset(){stop();state=mod.initial();step=0;$('#speed').value='1500';renderControls();render();}
+$('#prev').onclick=()=>go(step-1);$('#next').onclick=()=>go(step+1);$('#play').onclick=play;$('#reset').onclick=reset;$('#speed').onchange=()=>{if(timer){stop();play()}};
+document.addEventListener('click',e=>{const stage=e.target.closest('[data-stage]');if(stage){go(Number(stage.dataset.stage));return}const cell=e.target.closest('[data-cell]');if(cell){stop();const [kind,r,c]=cell.dataset.cell.split(',');if(CONFIG.key==='qkv'){state.row=+r;state.col=+c}else if(CONFIG.key==='attention'){state.kind=kind;state.row=+r;state.col=+c}renderControls();render();}});
+document.addEventListener('keydown',e=>{if(e.target.closest('input,select,textarea,button,a,summary'))return;if(e.key==='ArrowRight'){e.preventDefault();go(step+1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(step-1)}else if(e.key===' '){e.preventDefault();play()}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});
+$('#hint').textContent=mod.hint;
+window.lab={get state(){return clone(state)},get step(){return step},get count(){return mod.steps(state).length},get audit(){return clone(lastAudit)},get playing(){return !!timer},go,reset,math:{dot,mm,softmax,norm,attention,ffn,multi,encode}};
+reset();

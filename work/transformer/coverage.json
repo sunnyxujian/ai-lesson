@@ -32,9 +32,10 @@
       "frames/0030.0.jpg"
     ],
     "uncertainty": "",
-    "document_target": "Transformer-图文文章.html#u02",
+    "document_target": null,
     "slides_target": "Transformer-演示文稿.html#3",
-    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校",
+    "document_status": "用户要求从文章删除；演示文稿保留"
   },
   {
     "unit_id": "u03",

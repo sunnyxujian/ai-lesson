@@ -1,0 +1,22 @@
+{
+  "sections": 56,
+  "removed": true,
+  "titleRemoved": true,
+  "firstIds": [
+    "u01",
+    "u03",
+    "u04"
+  ],
+  "anchors": true,
+  "images": 92,
+  "brokenImages": 0,
+  "overflow": false,
+  "linkJump": {
+    "hash": "#u03",
+    "top": 74.875
+  },
+  "mobileOverflow": false,
+  "errors": [],
+  "numberingSequential": true,
+  "nextLabel": "从翻译问题说起 / 02"
+}
