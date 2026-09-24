@@ -1,0 +1,413 @@
+{
+  "tutorial": {
+    "images": 15,
+    "broken": [],
+    "headings": 15,
+    "anchors": [
+      "scene-01",
+      "scene-02",
+      "scene-03",
+      "scene-04",
+      "scene-05",
+      "scene-06",
+      "scene-07",
+      "scene-08",
+      "scene-09",
+      "scene-10",
+      "scene-11",
+      "scene-12",
+      "scene-13",
+      "scene-14",
+      "scene-15"
+    ],
+    "text": 10110
+  },
+  "deck": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 1,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 2,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 3,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 4,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 5,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 6,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 7,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 8,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 9,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 10,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 11,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 12,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 13,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 14,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 15,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slide": 16,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 1,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 2,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 3,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 4,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 5,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 6,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 7,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 8,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 9,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 10,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 11,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 12,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 13,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 14,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 15,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slide": 16,
+      "stageRatio": 1.7777777777777777,
+      "visibleSlides": 1,
+      "brokenImages": 0,
+      "outside": [],
+      "overflow": []
+    }
+  ],
+  "notesVisible": true,
+  "editable": 62
+}

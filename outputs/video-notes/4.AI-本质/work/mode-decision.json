@@ -1,0 +1,13 @@
+{
+  "selected": "explainer",
+  "requested": "explainer",
+  "visual_strategies": [
+    "screen-state",
+    "evidence"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "Conceptual lecture using live diagrams followed by a proxy-server walkthrough and HTTP request/response evidence; semantic arguments and operations determine chapter boundaries."
+  ],
+  "status": "confirmed"
+}

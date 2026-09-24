@@ -1,0 +1,13 @@
+{
+  "selected": "explainer",
+  "requested": "explainer",
+  "visual_strategies": [
+    "evidence",
+    "screen-state"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "全片为同一白板上的连续概念推导而非分页幻灯片；试检发现窗口拖动与绘图中间态造成过度分割，按完整论述及演示单元选取完成态。"
+  ],
+  "status": "confirmed"
+}

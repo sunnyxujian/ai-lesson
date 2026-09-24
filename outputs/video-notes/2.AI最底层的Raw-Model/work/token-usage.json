@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "entries": [],
+  "totals": {
+    "total_tokens": null,
+    "cost_usd": null
+  },
+  "status": "unavailable",
+  "reason": "Host runtime does not expose actual model token usage or billed cost; no estimates recorded."
+}

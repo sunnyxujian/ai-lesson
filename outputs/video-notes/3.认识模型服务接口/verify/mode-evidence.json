@@ -1,0 +1,31 @@
+{
+  "suggested_mode": "codex_review_required",
+  "confidence": null,
+  "sample_timestamps_sec": [
+    50.33,
+    155.464,
+    260.598,
+    365.731,
+    470.865,
+    575.999,
+    681.133,
+    786.266,
+    891.4,
+    996.534,
+    1101.668,
+    1206.802,
+    1311.935,
+    1417.069,
+    1522.203,
+    1627.337
+  ],
+  "media": {
+    "width": 1920,
+    "height": 1080,
+    "frame_rate": "30/1",
+    "duration_sec": 1677.666667,
+    "size_bytes": 65754528
+  },
+  "overview": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\3.认识模型服务接口\\verify\\mode-overview.jpg",
+  "decision_rule": "Codex inspects the whole-video overview and transcript, then confirms one route: stable slide-led lectures use slides; scripted visual arguments use explainer; interviews and podcasts use conversation; step-by-step UI or physical workflows use demo. Add composable visual strategies such as speaker, evidence, broll, dense-visual, document-evidence, or screen-state."
+}

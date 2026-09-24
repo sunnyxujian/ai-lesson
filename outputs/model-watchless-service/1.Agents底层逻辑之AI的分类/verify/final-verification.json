@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "scenes": 27,
+  "selected_images": 27,
+  "pdf_pages": 28,
+  "deck_slides": 18,
+  "raw_cues": 101,
+  "raw_exact_ordered_coverage": true,
+  "manual_polish_complete": true,
+  "html_images_loaded": 27,
+  "source_fingerprint_unchanged": true,
+  "token_usage": "unavailable",
+  "cost": "unknown",
+  "known_limitations": [
+    "Audio chunk timestamps are approximate, not word aligned.",
+    "No listening verification: host does not support audio input; corrections checked against original visible subtitles/diagrams.",
+    "One model name remains uncertain in tutorial.",
+    "Source conceptual simplifications preserved; no independent fact revision."
+  ],
+  "zip_verified": true,
+  "zip_entries": 45,
+  "zip_bytes": 21000353
+}

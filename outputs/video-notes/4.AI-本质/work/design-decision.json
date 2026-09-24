@@ -1,0 +1,16 @@
+{
+  "style": "Paper & Ink",
+  "choice": "A",
+  "selected_by": "user",
+  "density": "speaker-led",
+  "notes": "detailed",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "tutorial": "separate complete HTML",
+  "fonts": [
+    "Noto Serif SC",
+    "Noto Sans SC"
+  ]
+}

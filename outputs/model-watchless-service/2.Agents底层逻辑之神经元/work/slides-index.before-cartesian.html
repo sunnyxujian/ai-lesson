@@ -1,0 +1,214 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>神经元 · Agents底层逻辑</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet"><style>/* ===========================================
+   FIXED 16:9 STAGE: MANDATORY BASE STYLES
+   Include this ENTIRE file in every presentation.
+   Slides are authored at 1920×1080 and scaled as a whole.
+   =========================================== */
+
+/* 1. Lock the browser viewport */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 2. Full-window deck viewport */
+.deck-viewport {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 3. Fixed 16:9 design canvas.
+   JavaScript sets transform: translate(...) scale(...). */
+.deck-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background: var(--slide-bg, #fff);
+}
+
+/* 4. Slides stack inside the fixed stage.
+   Content must be laid out at 1920×1080, not reflowed per device. */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--slide-bg, #fff);
+}
+
+.slide.active,
+.slide.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* 5. Keep media inside authored slide bounds */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 6. Presentation chrome stays outside the slide design system */
+.deck-controls {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* 7. Print one fixed-size slide per page */
+@media print {
+    html,
+    body {
+        width: 1920px;
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-viewport {
+        position: static;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-stage {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none !important;
+        background: none;
+    }
+
+    .slide {
+        position: relative;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 1920px;
+        height: 1080px;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .slide:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .deck-controls {
+        display: none !important;
+    }
+}
+
+/* 8. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* === THEME: NEURON LAB === */
+:root{--stage-bg:#071718;--slide-bg:#eef3e9;--ink:#113337;--muted:#52716e;--accent:#007b6b;--line:#b6cfbd}
+*{box-sizing:border-box}body{font-family:'Noto Sans SC',sans-serif;color:var(--ink)}
+.slide{padding:90px 110px;background:radial-gradient(circle at 90% 10%,#dcebdc 0,transparent 40%),var(--slide-bg)}
+.eyebrow{font-size:25px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin:0 0 30px}
+h1,h2{font-family:'Noto Serif SC',serif;font-weight:700;margin:0;line-height:1.45}h1{font-size:110px;max-width:1500px}h2{font-size:74px;max-width:1600px;padding-bottom:8px}
+.intro{font-size:38px;line-height:1.6;max-width:1350px;color:var(--muted);margin:36px 0}
+.content{display:grid;grid-template-columns:620px 1fr;gap:70px;margin-top:36px;align-items:start}
+.content.no-image{grid-template-columns:1fr}.points{font-size:34px;line-height:1.6;padding:0;list-style:none;margin:0}
+.points li{padding:20px 0 24px;border-top:2px solid var(--line)}
+.figure{width:100%;height:590px;object-fit:contain;object-position:top center;border:1px solid var(--line);background:#fff}
+.formula{font-family:'Noto Serif SC',serif;font-size:55px;line-height:1.5;padding:36px 42px;background:#113337;color:#e5f8d4;margin:45px 0 0;max-width:1500px}
+.footer{position:absolute;bottom:60px;left:110px;right:110px;display:flex;justify-content:space-between;font-size:23px;color:var(--muted)}
+.footer a{color:inherit;position:absolute;right:160px;bottom:0}.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}.visible .reveal{opacity:1;transform:none}.reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.2s}
+/* === CONTROLS AND NOTES === */
+.deck-controls{display:flex;gap:10px;align-items:center;border-radius:8px;padding:7px 12px;background:#113337e8;color:white;font:14px sans-serif;width:max-content;max-width:calc(100vw - 20px);white-space:nowrap}
+button{border:0;border-radius:5px;padding:8px 12px;background:#e5f8d4;color:#113337;cursor:pointer}
+#notesPanel{position:fixed;right:16px;top:16px;bottom:80px;width:min(620px,90vw);padding:26px;background:#fffdf5;z-index:2000;overflow:auto;box-shadow:0 10px 50px #0007;font-size:17px;line-height:1.8;display:none}
+#notesPanel.open{display:block}.speaker-notes{display:none}.edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;z-index:10000}
+.edit-toggle{position:fixed;top:16px;left:16px;opacity:0;pointer-events:none;z-index:10001}.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}
+[contenteditable=true]{outline:2px dashed #007b6b;outline-offset:4px}
+@media print{#notesPanel,.edit-hotzone,.edit-toggle{display:none!important}.reveal{opacity:1;transform:none}}
+</style></head><body><div class="deck-viewport"><main class="deck-stage" id="deckStage"><!-- === SLIDE 1: 学习神经网络的目标：术语、概念与数学思维 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 01</p><h2 class="reveal" data-editable>从单个神经元理解神经网络</h2><div class="content  reveal"><ul class="points"><li data-editable>Transformer 是神经网络的一种实现形式。</li><li data-editable>先认识术语与概念，再建立知识体系。</li><li data-editable>从输入、参数与激活函数入手。</li></ul><img class="figure" src="assets/frame-01.jpg" alt="从单个神经元理解神经网络：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-01" target="_blank">阅读教程 ↗</a><span>01 / 15</span></div><aside class="speaker-notes"><p>人工神经元提供了理解神经网络的基本计算单元：多个输入经过权重、偏置和激活函数得到输出，再由多个单元组成网络。学习时应把符号与实际计算对应起来，像理解循环和数组一样，通过例子建立思路，再进入更复杂的架构。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-01" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 2: 生物神经元：多个树突与一个轴突 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 02</p><h2 class="reveal" data-editable>生物启发：接收与传递信号</h2><div class="content  reveal"><ul class="points"><li data-editable>树突等结构接收多个输入信号。</li><li data-editable>轴突向其他细胞传递信号。</li><li data-editable>人工模型抽象为多输入、单输出。</li></ul><img class="figure" src="assets/frame-02.jpg" alt="生物启发：接收与传递信号：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-02" target="_blank">阅读教程 ↗</a><span>02 / 15</span></div><aside class="speaker-notes"><p>生物神经元提供了接收与传递信号的启发。人工模型把它简化为多个数值输入与一个标量输出，输出可以传给多个下游单元。这个连接类比不等于复制真实神经元的全部结构与动力学。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-02" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 3: 把输入写成向量，把输出写成标量 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 03</p><h2 class="reveal" data-editable>把输入写成向量，把输出写成标量</h2><div class="content  reveal"><ul class="points"><li data-editable>输入是向量，可先理解为一维数组。</li><li data-editable>向量维数与数组轴数是不同概念。</li><li data-editable>输出是标量，即单个数字。</li></ul><img class="figure" src="assets/frame-03.jpg" alt="把输入写成向量，把输出写成标量：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-03" target="_blank">阅读教程 ↗</a><span>03 / 15</span></div><aside class="speaker-notes"><p>向量 x=[x₁,…,xₙ] 包含多个分量，单个神经元把它映射为标量 y。二维和三维向量便于画图，高维向量仍可按同样规则计算。数学上的 n 维向量可以存放在一维数组中，向量维数与数组轴数需要区分。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-03" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 4: 神经元数学模型与公式中的名字 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 04</p><h2 class="reveal" data-editable>神经元数学模型与公式中的名字</h2><div class="content  reveal"><ul class="points"><li data-editable>每个输入 xᵢ 乘上对应的权重 wᵢ。</li><li data-editable>把乘积相加，再加偏置 b。</li><li data-editable>经过激活函数 φ，得到输出 y。</li></ul><img class="figure" src="assets/frame-04.jpg" alt="神经元数学模型与公式中的名字：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-04" target="_blank">阅读教程 ↗</a><span>04 / 15</span></div><aside class="speaker-notes"><p>常见单元先计算 z=Σwᵢxᵢ+b，再计算 y=φ(z)。每个输入有对应权重，偏置平移加权结果，激活函数通常引入非线性。1943 年的 McCulloch–Pitts 模型是早期阈值逻辑模型，与现代可训练表达有关联，但不能完全等同；σ 也应根据上下文区分通用符号与 Sigmoid。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-04" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 5: 人为规定输入与输出的含义：薪资预测 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 05</p><h2 class="reveal" data-editable>人为规定输入与输出的含义：薪资预测</h2><div class="content  reveal"><ul class="points"><li data-editable>示例输入：[25, 11, 33]。</li><li data-editable>人为解释：年份、职业编号、年薪。</li><li data-editable>人为设定希望输出下一年的薪资涨幅。</li></ul><img class="figure" src="assets/frame-05.jpg" alt="人为规定输入与输出的含义：薪资预测：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-05" target="_blank">阅读教程 ↗</a><span>05 / 15</span></div><aside class="speaker-notes"><p>样本 [25,11,33] 可以约定为年份、职业类别与年薪，输出也必须预先规定是增长率还是其他量。职业编号是类别编码，不天然具有连续数值的大小关系。这个例子说明表示约定，不表明单个神经元足以可靠预测薪资。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-05" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 6: 换到图像识别领域，仍然是数字的计算 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 06</p><h2 class="reveal" data-editable>换到图像识别领域，仍然是数字的计算</h2><div class="content  reveal"><ul class="points"><li data-editable>图像常用 RGB 通道，可另含透明度 A。</li><li data-editable>输出数字可对应一个分类 ID。</li><li data-editable>输入与输出的业务含义都由人规定。</li></ul><img class="figure" src="assets/frame-06.jpg" alt="换到图像识别领域，仍然是数字的计算：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-06" target="_blank">阅读教程 ↗</a><span>06 / 15</span></div><aside class="speaker-notes"><p>图像通常以 RGB 通道表示，透明度 A 仅在需要时存在。分类输出可以映射到类别 ID，或由多个类别分数进一步决策。数值计算可以通过训练形成与任务有关的表示，因此不能把“使用数字”直接解释为“无法学习语义关系”。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-06" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 7: 权重：调节每个输入对结果的影响 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 07</p><h2 class="reveal" data-editable>权重：调节每个输入对结果的影响</h2><div class="content  reveal"><ul class="points"><li data-editable>w₁、w₂、…、wₙ 控制各输入的影响。</li><li data-editable>权重作用取决于输入及激活函数。</li><li data-editable>示例数值仅为演示，需要调整才可能符合预期。</li></ul><img class="figure" src="assets/frame-07.jpg" alt="权重：调节每个输入对结果的影响：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-07" target="_blank">阅读教程 ↗</a><span>07 / 15</span></div><aside class="speaker-notes"><p>固定输入 [25,11,33] 后，权重 0.3、1.2、0.8 的加权和为 47.1；截图的 0.2、1.3、0.8 则得到 45.7，再分别加偏置。两组参数不能混算。权重大小的解释还受输入尺度和相关性影响，不能直接当作普遍的特征重要性排名。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-07" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 8: 激活与未激活：用输出值表示状态 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 08</p><h2 class="reveal" data-editable>激活与未激活：用输出值表示状态</h2><div class="content  reveal"><ul class="points"><li data-editable>ReLU 的零输出表示没有正激活。</li><li data-editable>用输出 y 表示激活程度。</li><li data-editable>Sigmoid、tanh 的输出范围各不相同。</li></ul><img class="figure" src="assets/frame-08.jpg" alt="激活与未激活：用输出值表示状态：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-08" target="_blank">阅读教程 ↗</a><span>08 / 15</span></div><aside class="speaker-notes"><p>激活值的范围由函数定义决定：ReLU 输出不小于零，Sigmoid 在 0 与 1 之间，tanh 可以输出负数。亮度只是可视化编码。ReLU 输出零可以表示此次没有正激活，但不应推广成所有神经元都只能取非负值。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-08" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 9: 偏置：改变达到激活状态的门槛 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 09</p><h2 class="reveal" data-editable>偏置：改变达到激活状态的门槛</h2><div class="content  reveal"><ul class="points"><li data-editable>以 ReLU 为例，偏置 b 平移加权和。</li><li data-editable>减 10：加权和要超过 10 才能激活。</li><li data-editable>加 10：降低达到激活状态的门槛。</li></ul><img class="figure" src="assets/frame-09.jpg" alt="偏置：改变达到激活状态的门槛：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-09" target="_blank">阅读教程 ↗</a><span>09 / 15</span></div><aside class="speaker-notes"><p>对 y=max(0,s+b)，偏置改变出现正输出的位置。b=−10 时，s 必须大于 10 才有正输出，在 s=10 时仍为零；b=10 时，门槛移到 s=−10。其他激活函数不一定具有硬阈值，因此“门槛”类比需要限定函数。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-09" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 10: 激活函数：以 ReLU 为例完成运算 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 10</p><h2 class="reveal" data-editable>激活函数：以 ReLU 为例完成运算</h2><div class="content  reveal"><ul class="points"><li data-editable>ReLU 把负数截为 0。</li><li data-editable>非负值保持原值。</li><li data-editable>先计算加权和与偏置，再应用激活。</li></ul><img class="figure" src="assets/frame-10.jpg" alt="激活函数：以 ReLU 为例完成运算：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-10" target="_blank">阅读教程 ↗</a><span>10 / 15</span></div><aside class="speaker-notes"><p>ReLU(z)=max(0,z)，所以 −10 映射为 0，2 保持为 2。一次计算依次完成乘积求和、加偏置和非线性激活。函数选择属于模型设计，权重与偏置则在这个例子中通过训练调整。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-10" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 11: 打开交互网页并设定三个输入 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 11</p><h2 class="reveal" data-editable>打开交互网页并设定三个输入</h2><div class="content  reveal"><ul class="points"><li data-editable>输入：收入 30 万/年。</li><li data-editable>输入：信用分 750，负债率 30%。</li><li data-editable>界面用三个输入连接到单个神经元。</li></ul><img class="figure" src="assets/frame-11.jpg" alt="打开交互网页并设定三个输入：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-11" target="_blank">阅读教程 ↗</a><span>11 / 15</span></div><aside class="speaker-notes"><p>配套工程可用 make install 安装依赖、make dev 启动服务，再访问终端给出的地址；示例路径为 localhost:5173/#/neuron。页面初始输入是年收入 30 万元、信用分 750 和负债率 30%。固定输入后逐个调整参数，便于观察计算关系；这些字段只用于教学演示。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-11" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 12: 辨认能调的参数，设定输出的意义 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 12</p><h2 class="reveal" data-editable>辨认能调的参数，设定输出的意义</h2><div class="content  reveal"><ul class="points"><li data-editable>输入由外界给定。</li><li data-editable>当前演示的激活函数在设计时选定。</li><li data-editable>可调对象是权重和偏置。</li></ul><img class="figure" src="assets/frame-12.jpg" alt="辨认能调的参数，设定输出的意义：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-12" target="_blank">阅读教程 ↗</a><span>12 / 15</span></div><aside class="speaker-notes"><p>输入来自当前样本，权重与偏置是可调整参数，激活函数则是这次演示预先选定的设计。固定函数不代表函数没有影响。概率、金额和分数是不同输出定义，必须先约定任务与解释方式，不能在观察同一个数值时随意互换。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-12" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 13: 调节旋钮，观察输出与亮度变化 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 13</p><h2 class="reveal" data-editable>调节旋钮，观察输出与亮度变化</h2><div class="content  reveal"><ul class="points"><li data-editable>依次调节 w₁、w₂、w₃、b。</li><li data-editable>观察 y 值与节点明暗的变化。</li><li data-editable>1.71 不可能是 tanh 输出或概率。</li></ul><img class="figure" src="assets/frame-13.jpg" alt="调节旋钮，观察输出与亮度变化：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-13" target="_blank">阅读教程 ↗</a><span>13 / 15</span></div><aside class="speaker-notes"><p>逐个调整 w₁、w₂、w₃、b，观察数值与亮度。截图列出的贡献 0.270、0.554、−0.165 加上偏置 1.05，约为 1.71。这个值与 ReLU 阶段相符，但不可能是顶部计算链中 tanh 的最终输出，也不能直接解释为概率。复算时需要使用实际参与计算的特征值。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-13" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 14: 更换输入：参数、训练与共同满足预期 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 14</p><h2 class="reveal" data-editable>更换输入：参数、训练与共同满足预期</h2><div class="content  reveal"><ul class="points"><li data-editable>把收入改为 35 万/年，信用分改为 350。</li><li data-editable>新输入也要得到符合预期的输出。</li><li data-editable>权重和偏置统称参数；训练围绕参数调整展开。</li></ul><img class="figure" src="assets/frame-14.jpg" alt="更换输入：参数、训练与共同满足预期：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-14" target="_blank">阅读教程 ↗</a><span>14 / 15</span></div><aside class="speaker-notes"><p>将收入改为 35 万元、信用分改为 350 后，应继续使用同一组参数计算并评价结果。只为一个样本调参可能损害其他样本，因此训练要结合多条数据和明确损失。是否学到了规律，还需要在没有参与训练的数据上验证。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-14" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === SLIDE 15: 回顾：向量、标量、固定函数和可调参数 === -->
+<section class="slide"><p class="eyebrow reveal">NEURON LAB / 15</p><h2 class="reveal" data-editable>输入、参数、函数与输出的关系</h2><div class="content  reveal"><ul class="points"><li data-editable>向量输入 → 标量输出。</li><li data-editable>权重和偏置决定当前模型的可调行为。</li><li data-editable>目标：让不同输入都得到符合预期的结果。</li></ul><img class="figure" src="assets/frame-15.jpg" alt="输入、参数、函数与输出的关系：图示"></div><div class="footer"><span>Agents 底层逻辑 · 神经元</span><a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-15" target="_blank">阅读教程 ↗</a><span>15 / 15</span></div><aside class="speaker-notes"><p>单个神经元的关系为 y=φ(w·x+b)。在确定计算设置下，输入、参数和函数共同决定输出；固定输入与函数后，才能把变化归因于参数。多个单元连接后将形成更复杂的映射，后续的前向传播会说明这种组合怎样计算。</p>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#lesson-15" target="_blank">阅读相关章节 ↗</a>
+<a href="../share/2.Agents底层逻辑之神经元-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section></main></div><nav class="deck-controls" aria-label="幻灯片导航"><button onclick="deck.showSlide(deck.currentSlide-1)">←</button><span id="count"></span><button onclick="deck.showSlide(deck.currentSlide+1)">→</button><button onclick="deck.toggleNotes()">讲者备注 N</button></nav><aside id="notesPanel"><button onclick="deck.toggleNotes()">关闭</button><div id="notesBody"></div></aside><div class="edit-hotzone"></div><button class="edit-toggle" id="editToggle" title="编辑 E">编辑</button><script>
+/* === SLIDE PRESENTATION CONTROLLER === */
+class SlidePresentation{
+ constructor(){this.slides=[...document.querySelectorAll('.slide')];this.currentSlide=0;this.stage=document.getElementById('deckStage');this.editing=false;this.scale();addEventListener('resize',()=>this.scale());this.setup();this.showSlide(0)}
+ scale(){const f=Math.min(innerWidth/1920,innerHeight/1080);this.stage.style.transform=`translate(${(innerWidth-1920*f)/2}px,${(innerHeight-1080*f)/2}px) scale(${f})`}
+ showSlide(n){this.currentSlide=Math.max(0,Math.min(n,this.slides.length-1));this.slides.forEach((s,i)=>{s.classList.toggle('active',i===this.currentSlide);s.classList.toggle('visible',i===this.currentSlide)});document.getElementById('count').textContent=`${this.currentSlide+1} / ${this.slides.length}`;document.getElementById('notesBody').innerHTML=this.slides[this.currentSlide].querySelector('.speaker-notes').innerHTML}
+ toggleNotes(){document.getElementById('notesPanel').classList.toggle('open')}
+ toggleEdit(){this.editing=!this.editing;document.querySelectorAll('[data-editable]').forEach(e=>e.contentEditable=this.editing);document.getElementById('editToggle').classList.toggle('active',this.editing)}
+ save(){document.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));this.editing=false;const u=URL.createObjectURL(new Blob(['<!doctype html>\n'+document.documentElement.outerHTML],{type:'text/html'}));const a=document.createElement('a');a.href=u;a.download='神经元-重点讲义.html';a.click();URL.revokeObjectURL(u)}
+ setup(){addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();this.save();return}if(e.target.isContentEditable)return;if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();this.showSlide(this.currentSlide+1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();this.showSlide(this.currentSlide-1)}if(e.key.toLowerCase()==='n')this.toggleNotes();if(e.key.toLowerCase()==='e')this.toggleEdit();if(e.key==='Home')this.showSlide(0);if(e.key==='End')this.showSlide(this.slides.length-1)});let t=0;addEventListener('wheel',e=>{if(this.editing||document.getElementById('notesPanel').contains(e.target))return;if(Date.now()-t>600&&Math.abs(e.deltaY)>15){this.showSlide(this.currentSlide+Math.sign(e.deltaY));t=Date.now()}},{passive:true});let x=0;addEventListener('touchstart',e=>x=e.changedTouches[0].clientX,{passive:true});addEventListener('touchend',e=>{let d=e.changedTouches[0].clientX-x;if(Math.abs(d)>50)this.showSlide(this.currentSlide+(d<0?1:-1))},{passive:true});document.querySelectorAll('[data-editable]').forEach((e,i)=>{let v=localStorage.getItem('neuron-slide-editorial-v2-'+i);if(v)e.innerHTML=v;e.addEventListener('input',()=>localStorage.setItem('neuron-slide-editorial-v2-'+i,e.innerHTML))});const h=document.querySelector('.edit-hotzone'),b=document.getElementById('editToggle');let hide;[h,b].forEach(e=>{e.addEventListener('mouseenter',()=>{clearTimeout(hide);b.classList.add('show')});e.addEventListener('mouseleave',()=>hide=setTimeout(()=>{if(!this.editing)b.classList.remove('show')},400))});h.onclick=b.onclick=()=>this.toggleEdit()}
+}
+window.deck=new SlidePresentation();
+</script></body></html>

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "entries": [],
+  "totals": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "cost_usd": null
+  },
+  "status": "unavailable",
+  "reason": "Host runtime exposes no actual token counts or billed model cost. Local Qwen CPU ASR; no cloud ASR charge was incurred."
+}

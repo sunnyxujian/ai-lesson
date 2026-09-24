@@ -1,0 +1,884 @@
+[
+  {
+    "title": "AI 的分类",
+    "kind": "cover",
+    "chapter": "",
+    "unit": ""
+  },
+  {
+    "title": "课程导览",
+    "kind": "agenda",
+    "chapter": "",
+    "unit": ""
+  },
+  {
+    "title": "学习准备与抽象层级",
+    "kind": "chapter-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": ""
+  },
+  {
+    "title": "开场：关于智能的共识",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u001"
+  },
+  {
+    "title": "为什么要梳理 AI 概念",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u002"
+  },
+  {
+    "title": "新概念带来的不安",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u003"
+  },
+  {
+    "title": "学习目标与交流",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u004"
+  },
+  {
+    "title": "以易懂为目标",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u005"
+  },
+  {
+    "title": "本课内容：分类与实现方法",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u006"
+  },
+  {
+    "title": "人工智能的三个观察角度",
+    "kind": "figure-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u006"
+  },
+  {
+    "title": "工科思维与代码",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u007"
+  },
+  {
+    "title": "理科思维与抽象问题",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u008"
+  },
+  {
+    "title": "文生视频的假设",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u009"
+  },
+  {
+    "title": "必须完成的任务",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u010"
+  },
+  {
+    "title": "计算机如何产生视频",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u011"
+  },
+  {
+    "title": "文生视频：先追问视频如何产生",
+    "kind": "figure-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u011"
+  },
+  {
+    "title": "没有代码的思考",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u012"
+  },
+  {
+    "title": "如何生成符合要求的图像",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u013"
+  },
+  {
+    "title": "如何理解用户与语言",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u014"
+  },
+  {
+    "title": "文生视频：继续追问语言",
+    "kind": "figure-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u014"
+  },
+  {
+    "title": "智能与哲学问题",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u015"
+  },
+  {
+    "title": "继续追问智能",
+    "kind": "figure-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u015"
+  },
+  {
+    "title": "理论为什么有意义",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u016"
+  },
+  {
+    "title": "思想的层级与抽象级别",
+    "kind": "reading",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u017"
+  },
+  {
+    "title": "一个需求，向上追问前置问题",
+    "kind": "diagram-slide",
+    "chapter": "学习准备与抽象层级",
+    "unit": "u017"
+  },
+  {
+    "title": "人工智能与哲学流派",
+    "kind": "chapter-slide",
+    "chapter": "人工智能与哲学流派",
+    "unit": ""
+  },
+  {
+    "title": "什么是人工智能",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u018"
+  },
+  {
+    "title": "什么是人工智能：概念说明",
+    "kind": "clarification",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u018"
+  },
+  {
+    "title": "对话体验与智能共识",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u019"
+  },
+  {
+    "title": "游戏 NPC 与日常认知",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u020"
+  },
+  {
+    "title": "泊车、排序与判断的变化",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u021"
+  },
+  {
+    "title": "定义与共识的讨论",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u022"
+  },
+  {
+    "title": "哲学流派回答什么问题",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u023"
+  },
+  {
+    "title": "早期讨论与实现方向",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u024"
+  },
+  {
+    "title": "哲学流派的三个方向",
+    "kind": "figure-slide",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u024"
+  },
+  {
+    "title": "符号主义：推理规则",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u025"
+  },
+  {
+    "title": "规则的应用：NPC 与迷宫",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u026"
+  },
+  {
+    "title": "连接主义：大脑结构",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u027"
+  },
+  {
+    "title": "连接主义：大脑结构：概念说明",
+    "kind": "clarification",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u027"
+  },
+  {
+    "title": "神经元连接与模拟",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u028"
+  },
+  {
+    "title": "行为主义：环境互动",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u029"
+  },
+  {
+    "title": "不同流派可以交融",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u030"
+  },
+  {
+    "title": "三种流派，三种思考方向",
+    "kind": "diagram-slide",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u030"
+  },
+  {
+    "title": "产品开发中的 KPI 类比",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u031"
+  },
+  {
+    "title": "哲学流派的学习定位",
+    "kind": "reading",
+    "chapter": "人工智能与哲学流派",
+    "unit": "u032"
+  },
+  {
+    "title": "按要解决的问题分类",
+    "kind": "chapter-slide",
+    "chapter": "按要解决的问题分类",
+    "unit": ""
+  },
+  {
+    "title": "分类角度不止一种",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u033"
+  },
+  {
+    "title": "人的分类：年龄、性别与职业",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u034"
+  },
+  {
+    "title": "按要解决的问题分类",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u035"
+  },
+  {
+    "title": "自然语言处理的任务",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u036"
+  },
+  {
+    "title": "Transformer 与任务分类",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u037"
+  },
+  {
+    "title": "语言本身的特点",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u038"
+  },
+  {
+    "title": "自然语言处理与语音技术",
+    "kind": "figure-slide",
+    "chapter": "按要解决的问题分类",
+    "unit": "u038"
+  },
+  {
+    "title": "语音技术：ASR 与 TTS",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u039"
+  },
+  {
+    "title": "唤醒、声纹与音频特征",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u040"
+  },
+  {
+    "title": "Transformer 的应用范围",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u041"
+  },
+  {
+    "title": "不同业务领域的特点",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u042"
+  },
+  {
+    "title": "文本与语音的切分",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u043"
+  },
+  {
+    "title": "先区分业务领域，再讨论实现架构",
+    "kind": "diagram-slide",
+    "chapter": "按要解决的问题分类",
+    "unit": "u043"
+  },
+  {
+    "title": "计算机视觉与图像分类",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u044"
+  },
+  {
+    "title": "语义分割与弹幕避让",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u045"
+  },
+  {
+    "title": "计算机视觉的主要任务",
+    "kind": "figure-slide",
+    "chapter": "按要解决的问题分类",
+    "unit": "u045"
+  },
+  {
+    "title": "“公司做 NLP”是什么意思",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u046"
+  },
+  {
+    "title": "Web API 与语言选择",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u047"
+  },
+  {
+    "title": "技术选择与团队条件",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u048"
+  },
+  {
+    "title": "Web 开发中的共性问题",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u049"
+  },
+  {
+    "title": "应用与实现语言的区别",
+    "kind": "figure-slide",
+    "chapter": "按要解决的问题分类",
+    "unit": "u049"
+  },
+  {
+    "title": "文字提取的不同实现（1/2）",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u050"
+  },
+  {
+    "title": "文字提取的不同实现（2/2）",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u050"
+  },
+  {
+    "title": "TTS 与实现方式的变化",
+    "kind": "reading",
+    "chapter": "按要解决的问题分类",
+    "unit": "u051"
+  },
+  {
+    "title": "TTS 与实现方式的变化：概念说明",
+    "kind": "clarification",
+    "chapter": "按要解决的问题分类",
+    "unit": "u051"
+  },
+  {
+    "title": "实现方法与机器学习",
+    "kind": "chapter-slide",
+    "chapter": "实现方法与机器学习",
+    "unit": ""
+  },
+  {
+    "title": "实现方法与理论讨论",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u052"
+  },
+  {
+    "title": "知识工程",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u053"
+  },
+  {
+    "title": "演化计算",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u054"
+  },
+  {
+    "title": "机器学习的学习重点",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u055"
+  },
+  {
+    "title": "机器学习的学习重点：概念说明",
+    "kind": "clarification",
+    "chapter": "实现方法与机器学习",
+    "unit": "u055"
+  },
+  {
+    "title": "机器学习的定义",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u056"
+  },
+  {
+    "title": "任务 T、经验 E、性能 P",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u057"
+  },
+  {
+    "title": "机器学习的定义与关键",
+    "kind": "figure-slide",
+    "chapter": "实现方法与机器学习",
+    "unit": "u057"
+  },
+  {
+    "title": "什么样的变化，才叫学习？",
+    "kind": "diagram-slide",
+    "chapter": "实现方法与机器学习",
+    "unit": "u057"
+  },
+  {
+    "title": "任务不限于一个领域",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u058"
+  },
+  {
+    "title": "Java 与通用能力的类比",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u059"
+  },
+  {
+    "title": "Java 与通用能力的类比：概念说明",
+    "kind": "clarification",
+    "chapter": "实现方法与机器学习",
+    "unit": "u059"
+  },
+  {
+    "title": "领域特点与智能实现",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u060"
+  },
+  {
+    "title": "智能与具体业务的结合",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u061"
+  },
+  {
+    "title": "任务与经验：写文章",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u062"
+  },
+  {
+    "title": "训练与逐步具体化",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u063"
+  },
+  {
+    "title": "技术路线的历史变化",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u064"
+  },
+  {
+    "title": "技术路线的历史变化：概念说明",
+    "kind": "clarification",
+    "chapter": "实现方法与机器学习",
+    "unit": "u064"
+  },
+  {
+    "title": "连接主义曾遇到的困难",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u065"
+  },
+  {
+    "title": "连接主义曾遇到的困难：概念说明",
+    "kind": "clarification",
+    "chapter": "实现方法与机器学习",
+    "unit": "u065"
+  },
+  {
+    "title": "性能：怎样衡量好坏",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u066"
+  },
+  {
+    "title": "T、E、P 的对应问题",
+    "kind": "figure-slide",
+    "chapter": "实现方法与机器学习",
+    "unit": "u066"
+  },
+  {
+    "title": "机器学习的范围",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u067"
+  },
+  {
+    "title": "喂数据、衡量与调整",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u068"
+  },
+  {
+    "title": "下棋：任务、经验与表现",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u069"
+  },
+  {
+    "title": "经验增加与性能提升",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u070"
+  },
+  {
+    "title": "数据更多不一定学得更好",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u071"
+  },
+  {
+    "title": "学习能力与训练方法",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u072"
+  },
+  {
+    "title": "打印棋谱不等于学习",
+    "kind": "reading",
+    "chapter": "实现方法与机器学习",
+    "unit": "u073"
+  },
+  {
+    "title": "给数据，不等于已经发生学习",
+    "kind": "diagram-slide",
+    "chapter": "实现方法与机器学习",
+    "unit": "u073"
+  },
+  {
+    "title": "学习范式与标注案例",
+    "kind": "chapter-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": ""
+  },
+  {
+    "title": "学习范式",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u074"
+  },
+  {
+    "title": "四种学习范式",
+    "kind": "figure-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u074"
+  },
+  {
+    "title": "监督学习：人类给答案",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u075"
+  },
+  {
+    "title": "图像、文本与声音标注",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u076"
+  },
+  {
+    "title": "图像数据标注",
+    "kind": "figure-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u076"
+  },
+  {
+    "title": "文本数据标注",
+    "kind": "figure-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u076"
+  },
+  {
+    "title": "声音数据标注",
+    "kind": "figure-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u076"
+  },
+  {
+    "title": "范式与工程工具的区别",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u077"
+  },
+  {
+    "title": "方向、思路与方法的价值",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u078"
+  },
+  {
+    "title": "自监督学习：自己找答案",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u079"
+  },
+  {
+    "title": "自监督的算式例子",
+    "kind": "figure-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u079"
+  },
+  {
+    "title": "自监督与老师批改作业",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u080"
+  },
+  {
+    "title": "自监督与老师批改作业：概念说明",
+    "kind": "clarification",
+    "chapter": "学习范式与标注案例",
+    "unit": "u080"
+  },
+  {
+    "title": "监督与自监督：答案从哪里来？",
+    "kind": "diagram-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u080"
+  },
+  {
+    "title": "无监督学习：没有现成答案",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u081"
+  },
+  {
+    "title": "无监督学习：没有现成答案：概念说明",
+    "kind": "clarification",
+    "chapter": "学习范式与标注案例",
+    "unit": "u081"
+  },
+  {
+    "title": "残次品数据为什么难收集",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u082"
+  },
+  {
+    "title": "用良品建立相似度判断",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u083"
+  },
+  {
+    "title": "瓷器碎片与特征相似度",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u084"
+  },
+  {
+    "title": "强化学习：给奖惩",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u085"
+  },
+  {
+    "title": "数字反馈与策略调整",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u086"
+  },
+  {
+    "title": "游戏、自我对弈与奖惩",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u087"
+  },
+  {
+    "title": "学习范式可以组合",
+    "kind": "reading",
+    "chapter": "学习范式与标注案例",
+    "unit": "u088"
+  },
+  {
+    "title": "学习范式，关注训练如何进行",
+    "kind": "diagram-slide",
+    "chapter": "学习范式与标注案例",
+    "unit": "u088"
+  },
+  {
+    "title": "神经网络、深度学习与实现",
+    "kind": "chapter-slide",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": ""
+  },
+  {
+    "title": "机器学习如何实现",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u089"
+  },
+  {
+    "title": "线性回归与拟合",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u090"
+  },
+  {
+    "title": "机器学习的不同实现方法",
+    "kind": "figure-slide",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u090"
+  },
+  {
+    "title": "线性回归与拟合：概念说明",
+    "kind": "clarification",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u090"
+  },
+  {
+    "title": "神经网络这一实现手段",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u091"
+  },
+  {
+    "title": "神经网络与深度学习",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u092"
+  },
+  {
+    "title": "强化学习与深度学习的区别",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u093"
+  },
+  {
+    "title": "强化学习与深度学习，不是同一分类角度",
+    "kind": "diagram-slide",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u093"
+  },
+  {
+    "title": "回顾分类与实现方法（1/2）",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u094"
+  },
+  {
+    "title": "回顾分类与实现方法（2/2）",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u094"
+  },
+  {
+    "title": "学习是实现智能的一条路线",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u095"
+  },
+  {
+    "title": "方案设计逐步接近实现",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u096"
+  },
+  {
+    "title": "Transformer 的位置",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u097"
+  },
+  {
+    "title": "需求分析、架构与类设计",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u098"
+  },
+  {
+    "title": "软件工程中的逐层设计",
+    "kind": "figure-slide",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u098"
+  },
+  {
+    "title": "逐层推进的实现过程",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u099"
+  },
+  {
+    "title": "从方法到实现，一层一层具体化",
+    "kind": "diagram-slide",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u099"
+  },
+  {
+    "title": "本课结束与概念关系",
+    "kind": "reading",
+    "chapter": "神经网络、深度学习与实现",
+    "unit": "u100"
+  },
+  {
+    "title": "课程回顾",
+    "kind": "diagram-slide",
+    "chapter": "",
+    "unit": ""
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "scenes": 12,
+  "candidate_frames": 108,
+  "selected_frames": 12,
+  "pdf_pages": 13,
+  "deck_slides": 13,
+  "image_references_checked": 24,
+  "broken_references": [],
+  "zip_entries": 23,
+  "zip_crc": "pass",
+  "pdf_visual_review": "13 page overview plus full page 2 verified; no clipped text or orphan caption pages",
+  "deck_visual_review": "13 screenshots plus 390x844 phone screenshot verified; no overlaps; controls outside stage",
+  "token_usage": null,
+  "cost_usd": null,
+  "limitations": [
+    "audio_chunk timestamps approximate",
+    "No auditory input verification",
+    "Some colloquial ASR uncertainty retained in correction log",
+    "Course simplifications not independently fact checked"
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "raw_cues": 101,
+  "mapped_cues": 101,
+  "complete_ordered_mapping": true,
+  "scenes": [
+    {
+      "scene": 1,
+      "cue_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "source_characters": 1038,
+      "note_characters": 746,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_001_00-02-20.png"
+    },
+    {
+      "scene": 2,
+      "cue_ids": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_characters": 1311,
+      "note_characters": 824,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_002_00-05-12.png"
+    },
+    {
+      "scene": 3,
+      "cue_ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "source_characters": 987,
+      "note_characters": 670,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_003_00-06-07.png"
+    },
+    {
+      "scene": 4,
+      "cue_ids": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "source_characters": 1450,
+      "note_characters": 888,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_004_00-09-34.png"
+    },
+    {
+      "scene": 5,
+      "cue_ids": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "source_characters": 1842,
+      "note_characters": 1139,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_005_00-10-34.png"
+    },
+    {
+      "scene": 6,
+      "cue_ids": [
+        36,
+        37,
+        38
+      ],
+      "source_characters": 605,
+      "note_characters": 336,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_006_00-15-31.png"
+    },
+    {
+      "scene": 7,
+      "cue_ids": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "source_characters": 792,
+      "note_characters": 524,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_007_00-17-13.png"
+    },
+    {
+      "scene": 8,
+      "cue_ids": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "source_characters": 1035,
+      "note_characters": 605,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_008_00-19-30.png"
+    },
+    {
+      "scene": 9,
+      "cue_ids": [
+        48,
+        49
+      ],
+      "source_characters": 399,
+      "note_characters": 284,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_009_00-20-14.png"
+    },
+    {
+      "scene": 10,
+      "cue_ids": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "source_characters": 829,
+      "note_characters": 513,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_010_00-21-06.png"
+    },
+    {
+      "scene": 11,
+      "cue_ids": [
+        54,
+        55,
+        56
+      ],
+      "source_characters": 626,
+      "note_characters": 423,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_011_00-22-00.png"
+    },
+    {
+      "scene": 12,
+      "cue_ids": [
+        57,
+        58,
+        59
+      ],
+      "source_characters": 613,
+      "note_characters": 379,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_012_00-24-22.png"
+    },
+    {
+      "scene": 13,
+      "cue_ids": [
+        60
+      ],
+      "source_characters": 185,
+      "note_characters": 142,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_013_00-24-52.png"
+    },
+    {
+      "scene": 14,
+      "cue_ids": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "source_characters": 1258,
+      "note_characters": 766,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_014_00-26-35.png"
+    },
+    {
+      "scene": 15,
+      "cue_ids": [
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73
+      ],
+      "source_characters": 1563,
+      "note_characters": 917,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_015_00-30-08.png"
+    },
+    {
+      "scene": 16,
+      "cue_ids": [
+        74
+      ],
+      "source_characters": 169,
+      "note_characters": 175,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_016_00-30-56.png"
+    },
+    {
+      "scene": 17,
+      "cue_ids": [
+        75,
+        76
+      ],
+      "source_characters": 382,
+      "note_characters": 206,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_017_00-31-27.png"
+    },
+    {
+      "scene": 18,
+      "cue_ids": [
+        77
+      ],
+      "source_characters": 225,
+      "note_characters": 174,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_018_00-31-55.png"
+    },
+    {
+      "scene": 19,
+      "cue_ids": [
+        78
+      ],
+      "source_characters": 212,
+      "note_characters": 156,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_019_00-31-58.png"
+    },
+    {
+      "scene": 20,
+      "cue_ids": [
+        79,
+        80
+      ],
+      "source_characters": 367,
+      "note_characters": 269,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_020_00-33-19.png"
+    },
+    {
+      "scene": 21,
+      "cue_ids": [
+        81
+      ],
+      "source_characters": 194,
+      "note_characters": 133,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_021_00-33-30.png"
+    },
+    {
+      "scene": 22,
+      "cue_ids": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "source_characters": 1618,
+      "note_characters": 932,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_022_00-37-03.png"
+    },
+    {
+      "scene": 23,
+      "cue_ids": [
+        90,
+        91
+      ],
+      "source_characters": 327,
+      "note_characters": 197,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_023_00-38-02.png"
+    },
+    {
+      "scene": 24,
+      "cue_ids": [
+        92,
+        93
+      ],
+      "source_characters": 405,
+      "note_characters": 291,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_024_00-38-42.png"
+    },
+    {
+      "scene": 25,
+      "cue_ids": [
+        94,
+        95,
+        96
+      ],
+      "source_characters": 651,
+      "note_characters": 479,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_025_00-39-52.png"
+    },
+    {
+      "scene": 26,
+      "cue_ids": [
+        97,
+        98,
+        99,
+        100
+      ],
+      "source_characters": 843,
+      "note_characters": 520,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_026_00-40-49.png"
+    },
+    {
+      "scene": 27,
+      "cue_ids": [
+        101
+      ],
+      "source_characters": 54,
+      "note_characters": 40,
+      "image": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\keyframes\\scene_027_00-41-36.png"
+    }
+  ],
+  "notes_status": "All 27 manually light-polished, no condensed substitute; chunk overlap and meaningless filler reduced; 101 raw chunks remain exactly covered in source manifest."
+}

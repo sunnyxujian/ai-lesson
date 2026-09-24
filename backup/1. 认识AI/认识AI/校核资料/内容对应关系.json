@@ -1,0 +1,141 @@
+{
+  "raw_cues": 36,
+  "mapped_cues": 36,
+  "sections": [
+    {
+      "section": 1,
+      "title": "两条主线：技术认知与效能工具",
+      "raw_cues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clean_characters": 742
+    },
+    {
+      "section": 2,
+      "title": "面对新名词，先看技术结构",
+      "raw_cues": [
+        6,
+        7,
+        8
+      ],
+      "clean_characters": 380
+    },
+    {
+      "section": 3,
+      "title": "第一层：裸模型",
+      "raw_cues": [
+        9
+      ],
+      "clean_characters": 116
+    },
+    {
+      "section": 4,
+      "title": "第二层：模型服务",
+      "raw_cues": [
+        10,
+        11
+      ],
+      "clean_characters": 280
+    },
+    {
+      "section": 5,
+      "title": "第三层：AI 应用与学习路径",
+      "raw_cues": [
+        12,
+        13,
+        14
+      ],
+      "clean_characters": 383
+    },
+    {
+      "section": 6,
+      "title": "认知差异，决定使用差异",
+      "raw_cues": [
+        15,
+        16
+      ],
+      "clean_characters": 281
+    },
+    {
+      "section": 7,
+      "title": "程序员是需求与运行时之间的桥梁",
+      "raw_cues": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "clean_characters": 462
+    },
+    {
+      "section": 8,
+      "title": "案例一：用技术语言分析搜索接口",
+      "raw_cues": [
+        21,
+        22,
+        23
+      ],
+      "clean_characters": 443
+    },
+    {
+      "section": 9,
+      "title": "案例二：测试通过，功能仍可能被改坏",
+      "raw_cues": [
+        24,
+        25
+      ],
+      "clean_characters": 289
+    },
+    {
+      "section": 10,
+      "title": "案例三：理解代码，再沉淀文档",
+      "raw_cues": [
+        26,
+        27
+      ],
+      "clean_characters": 281
+    },
+    {
+      "section": 11,
+      "title": "案例四：发现疑问，追问返回结构",
+      "raw_cues": [
+        28
+      ],
+      "clean_characters": 145
+    },
+    {
+      "section": 12,
+      "title": "商业应用需要持续的技术沟通",
+      "raw_cues": [
+        29,
+        30,
+        31
+      ],
+      "clean_characters": 353
+    },
+    {
+      "section": 13,
+      "title": "能力要求的重心正在变化",
+      "raw_cues": [
+        32,
+        33,
+        34
+      ],
+      "clean_characters": 387
+    },
+    {
+      "section": 14,
+      "title": "让认知与工具使用相互促进",
+      "raw_cues": [
+        35,
+        36
+      ],
+      "clean_characters": 188
+    }
+  ],
+  "notes": "去除分块重叠及口头填充，术语依据板书校核；未声称逐字识别无误。"
+}

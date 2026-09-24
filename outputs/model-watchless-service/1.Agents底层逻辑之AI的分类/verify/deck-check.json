@@ -1,0 +1,138 @@
+{
+  "checks": [
+    {
+      "slide": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 2,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 3,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 4,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 5,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 6,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 7,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 8,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 9,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 10,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 11,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 12,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 13,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 14,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 15,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 16,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 17,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    },
+    {
+      "slide": 18,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflow": [],
+      "footOverlap": false
+    }
+  ],
+  "errors": [],
+  "speakerNotesAvailable": true,
+  "keyboardNavigation": true,
+  "editing": true,
+  "phoneViewport": {
+    "width": 390,
+    "height": 844
+  }
+}

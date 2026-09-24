@@ -1,0 +1,22 @@
+{
+  "full_audio_duration": 2526.771995,
+  "source_video_sha256": "c73a794ee18953ec691632eee61e40ec8144416671cea9ba9d19bb68c932936c",
+  "full_audio_asr_segments": 91,
+  "subtitle_ocr_rows": 1798,
+  "video_frames_scanned": 75802,
+  "visual_candidates_reviewed": 127,
+  "content_units": 100,
+  "slide_count": 130,
+  "body_character_count": 15975,
+  "document_slides_text_mismatches": [],
+  "banned_phrases": [],
+  "manual_listening": "No claim of word-for-word human listening; whole-track ASR checked against burned-in subtitles and visible instructional states. A second local model pass was used on difficult intervals; hallucinated outputs were rejected.",
+  "excluded_navigation": {
+    "1888-1905": "Browsing old course files; unrelated directory listings and old course headings are navigation, not new instruction. The image/text/audio annotation examples shown after navigation are included."
+  },
+  "known_limits": [
+    "Dialectal fillers and a few hesitant phrases received minimal editing. No guarantee of zero recognition errors.",
+    "Historical and definitional overstatements are retained with separate short concept notes."
+  ],
+  "notes": "Intermediate alignment, source timestamps and audit records remain outside the delivery folder."
+}

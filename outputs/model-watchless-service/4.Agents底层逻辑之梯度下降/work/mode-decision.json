@@ -1,0 +1,13 @@
+{
+  "selected": "demo",
+  "requested": "demo",
+  "visual_strategies": [
+    "screen-state",
+    "evidence"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "全片浏览器神经网络界面、函数曲线与三维曲面演示、参数箭头和笔记操作；以动作和结果组织教学，非固定幻灯片"
+  ],
+  "status": "confirmed"
+}

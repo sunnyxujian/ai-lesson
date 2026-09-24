@@ -1,0 +1,13 @@
+{
+  "selected": "demo",
+  "requested": "demo",
+  "visual_strategies": [
+    "screen-state",
+    "evidence"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "完整文档讲授并逐步手写公式、向量与权重示例，随后进入交互网页操作参数观察输出；按概念和操作结果划分完整语义单元"
+  ],
+  "status": "confirmed"
+}

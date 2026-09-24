@@ -1,0 +1,31 @@
+{
+  "suggested_mode": "codex_review_required",
+  "confidence": null,
+  "sample_timestamps_sec": [
+    51.432,
+    158.868,
+    266.303,
+    373.739,
+    481.175,
+    588.611,
+    696.046,
+    803.482,
+    910.918,
+    1018.354,
+    1125.789,
+    1233.225,
+    1340.661,
+    1448.097,
+    1555.532,
+    1662.968
+  ],
+  "media": {
+    "width": 1920,
+    "height": 1080,
+    "frame_rate": "30/1",
+    "duration_sec": 1714.4,
+    "size_bytes": 61285092
+  },
+  "overview": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\verify\\mode-overview.jpg",
+  "decision_rule": "Codex inspects the whole-video overview and transcript, then confirms one route: stable slide-led lectures use slides; scripted visual arguments use explainer; interviews and podcasts use conversation; step-by-step UI or physical workflows use demo. Add composable visual strategies such as speaker, evidence, broll, dense-visual, document-evidence, or screen-state."
+}

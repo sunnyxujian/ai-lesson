@@ -1,0 +1,20 @@
+{
+  "course": "4.AI-本质",
+  "slides": 26,
+  "checks": {
+    "default_hidden": true,
+    "O_show": true,
+    "H_hide": true,
+    "uppercase_O": true,
+    "uppercase_H": true,
+    "next_slide": true,
+    "notes_open": true,
+    "notes_close": true,
+    "export_hidden": true,
+    "phone_toolbar_fits": true,
+    "phone_ratio": true,
+    "reload_hidden": true
+  },
+  "issues": [],
+  "errors": []
+}

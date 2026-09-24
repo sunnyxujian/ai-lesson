@@ -1,0 +1,92 @@
+[
+  {
+    "course": "1.Agents底层逻辑之AI的分类",
+    "slides": 18,
+    "checks": {
+      "default_hidden": true,
+      "O_shows": true,
+      "H_hides": true,
+      "uppercase_O": true,
+      "uppercase_H": true,
+      "next_slide": true,
+      "notes_open": true,
+      "notes_close": true,
+      "export_hidden": true,
+      "reload_hidden": true
+    },
+    "issues": [],
+    "errors": []
+  },
+  {
+    "course": "2.Agents底层逻辑之神经元",
+    "slides": 15,
+    "checks": {
+      "default_hidden": true,
+      "O_shows": true,
+      "H_hides": true,
+      "uppercase_O": true,
+      "uppercase_H": true,
+      "next_slide": true,
+      "notes_open": true,
+      "notes_close": true,
+      "export_hidden": true,
+      "reload_hidden": true
+    },
+    "issues": [],
+    "errors": []
+  },
+  {
+    "course": "3.Agents底层逻辑之前向传播",
+    "slides": 16,
+    "checks": {
+      "default_hidden": true,
+      "O_shows": true,
+      "H_hides": true,
+      "uppercase_O": true,
+      "uppercase_H": true,
+      "next_slide": true,
+      "notes_open": true,
+      "notes_close": true,
+      "export_hidden": true,
+      "reload_hidden": true
+    },
+    "issues": [],
+    "errors": []
+  },
+  {
+    "course": "4.Agents底层逻辑之梯度下降",
+    "slides": 17,
+    "checks": {
+      "default_hidden": true,
+      "O_shows": true,
+      "H_hides": true,
+      "uppercase_O": true,
+      "uppercase_H": true,
+      "next_slide": true,
+      "notes_open": true,
+      "notes_close": true,
+      "export_hidden": true,
+      "reload_hidden": true
+    },
+    "issues": [],
+    "errors": []
+  },
+  {
+    "course": "5.Agents底层逻辑之训练模式",
+    "slides": 13,
+    "checks": {
+      "default_hidden": true,
+      "O_shows": true,
+      "H_hides": true,
+      "uppercase_O": true,
+      "uppercase_H": true,
+      "next_slide": true,
+      "notes_open": true,
+      "notes_close": true,
+      "export_hidden": true,
+      "reload_hidden": true
+    },
+    "issues": [],
+    "errors": []
+  }
+]

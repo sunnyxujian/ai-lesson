@@ -1,0 +1,13 @@
+{
+  "selected": "demo",
+  "requested": "demo",
+  "visual_strategies": [
+    "screen-state",
+    "evidence"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "已审阅全片概览和完整转写：浏览器逐步演示输入数字化、隐藏层与输出层计算及参数统计，末段以文档公式说明矩阵运算。"
+  ],
+  "status": "confirmed"
+}

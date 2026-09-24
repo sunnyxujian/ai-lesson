@@ -1,0 +1,30 @@
+{
+  "audio_chunks": 70,
+  "tutorial_sections": 20,
+  "selected_images": 20,
+  "supplemental_images": 3,
+  "total_images": 23,
+  "slides": 26,
+  "pdf_pages": 21,
+  "source_immutable": true,
+  "html_references": "pass",
+  "ordered_cue_coverage": true,
+  "deck_visual_bounds": "pass",
+  "navigation": "2 / 26",
+  "speaker_notes": true,
+  "editing": "true",
+  "mobile_16_9": true,
+  "uncertain_terms": [
+    "OpenClaw",
+    "OAuth",
+    "Skills (one occurrence transcribed as Studio)"
+  ],
+  "token_usage": null,
+  "cost_usd": null,
+  "limitations": [
+    "ASR chunk timing is approximate, not word alignment.",
+    "Not a word-for-word human listening verification.",
+    "Lecture-specific product examples, opinions, and simplifications are preserved in context.",
+    "Actual host token counts and cost are unavailable."
+  ]
+}

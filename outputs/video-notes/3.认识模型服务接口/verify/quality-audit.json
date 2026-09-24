@@ -1,0 +1,27 @@
+{
+  "status": "needs_review",
+  "mode": "explainer",
+  "conversation_profile": null,
+  "duration_sec": 1677.666667,
+  "transcript": {
+    "cue_count": 66,
+    "source_characters": 13270,
+    "scene_characters": 13270,
+    "exact_ordered_coverage": true,
+    "length_ratio": 1.0
+  },
+  "scenes": 20,
+  "notes": 20,
+  "selected_frames": 20,
+  "candidate_frames": 181,
+  "evidence_trigger_candidates": 0,
+  "byte_identical_selected_frames": 0,
+  "speaker_map_status": null,
+  "token_usage": {
+    "total_tokens": null,
+    "cost_usd": null
+  },
+  "warnings": [
+    "No model token usage has been recorded; do not estimate or fabricate unavailable counts"
+  ]
+}

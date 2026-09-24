@@ -1,0 +1,13 @@
+{
+  "status": "unavailable",
+  "entries": [],
+  "totals": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_input_tokens": null,
+    "total_tokens": null,
+    "cost": null
+  },
+  "reason": "The host does not expose actual model token counts for this sub-agent run. Local Qwen audio-chunk service results do not supply billable LLM usage. Counts and prices were not estimated.",
+  "phases": ["transcript review", "boundary review", "keyframe selection", "complete notes", "frontend-slides deck"]
+}

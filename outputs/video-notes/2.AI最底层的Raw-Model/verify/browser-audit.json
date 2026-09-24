@@ -1,0 +1,121 @@
+{
+  "errors": [],
+  "slides": 18,
+  "slideChecks": [
+    {
+      "title": "AI 最底层的\nRaw Model",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先看输入与输出",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "语言先变成数字",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "输出是一组可能性",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "“你好”后面会是什么？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "上下文窗口有多长？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "容量换算，先说明假设",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "装得下 ≠ 处理得好",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "下载的模型，核心是权重",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "7B，说的是参数个数",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "训练与微调，改变的是权重",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "语料是训练的原材料",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "架构规定怎样使用权重",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先建立数学函数的直觉",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "GPU 计算还要面对浮点数",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "多模态，也先转成数字",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把概念放回同一张图",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "下一层：模型服务",
+      "overflow": [],
+      "brokenImages": 0
+    }
+  ],
+  "navigation": "2 / 18",
+  "notesVisible": true,
+  "editing": "true",
+  "mobile": [
+    {
+      "width": 390,
+      "height": 219.375,
+      "ratio": 1.7777777777777777,
+      "left": 0,
+      "top": 312.3125
+    },
+    {
+      "width": 693.3333129882812,
+      "height": 390,
+      "ratio": 1.7777777256109775,
+      "left": 75.33333587646484,
+      "top": 0
+    }
+  ],
+  "tutorial": {
+    "sections": 12,
+    "images": 12,
+    "broken": 0,
+    "anchors": true
+  }
+}

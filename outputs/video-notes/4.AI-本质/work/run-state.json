@@ -1,0 +1,10 @@
+{
+  "source": "C:/Users/micro/Desktop/ai-lesson/video/4.AI 本质.mp4",
+  "project_dir": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质",
+  "acquisition": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质\\work\\acquisition.json",
+  "transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质\\work\\transcript\\4.AI-本质_transcript.txt",
+  "transcript_json": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质\\work\\video-use\\transcripts\\4.AI-本质.json",
+  "packed_transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质\\work\\video-use\\takes_packed.md",
+  "mode_evidence": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\4.AI-本质\\verify\\mode-evidence.json",
+  "suggested_mode": "codex_review_required"
+}

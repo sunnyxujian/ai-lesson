@@ -1,0 +1,93 @@
+{
+  "count": 130,
+  "issues": [],
+  "errors": [],
+  "external": [],
+  "keyboard": {
+    "right": 1,
+    "left": 0,
+    "selectH": 0,
+    "jumped": 50
+  },
+  "fullscreen": {
+    "active": true,
+    "tools": "none"
+  },
+  "document": {
+    "units": 100,
+    "images": [
+      {
+        "ok": true,
+        "src": "assets/figure-0000.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-0270.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-0338.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-0361.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-0585.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1041.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1170.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1303.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1488.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1596.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1853.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1908.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1918.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-1927.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-2009.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-2240.jpg"
+      },
+      {
+        "ok": true,
+        "src": "assets/figure-2468.jpg"
+      }
+    ],
+    "overflow": false
+  },
+  "mobile": {
+    "overflow": false
+  }
+}

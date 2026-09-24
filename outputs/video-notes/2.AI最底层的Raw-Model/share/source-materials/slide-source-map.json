@@ -1,0 +1,92 @@
+[
+  {
+    "slide": 1,
+    "title": "AI 最底层的<br>Raw Model",
+    "source_scene": 1
+  },
+  {
+    "slide": 2,
+    "title": "先看输入与输出",
+    "source_scene": 1
+  },
+  {
+    "slide": 3,
+    "title": "语言先变成数字",
+    "source_scene": 2
+  },
+  {
+    "slide": 4,
+    "title": "输出是一组可能性",
+    "source_scene": 3
+  },
+  {
+    "slide": 5,
+    "title": "“你好”后面会是什么？",
+    "source_scene": 3
+  },
+  {
+    "slide": 6,
+    "title": "上下文窗口有多长？",
+    "source_scene": 4
+  },
+  {
+    "slide": 7,
+    "title": "容量换算，先说明假设",
+    "source_scene": 4
+  },
+  {
+    "slide": 8,
+    "title": "装得下 ≠ 处理得好",
+    "source_scene": 5
+  },
+  {
+    "slide": 9,
+    "title": "下载的模型，核心是权重",
+    "source_scene": 6
+  },
+  {
+    "slide": 10,
+    "title": "7B，说的是参数个数",
+    "source_scene": 6
+  },
+  {
+    "slide": 11,
+    "title": "训练与微调，改变的是权重",
+    "source_scene": 7
+  },
+  {
+    "slide": 12,
+    "title": "语料是训练的原材料",
+    "source_scene": 7
+  },
+  {
+    "slide": 13,
+    "title": "架构规定怎样使用权重",
+    "source_scene": 8
+  },
+  {
+    "slide": 14,
+    "title": "先建立数学函数的直觉",
+    "source_scene": 9
+  },
+  {
+    "slide": 15,
+    "title": "GPU 计算还要面对浮点数",
+    "source_scene": 10
+  },
+  {
+    "slide": 16,
+    "title": "多模态，也先转成数字",
+    "source_scene": 11
+  },
+  {
+    "slide": 17,
+    "title": "把概念放回同一张图",
+    "source_scene": 12
+  },
+  {
+    "slide": 18,
+    "title": "下一层：模型服务",
+    "source_scene": 12
+  }
+]

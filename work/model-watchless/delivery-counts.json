@@ -1,0 +1,32 @@
+{
+  "1": {
+    "scenes": 27,
+    "images": 27,
+    "pdf_pages": 28,
+    "deck_slides": 18
+  },
+  "2": {
+    "scenes": 15,
+    "images": 15,
+    "pdf_pages": 15,
+    "deck_slides": 15
+  },
+  "3": {
+    "scenes": 15,
+    "images": 15,
+    "pdf_pages": 15,
+    "deck_slides": 16
+  },
+  "4": {
+    "scenes": 16,
+    "images": 16,
+    "pdf_pages": 20,
+    "deck_slides": 17
+  },
+  "5": {
+    "scenes": 12,
+    "images": 12,
+    "pdf_pages": 13,
+    "deck_slides": 13
+  }
+}

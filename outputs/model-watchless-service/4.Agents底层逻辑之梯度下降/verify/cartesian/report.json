@@ -1,0 +1,18 @@
+{
+  "course": "4.Agents底层逻辑之梯度下降",
+  "slides": 17,
+  "checks": {
+    "default_hidden": true,
+    "O_shows": true,
+    "H_hides": true,
+    "uppercase_O": true,
+    "uppercase_H": true,
+    "next_slide": true,
+    "notes_open": true,
+    "notes_close": true,
+    "export_hidden": true,
+    "reload_hidden": true
+  },
+  "issues": [],
+  "errors": []
+}

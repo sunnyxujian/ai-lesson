@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "status": "unavailable",
+  "reason": "本次宿主 agent 未暴露实际输入、输出、缓存 token 计数；本地 Qwen 服务不提供模型 token 计价。没有使用估计数或假定价格。",
+  "entries": [],
+  "totals": {"input_tokens": null, "output_tokens": null, "cached_input_tokens": null, "total_tokens": null, "cost_usd": null}
+}

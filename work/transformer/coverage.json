@@ -1,0 +1,1036 @@
+[
+  {
+    "unit_id": "u01",
+    "start": 0,
+    "end": 18,
+    "kind": "口述与视觉图解",
+    "transcript": "Transformer 是什么，架构又是怎样的？先做一个假设：2050 年，AI 取代了人类，成了蓝星扛把子，而人类正好发明了时光机。那就回到 2017 年，阻止那篇名叫《Attention Is All You Need》的论文发表。|这个玩笑强调的是它的影响：没有这篇论文，就没有 Transformer 架构，也就没有后来沿这条技术路线发展的 GPT、DeepSeek 等大模型。",
+    "asr_chunk_ids": [
+      1
+    ],
+    "visual_evidence": [
+      "frames/0013.0.jpg",
+      "frames/0017.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u01",
+    "slides_target": "Transformer-演示文稿.html#2",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u02",
+    "start": 18,
+    "end": 34,
+    "kind": "口述与视觉图解",
+    "transcript": "这篇论文的含金量，就连小白debug的《趣味网络图解》也得“避其锋芒，退让三分”。|现在，假装还不了解 Transformer，从头看一遍它的原理和架构。开始之前，也别忘了给小白debug点个赞、关注一下——谢谢！",
+    "asr_chunk_ids": [
+      1,
+      2
+    ],
+    "visual_evidence": [
+      "frames/0023.0.jpg",
+      "frames/0030.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u02",
+    "slides_target": "Transformer-演示文稿.html#3",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u03",
+    "start": 34,
+    "end": 48,
+    "kind": "口述与视觉图解",
+    "transcript": "“货拉拉拉不拉拉布拉多”，短短 10 个字里有 6 个“拉”，含“拉”量达到惊人的 60%。人一看就能理解意思，所以很自然地把它翻译成英文：Can Huolala carry a Labrador?",
+    "asr_chunk_ids": [
+      2
+    ],
+    "visual_evidence": [
+      "frames/0042.0.jpg",
+      "frames/0048.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u03",
+    "slides_target": "Transformer-演示文稿.html#4",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u04",
+    "start": 48,
+    "end": 58,
+    "kind": "口述与视觉图解",
+    "transcript": "注意，关键是理解，所以才能翻译。但计算机很难理解：每个“拉”字在不同位置代表不同的意思。|“货拉拉”里的“拉”属于名称中的叠词，“拉不拉”里的“拉”是动词，“拉布拉多”里的“拉”是音译音节。尤其要弄明白中间这个“拉不拉”。",
+    "asr_chunk_ids": [
+      2,
+      3
+    ],
+    "visual_evidence": [
+      "frames/0050.0.jpg",
+      "frames/0056.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u04",
+    "slides_target": "Transformer-演示文稿.html#5",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u05",
+    "start": 58,
+    "end": 74,
+    "kind": "口述与视觉图解",
+    "transcript": "在中文里，“拉”可以表示拉货，也可以表示拉扯。在英文里，它既可以翻译为 carry，也可以是 drag 或 pull。|必须结合前面的“货拉拉”和后面的“拉布拉多”，才能准确理解“拉不拉”。那么，计算机该如何理解一句话里每个词的含义？",
+    "asr_chunk_ids": [
+      3
+    ],
+    "visual_evidence": [
+      "frames/0064.0.jpg",
+      "frames/0069.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u05",
+    "slides_target": "Transformer-演示文稿.html#6",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u06",
+    "start": 74,
+    "end": 88,
+    "kind": "口述与视觉图解",
+    "transcript": "计算机只认识 0、1 这样的数字，所以在翻译之前，需要把文本变成数字。最简单的办法，是把文本挨个字转换成对应的数字编号，比如 Unicode 编码。|“货”的编码是 U+8D38，“拉”的编码是 U+62C9。",
+    "asr_chunk_ids": [
+      3,
+      4
+    ],
+    "visual_evidence": [
+      "frames/0082.0.jpg",
+      "frames/0087.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u06",
+    "slides_target": "Transformer-演示文稿.html#7",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u07",
+    "start": 88,
+    "end": 99,
+    "kind": "口述与视觉图解",
+    "transcript": "但这有一个问题：编号只是一个纯数字，本身不承载词语的语义，两个数字编号之间也不会天然形成语义关联。|所以，需要一种既能数字化、又能承载语义的方案。怎么办呢？",
+    "asr_chunk_ids": [
+      4
+    ],
+    "visual_evidence": [
+      "frames/0094.0.jpg",
+      "frames/0097.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u07",
+    "slides_target": "Transformer-演示文稿.html#8",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u08",
+    "start": 99,
+    "end": 105,
+    "kind": "口述与视觉图解",
+    "transcript": "首先，把这句话切分成多个词块，每个词块叫一个 token。在这个例子里，先按“货拉拉／拉不拉／拉布拉多”三个词块来理解。|然后，想象有一个二维坐标系。",
+    "asr_chunk_ids": [
+      4,
+      5
+    ],
+    "visual_evidence": [
+      "frames/0103.0.jpg"
+    ],
+    "uncertainty": "说明：这里的三词块划分是教学示意；实际 token 边界由分词器决定。",
+    "document_target": "Transformer-图文文章.html#u08",
+    "slides_target": "Transformer-演示文稿.html#9",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u09",
+    "start": 105,
+    "end": 121,
+    "kind": "口述与视觉图解",
+    "transcript": "让 x 轴表示是否与交通相关，y 轴表示是否与动物相关。“货拉拉”会落在 x 轴正方向，“拉布拉多”会落在 y 轴正方向。|物流平台、网约车这类词会更靠近货拉拉；金毛、牧羊犬则更靠近拉布拉多。",
+    "asr_chunk_ids": [
+      5
+    ],
+    "visual_evidence": [
+      "frames/0113.0.jpg",
+      "frames/0120.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u09",
+    "slides_target": "Transformer-演示文稿.html#10",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u10",
+    "start": 121,
+    "end": 137,
+    "kind": "口述与视觉图解",
+    "transcript": "只有两个维度还不够，无法表达复杂的语义关系。比如货拉拉、物流平台、网约车，在二维里都和交通相关，靠得很近。|如果加入第三维“是否运货”，货拉拉和物流平台偏向运货物，网约车偏向运人，它们就被区分开了。",
+    "asr_chunk_ids": [
+      5,
+      6
+    ],
+    "visual_evidence": [
+      "frames/0129.0.jpg",
+      "frames/0136.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u10",
+    "slides_target": "Transformer-演示文稿.html#11",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u11",
+    "start": 137,
+    "end": 153,
+    "kind": "口述与视觉图解",
+    "transcript": "随着维度增多，所有已知词汇的 token 都可以在多维坐标系里找到自己的位置。通过海量语料训练，可以让语义相近的词在空间中靠得近，语义无关的词离得远。|图中还有 Golang、py，靓仔、小白debug，男人、女人、国王、王后等位置。看爽了吗？来个一键三连不过分吧？",
+    "asr_chunk_ids": [
+      6,
+      7
+    ],
+    "visual_evidence": [
+      "frames/0145.0.jpg",
+      "frames/0148.0.jpg"
+    ],
+    "uncertainty": "说明：这些有名称的坐标轴是帮助理解的类比；真实向量维度通常没有这样直接、固定的语义标签。",
+    "document_target": "Transformer-图文文章.html#u11",
+    "slides_target": "Transformer-演示文稿.html#12",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u12",
+    "start": 153,
+    "end": 161,
+    "kind": "口述与视觉图解",
+    "transcript": "词和词之间的关系，还能通过数学方式计算。比如，用国王的坐标减去男人的坐标，再加上女人的坐标，得到的结果会非常接近王后的坐标。",
+    "asr_chunk_ids": [
+      7
+    ],
+    "visual_evidence": [
+      "frames/0158.0.jpg",
+      "frames/0160.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u12",
+    "slides_target": "Transformer-演示文稿.html#13",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u13",
+    "start": 161,
+    "end": 170,
+    "kind": "口述与视觉图解",
+    "transcript": "至于“拉不拉”这种多义表达，可以先把它在坐标系里的表示想象成一个模糊的平均位置。只有结合前后词之后，它的位置才会被拉向正确的语义区域。|在“货拉拉拉不拉拉布拉多”里，这个位置会更接近“拉货”，而不是“拉拽”。",
+    "asr_chunk_ids": [
+      7
+    ],
+    "visual_evidence": [
+      "frames/0165.0.jpg",
+      "frames/0169.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u13",
+    "slides_target": "Transformer-演示文稿.html#14",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u14",
+    "start": 170,
+    "end": 177,
+    "kind": "口述与视觉图解",
+    "transcript": "每个坐标维度都可以表示为数字，因此每个 token 都可以用一组数字表示。这种表示方式就是 embedding，也叫向量。|图中的示意数值分别是：物流平台 [0.2, 0.1, 0.8]，货拉拉 [0.6, 0.2, 0.2]，网约车 [0.1, −0.2, −0.2]。",
+    "asr_chunk_ids": [
+      7,
+      8
+    ],
+    "visual_evidence": [
+      "frames/0176.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u14",
+    "slides_target": "Transformer-演示文稿.html#15",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u15",
+    "start": 177,
+    "end": 190,
+    "kind": "口述与视觉图解",
+    "transcript": "语言不仅有词义，还有顺序。“货拉拉”和“拉布拉多”一旦颠倒位置，变成“拉布拉多拉不拉货拉拉”，意思就完全不同。|所以，模型还会给每个 token 加入位置信息，让向量同时包含“它是什么”和“它在什么位置”。",
+    "asr_chunk_ids": [
+      7,
+      8
+    ],
+    "visual_evidence": [
+      "frames/0182.0.jpg",
+      "frames/0189.0.jpg"
+    ],
+    "uncertainty": "说明：图中把语义和位置分开画出以便理解；经典 Transformer 实际将同维度的位置编码与词嵌入相加。[论文 §3.5]",
+    "document_target": "Transformer-图文文章.html#u15",
+    "slides_target": "Transformer-演示文稿.html#16",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u16",
+    "start": 190,
+    "end": 203,
+    "kind": "口述与视觉图解",
+    "transcript": "知道了每个 token 对应的向量，就可以考虑翻译。但问题又来了：翻译“拉不拉”这种多义表达时，怎样结合上下文，判断这个“拉”究竟是 carry 还是 drag？",
+    "asr_chunk_ids": [
+      8,
+      9
+    ],
+    "visual_evidence": [
+      "frames/0202.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u16",
+    "slides_target": "Transformer-演示文稿.html#17",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u17",
+    "start": 203,
+    "end": 218,
+    "kind": "口述与视觉图解",
+    "transcript": "每个词块除了表面的字面意思，还有背后的含义。比如“拉布拉多”背后有“宠物、狗”等含义；“货拉拉”对应货车、名词、搬家；“拉不拉”对应拉货、动词、拉扯。|可以把一句话抽象成一个词块数据库：查询键 key 是词块本身，value 是词块背后的含义。",
+    "asr_chunk_ids": [
+      9
+    ],
+    "visual_evidence": [
+      "frames/0217.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u17",
+    "slides_target": "Transformer-演示文稿.html#18",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u18",
+    "start": 218,
+    "end": 232,
+    "kind": "口述与视觉图解",
+    "transcript": "计算机理解“拉不拉”时，应该重点关注哪些词？可以想象拿着“拉不拉”这个词，到词块数据库里挨个遍历，看看哪个词对它的参考价值更大。|这个过程里有三个概念：查询 Query、键 Key、值 Value。",
+    "asr_chunk_ids": [
+      9,
+      10
+    ],
+    "visual_evidence": [
+      "frames/0227.0.jpg",
+      "frames/0231.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u18",
+    "slides_target": "Transformer-演示文稿.html#19",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u19",
+    "start": 232,
+    "end": 245,
+    "kind": "口述与视觉图解",
+    "transcript": "直接拿 token 的向量做这三件事不够灵活，因为一个向量要同时扮演三个角色。|通过 WQ、WK、WV 三个权重矩阵的变换，让每个 token 的向量分别变成三个专门的向量，各司其职。",
+    "asr_chunk_ids": [
+      10
+    ],
+    "visual_evidence": [
+      "frames/0240.0.jpg",
+      "frames/0244.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u19",
+    "slides_target": "Transformer-演示文稿.html#20",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u20",
+    "start": 245,
+    "end": 252,
+    "kind": "口述与视觉图解",
+    "transcript": "承担查询角色的叫 Q，代表这个 token 想关注什么，就像数据库的查询 SQL。",
+    "asr_chunk_ids": [
+      10,
+      11
+    ],
+    "visual_evidence": [
+      "frames/0250.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u20",
+    "slides_target": "Transformer-演示文稿.html#21",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u21",
+    "start": 252,
+    "end": 258,
+    "kind": "口述与视觉图解",
+    "transcript": "承担键角色的叫 K，代表这个 token 能提供什么信息，就像数据库里的查询键。",
+    "asr_chunk_ids": [
+      11
+    ],
+    "visual_evidence": [
+      "frames/0256.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u21",
+    "slides_target": "Transformer-演示文稿.html#22",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u22",
+    "start": 258,
+    "end": 264,
+    "kind": "口述与视觉图解",
+    "transcript": "承担值角色的叫 V，代表这个 token 背后的真正含义，就像数据库里查询键对应的值。|查询、键、值都准备好之后，就可以进行注意力计算了。",
+    "asr_chunk_ids": [
+      11
+    ],
+    "visual_evidence": [
+      "frames/0263.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u22",
+    "slides_target": "Transformer-演示文稿.html#23",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u23",
+    "start": 264,
+    "end": 276,
+    "kind": "口述与视觉图解",
+    "transcript": "有了每个 token 的 Q、K、V，来看怎样计算。首先，每个 token 的 Q 都会遍历句子中所有 token 的 K，用点积计算相关程度。|三个 token 的例子会得到一个 3 × 3 的表格：每一行是一个 Q，每一列是一个 K，格子里是 Qi·Kj。",
+    "asr_chunk_ids": [
+      11,
+      12
+    ],
+    "visual_evidence": [
+      "frames/0275.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u23",
+    "slides_target": "Transformer-演示文稿.html#24",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u24",
+    "start": 276,
+    "end": 290,
+    "kind": "口述与视觉图解",
+    "transcript": "点积可以先直观地理解为“相乘”：从数学图像上看，是比较两个向量在坐标系里的指向是否一致，越同向，数值越大。|从效果上看，就是两者相关程度越高，这个 token 越值得被重点参考，可以多关注它。",
+    "asr_chunk_ids": [
+      12
+    ],
+    "visual_evidence": [
+      "frames/0277.0.jpg",
+      "frames/0284.0.jpg"
+    ],
+    "uncertainty": "说明：点积是对应分量乘积之和；它同时受方向和向量长度影响，“越同向越大”是在长度等条件相同的比较下理解。",
+    "document_target": "Transformer-图文文章.html#u24",
+    "slides_target": "Transformer-演示文稿.html#25",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u25",
+    "start": 290,
+    "end": 306,
+    "kind": "口述与视觉图解",
+    "transcript": "针对“拉不拉”，遍历结束后，就知道它对句子中所有 token 的关注程度。示意分数是 8、11、4，分别对应货拉拉、拉不拉、拉布拉多。|“拉不拉”和“货拉拉”相关性较高，就会关注货拉拉，后续“拉货”这个含义也会被显著放大。",
+    "asr_chunk_ids": [
+      12,
+      13
+    ],
+    "visual_evidence": [
+      "frames/0298.0.jpg",
+      "frames/0304.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u25",
+    "slides_target": "Transformer-演示文稿.html#26",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u26",
+    "start": 306,
+    "end": 320,
+    "kind": "口述与视觉图解",
+    "transcript": "如果向量维度较大，点积结果可能整体偏大，容易把某个 token 的关注程度放大得过于极端。|为了让不同 token 之间的关注差异更容易被区分，模型会在点积之后除以维度的开方 √dk，这一步称为 Scale。",
+    "asr_chunk_ids": [
+      13
+    ],
+    "visual_evidence": [
+      "frames/0311.0.jpg",
+      "frames/0319.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u26",
+    "slides_target": "Transformer-演示文稿.html#27",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u27",
+    "start": 320,
+    "end": 331,
+    "kind": "口述与视觉图解",
+    "transcript": "接下来，对这些关注程度做一次 Softmax，把它们转换成一组权重。这样，“拉不拉”对所有 token 的关注权重之和就是 1，可以理解为注意力分配比例。|示意结果为 0.15、0.84、0.01，三者相加等于 1。",
+    "asr_chunk_ids": [
+      13,
+      14
+    ],
+    "visual_evidence": [
+      "frames/0325.0.jpg",
+      "frames/0330.0.jpg"
+    ],
+    "uncertainty": "说明：这组数为近似示意；不能把 8、11、4 未经缩放直接做 Softmax，就当作图中权重。",
+    "document_target": "Transformer-图文文章.html#u27",
+    "slides_target": "Transformer-演示文稿.html#28",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u28",
+    "start": 331,
+    "end": 341,
+    "kind": "口述与视觉图解",
+    "transcript": "最后，用这组权重加权所有 token 的 V 向量。相当于知道“拉不拉”应该以多大的权重，从其他 token 那里取哪些信息。|分别取 0.15 份 V₁、0.84 份 V₂、0.01 份 V₃，再相加，得到新的向量。",
+    "asr_chunk_ids": [
+      14
+    ],
+    "visual_evidence": [
+      "frames/0340.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u28",
+    "slides_target": "Transformer-演示文稿.html#29",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u29",
+    "start": 341,
+    "end": 352,
+    "kind": "口述与视觉图解",
+    "transcript": "最终得到的是“拉不拉”融合了上下文信息之后的表示，可以把它记作 H₂。|“货拉拉”和“拉布拉多”也以同样方式，分别得到自己的 H₁ 和 H₃。对对对，这一整套计算过程，就是注意力机制。",
+    "asr_chunk_ids": [
+      14,
+      15
+    ],
+    "visual_evidence": [
+      "frames/0346.0.jpg",
+      "frames/0350.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u29",
+    "slides_target": "Transformer-演示文稿.html#30",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u30",
+    "start": 352,
+    "end": 362,
+    "kind": "口述与视觉图解",
+    "transcript": "注意力机制可以用下面的公式表示。它让每个 token 根据当前语境，自动决定应该重点参考其他哪些 token。",
+    "asr_chunk_ids": [
+      15
+    ],
+    "visual_evidence": [
+      "frames/0359.0.jpg"
+    ],
+    "uncertainty": "说明：逐对向量计算写作 Q·K；按“每个 token 占矩阵一行”的约定，矩阵公式应写 QKᵀ。[论文 §3.2.1]",
+    "document_target": "Transformer-图文文章.html#u30",
+    "slides_target": "Transformer-演示文稿.html#31",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u31",
+    "start": 362,
+    "end": 369,
+    "kind": "口述与视觉图解",
+    "transcript": "如果还没有完全理解，再把这套计算走一遍。|Q 与 K 的点积，用来计算 token 之间“关注谁”，以及“关注程度”。",
+    "asr_chunk_ids": [
+      15
+    ],
+    "visual_evidence": [
+      "frames/0367.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u31",
+    "slides_target": "Transformer-演示文稿.html#32",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u32",
+    "start": 369,
+    "end": 375,
+    "kind": "口述与视觉图解",
+    "transcript": "Scale 是为了防止点积数值过大，避免 Softmax 饱和以及梯度消失，让模型训练更稳定。",
+    "asr_chunk_ids": [
+      15,
+      16
+    ],
+    "visual_evidence": [
+      "frames/0374.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u32",
+    "slides_target": "Transformer-演示文稿.html#33",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u33",
+    "start": 375,
+    "end": 384,
+    "kind": "口述与视觉图解",
+    "transcript": "Softmax 把关注程度转换成注意力权重，也就是一个概率分布。|再乘以 V：用这些权重，从被关注的 token 中提取并融合具体的语义内容。",
+    "asr_chunk_ids": [
+      15,
+      16
+    ],
+    "visual_evidence": [
+      "frames/0378.0.jpg",
+      "frames/0383.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u33",
+    "slides_target": "Transformer-演示文稿.html#34",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u34",
+    "start": 384,
+    "end": 396,
+    "kind": "口述与视觉图解",
+    "transcript": "只算一次注意力是不够的。词与词之间的关系多种多样：有的是语义关联，有的是语法结构依赖。|单一角度很难捕捉全面，所以需要多个关注角度。",
+    "asr_chunk_ids": [
+      16
+    ],
+    "visual_evidence": [
+      "frames/0394.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u34",
+    "slides_target": "Transformer-演示文稿.html#35",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u35",
+    "start": 396,
+    "end": 405,
+    "kind": "口述与视觉图解",
+    "transcript": "模型会并行做多次注意力计算，每一次关注不同侧重点。这些并行计算的结果，最终会拼接在一起。这就是多头注意力。",
+    "asr_chunk_ids": [
+      16,
+      17
+    ],
+    "visual_evidence": [
+      "frames/0400.0.jpg",
+      "frames/0403.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u35",
+    "slides_target": "Transformer-演示文稿.html#36",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u36",
+    "start": 405,
+    "end": 420,
+    "kind": "口述与视觉图解",
+    "transcript": "通过多头注意力，原句中的各种语义信息已经用向量表示出来。接着，模型把注意力结果和原始输入相加，让 token 自身的信息得以保留。|这一步叫 Add，也就是残差连接。",
+    "asr_chunk_ids": [
+      17
+    ],
+    "visual_evidence": [
+      "frames/0415.0.jpg",
+      "frames/0419.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u36",
+    "slides_target": "Transformer-演示文稿.html#37",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u37",
+    "start": 420,
+    "end": 432,
+    "kind": "口述与视觉图解",
+    "transcript": "接着，可以用“让数值保持在 0 到 1 之间”来直观描述统一调整的意图；模型会对结果进行归一化，这一步称为 Norm。|这样既保留原有信息，又避免数值在多层计算后失控。",
+    "asr_chunk_ids": [
+      17,
+      18
+    ],
+    "visual_evidence": [
+      "frames/0421.0.jpg",
+      "frames/0430.0.jpg"
+    ],
+    "uncertainty": "勘误：经典 Transformer 的 Norm 是 LayerNorm，并不把结果限制在 0 到 1；它按均值、方差标准化，再进行可学习的缩放和平移。[Layer Normalization]",
+    "document_target": "Transformer-图文文章.html#u37",
+    "slides_target": "Transformer-演示文稿.html#38",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u38",
+    "start": 432,
+    "end": 450,
+    "kind": "口述与视觉图解",
+    "transcript": "先用“直线变换”的图像理解：把残差连接和归一化后的表示想象为沿笔直路径变化，单靠这样的变化，难以捕捉复杂语义关联。|为了增强表达能力、拟合自然语言中非线性的语义关系，模型会继续让向量通过前馈网络 FFN。",
+    "asr_chunk_ids": [
+      18
+    ],
+    "visual_evidence": [
+      "frames/0442.0.jpg",
+      "frames/0449.0.jpg"
+    ],
+    "uncertainty": "勘误：“此前映射仍然是线性的”不能作为严格结论：注意力中的 Softmax 与 LayerNorm 已含非线性。直线图像只用于引出 FFN 的进一步变换。",
+    "document_target": "Transformer-图文文章.html#u38",
+    "slides_target": "Transformer-演示文稿.html#39",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u39",
+    "start": 450,
+    "end": 461,
+    "kind": "口述与视觉图解",
+    "transcript": "FFN 的核心作用，是通过 ReLU 等激活函数，把“线性的映射路径掰弯”，形成非线性变换。随后，同样再接一次 Add 和 Norm。|这就是前馈网络在这套结构中的位置。",
+    "asr_chunk_ids": [
+      18,
+      19
+    ],
+    "visual_evidence": [
+      "frames/0455.0.jpg",
+      "frames/0458.0.jpg"
+    ],
+    "uncertainty": "说明：“掰弯成曲线”是直观比喻；ReLU 本身是分段线性的激活函数。",
+    "document_target": "Transformer-图文文章.html#u39",
+    "slides_target": "Transformer-演示文稿.html#40",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u40",
+    "start": 461,
+    "end": 473,
+    "kind": "口述与视觉图解",
+    "transcript": "多头注意力、Add & Norm、前馈网络、再一次 Add & Norm，共同构成一个编码层。|一个编码层能让模型对整句话形成一次上下文理解。",
+    "asr_chunk_ids": [
+      19
+    ],
+    "visual_evidence": [
+      "frames/0468.0.jpg",
+      "frames/0472.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u40",
+    "slides_target": "Transformer-演示文稿.html#41",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u41",
+    "start": 473,
+    "end": 488,
+    "kind": "口述与视觉图解",
+    "transcript": "把多个编码层堆叠起来，模型对语义的理解就会逐层加深，这些编码层组成一个编码器。|编码器最终输出一组向量：它们是原句各个词块融合上下文语义信息后的数字表示，也就是计算机对输入文本的整体语义理解。",
+    "asr_chunk_ids": [
+      19,
+      20
+    ],
+    "visual_evidence": [
+      "frames/0480.0.jpg",
+      "frames/0487.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u41",
+    "slides_target": "Transformer-演示文稿.html#42",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u42",
+    "start": 488,
+    "end": 501,
+    "kind": "口述与视觉图解",
+    "transcript": "接下来，基于编码器输出的整体语义理解，开始翻译成英文。|生成英文时，先放入一个固定的起始符号 <BOS>，表示“英文从这里开始翻译”。",
+    "asr_chunk_ids": [
+      20,
+      21
+    ],
+    "visual_evidence": [
+      "frames/0500.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u42",
+    "slides_target": "Transformer-演示文稿.html#43",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u43",
+    "start": 501,
+    "end": 512,
+    "kind": "口述与视觉图解",
+    "transcript": "模型结合编码器输出的中文理解，预测最合理的第一个英文词。候选可以是 Does、Should、Can，这个例子生成 Can。|接着，把 <BOS> 和 Can 一起作为输入，预测下一个词。候选里有 Car、Huolala、You，例子选择 Huolala，也就是货拉拉。",
+    "asr_chunk_ids": [
+      21
+    ],
+    "visual_evidence": [
+      "frames/0505.0.jpg",
+      "frames/0511.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u43",
+    "slides_target": "Transformer-演示文稿.html#44",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u44",
+    "start": 512,
+    "end": 519,
+    "kind": "口述与视觉图解",
+    "transcript": "以此类推，每一步都在已有结果的基础上，预测下一个最合理的英文词，就像成语接龙。|不过，这个过程需要解决两个问题：既要衔接已有英文，又要参考中文原句。",
+    "asr_chunk_ids": [
+      21
+    ],
+    "visual_evidence": [
+      "frames/0516.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u44",
+    "slides_target": "Transformer-演示文稿.html#45",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u45",
+    "start": 519,
+    "end": 532,
+    "kind": "口述与视觉图解",
+    "transcript": "新生成的词，怎样与已经写下的英文内容衔接，保证语法和表达连贯？好办，用注意力机制解决——Attention is all you need。|仍然把一句话理解成词块数据库：Q 对应当前要翻译单词的位置。那 K、V 呢？",
+    "asr_chunk_ids": [
+      21,
+      22
+    ],
+    "visual_evidence": [
+      "frames/0524.0.jpg",
+      "frames/0531.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u45",
+    "slides_target": "Transformer-演示文稿.html#46",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u46",
+    "start": 532,
+    "end": 543,
+    "kind": "口述与视觉图解",
+    "transcript": "既然要保证英文衔接自然连贯，模型关注已经生成的英文就够了。因此，K、V 来自英文构成的词块数据库。|例子中已有 <BOS>、Can：前者表示开始、不翻译；后者带有“能否、疑问、接名词”等语义或语法提示。",
+    "asr_chunk_ids": [
+      22
+    ],
+    "visual_evidence": [
+      "frames/0538.0.jpg",
+      "frames/0542.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u46",
+    "slides_target": "Transformer-演示文稿.html#47",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u47",
+    "start": 543,
+    "end": 555,
+    "kind": "口述与视觉图解",
+    "transcript": "预测第 N 个词时，只依赖前 N−1 个词的结果，保证生成过程从左到右。|这就像把后面部分遮盖起来再做词语预测，所以叫“带掩码的多头自注意力”。",
+    "asr_chunk_ids": [
+      22,
+      23
+    ],
+    "visual_evidence": [
+      "frames/0549.0.jpg",
+      "frames/0554.0.jpg"
+    ],
+    "uncertainty": "说明：“当前位置的 Q”来自已有目标序列的表示，不是未知词的向量。解码输入右移后，掩码阻止位置访问未来信息。[论文 §3.1、§3.2.3]",
+    "document_target": "Transformer-图文文章.html#u47",
+    "slides_target": "Transformer-演示文稿.html#48",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u48",
+    "start": 555,
+    "end": 568,
+    "kind": "口述与视觉图解",
+    "transcript": "在原句已经理解好的整体语义中，此刻翻译最该参考原句哪部分信息？同样还是用注意力解决。|Q 对应当前生成位置，而 K、V 来自中文构成的词块数据库，也就是编码器输出的表示。",
+    "asr_chunk_ids": [
+      23
+    ],
+    "visual_evidence": [
+      "frames/0560.0.jpg",
+      "frames/0568.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u48",
+    "slides_target": "Transformer-演示文稿.html#49",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u49",
+    "start": 568,
+    "end": 582,
+    "kind": "口述与视觉图解",
+    "transcript": "已经生成 Can Huolala 之后，要翻译“拉不拉”。由于编码器输出的中文理解中，它与运货相关的信息关联更强，因此更可能译为 carry，而不是 pull 或 drag。|这一部分叫多头交叉注意力。",
+    "asr_chunk_ids": [
+      23,
+      24
+    ],
+    "visual_evidence": [
+      "frames/0574.0.jpg",
+      "frames/0580.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u49",
+    "slides_target": "Transformer-演示文稿.html#50",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u50",
+    "start": 582,
+    "end": 596,
+    "kind": "口述与视觉图解",
+    "transcript": "这两次注意力计算之后，输出都会经过残差连接、归一化，以及前馈网络等流程。各步骤的作用与前面处理中文时几乎一致，不再逐项重复。|带掩码的多头自注意力、多头交叉注意力、相应的 Add & Norm、FFN，再一次 Add & Norm，共同构成一个解码层。",
+    "asr_chunk_ids": [
+      24
+    ],
+    "visual_evidence": [
+      "frames/0587.0.jpg",
+      "frames/0595.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u50",
+    "slides_target": "Transformer-演示文稿.html#51",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u51",
+    "start": 596,
+    "end": 607,
+    "kind": "口述与视觉图解",
+    "transcript": "把多个这样的解码层堆叠起来，形成完整的解码器。|每层都在上一层输出的基础上进一步加工表示，使生成的英文序列在语法、语义和上下文理解上更准确。",
+    "asr_chunk_ids": [
+      24,
+      25
+    ],
+    "visual_evidence": [
+      "frames/0600.0.jpg",
+      "frames/0606.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u51",
+    "slides_target": "Transformer-演示文稿.html#52",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u52",
+    "start": 607,
+    "end": 613,
+    "kind": "口述与视觉图解",
+    "transcript": "最后，把解码器输出的向量通过词表转换成可读的文字，也就是英文输出：Can Huolala carry a Labrador?",
+    "asr_chunk_ids": [
+      25
+    ],
+    "visual_evidence": [
+      "frames/0612.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u52",
+    "slides_target": "Transformer-演示文稿.html#53",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u53",
+    "start": 613,
+    "end": 625,
+    "kind": "口述与视觉图解",
+    "transcript": "编码器和解码器配合工作，共同完成翻译任务。这就是 Transformer 的经典架构。|之所以称为“经典”，是因为并不是所有任务，都需要编码器和解码器同时存在。",
+    "asr_chunk_ids": [
+      25
+    ],
+    "visual_evidence": [
+      "frames/0619.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u53",
+    "slides_target": "Transformer-演示文稿.html#54",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u54",
+    "start": 625,
+    "end": 633,
+    "kind": "口述与视觉图解",
+    "transcript": "如果只需要理解文本、不需要生成文本，只用编码器就够了。比如有名的 BERT，可以用来做文本分类、情感分析这类理解任务。",
+    "asr_chunk_ids": [
+      25,
+      26
+    ],
+    "visual_evidence": [
+      "frames/0632.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u54",
+    "slides_target": "Transformer-演示文稿.html#55",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u55",
+    "start": 633,
+    "end": 647,
+    "kind": "口述与视觉图解",
+    "transcript": "以 GPT、DeepSeek 这类生成式语言模型为例，可以把用户输入的问题交给解码器理解，然后一个词接一个词地往后生成。|省略独立的编码器，就形成 Decoder-only，也就是纯解码器架构。而且，这样的大模型也能做翻译。",
+    "asr_chunk_ids": [
+      26
+    ],
+    "visual_evidence": [
+      "frames/0640.0.jpg",
+      "frames/0646.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u55",
+    "slides_target": "Transformer-演示文稿.html#56",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u56",
+    "start": 647,
+    "end": 654,
+    "kind": "口述与视觉图解",
+    "transcript": "因此，可以提出一个应用上的判断：前面讲的“编码器加解码器”完整架构，后续可能更多用于小模型和低资源场景。|现在，Transformer 的这条理解路线贯通了吗？",
+    "asr_chunk_ids": [
+      26,
+      27
+    ],
+    "visual_evidence": [
+      "frames/0651.0.jpg"
+    ],
+    "uncertainty": "说明：这是对应用取向的判断，不是架构的适用范围限制。",
+    "document_target": "Transformer-图文文章.html#u56",
+    "slides_target": "Transformer-演示文稿.html#57",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  },
+  {
+    "unit_id": "u57",
+    "start": 654,
+    "end": 675.167,
+    "kind": "口述与视觉图解",
+    "transcript": "如果这些内容对你有帮助，也可以分享给身边还没弄明白的朋友。|最后留下一个问题：你知道神经网络与人类大脑有什么关系吗？这也是接下来值得继续讨论的话题。|小白debug关注一切可能影响人类历史进程的技术；感兴趣的话，可以继续关注相关内容。下次见。",
+    "asr_chunk_ids": [
+      27
+    ],
+    "visual_evidence": [
+      "frames/0663.0.jpg"
+    ],
+    "uncertainty": "",
+    "document_target": "Transformer-图文文章.html#u57",
+    "slides_target": "Transformer-演示文稿.html#58",
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+  }
+]

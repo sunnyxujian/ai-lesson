@@ -1,0 +1,161 @@
+{
+  "errors": [],
+  "slides": 26,
+  "slideChecks": [
+    {
+      "title": "AI 的本质",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "每一层，都在封装下一层",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "边界会移动，事情总要有人做",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "调用方式稳定，能力仍在变化",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "微调：别只计算训练时间",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "应用层有两条学习路线",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "工具会换，理解方法可以复用",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "只盯住两个问题",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "前处理与后处理，是现成例子",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "用熟悉的 HTTP 帮助理解",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "新概念到来，追踪三件事",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把代理插进消息链路",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先验证代理能转发",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "应用请求代理，代理请求模型",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "没输入问题，也可能有请求",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "“你是谁”的答案从哪里来？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "技能清单先告诉模型“有哪些”",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "发出 review UX，触发技能",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "一句自然语言，还不是整个调用",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "流式 JSON 要拼接后再理解",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "模型选择，应用执行下一步",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "用到技能时，再送入全文",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "输入与输出，组成完整闭环",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "真正要带走的是观察方法",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "按目标，继续自己的学习路线",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "输入什么？\n输出之后做什么？",
+      "overflow": [],
+      "brokenImages": 0
+    }
+  ],
+  "navigation": "2 / 26",
+  "notesVisible": true,
+  "editing": "true",
+  "mobile": [
+    {
+      "width": 390,
+      "height": 219.375,
+      "ratio": 1.7777777777777777,
+      "left": 0,
+      "top": 312.3125
+    },
+    {
+      "width": 693.3333129882812,
+      "height": 390,
+      "ratio": 1.7777777256109775,
+      "left": 75.33333587646484,
+      "top": 0
+    }
+  ],
+  "tutorial": {
+    "sections": 20,
+    "images": 23,
+    "broken": 0,
+    "anchors": true
+  }
+}

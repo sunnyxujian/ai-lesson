@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "stage": "semantic-review-notes-slides",
+      "model": "runtime-model",
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached_input_tokens": null,
+      "total_tokens": null,
+      "cost_usd": null,
+      "status": "unavailable",
+      "reason": "当前运行环境未暴露真实模型token使用量和费用；未估算。"
+    }
+  ],
+  "totals": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "cost_usd": null
+  }
+}

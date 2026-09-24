@@ -1,0 +1,16 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]
+out=root/'.frontend-slides/slide-previews'
+out.mkdir(parents=True,exist_ok=True)
+base=Path('C:/Users/micro/.codex/skills/frontend-slides/viewport-base.css').read_text(encoding='utf-8')
+common='''*{box-sizing:border-box}body{font-family:"Noto Sans SC",sans-serif}.slide{padding:90px 108px}.eyebrow{font-size:26px;letter-spacing:4px}h1{margin:130px 0 30px;font-size:108px;line-height:1.2;font-weight:900}p{font-size:34px;line-height:1.7}.foot{position:absolute;bottom:76px;font-size:24px}.reveal{animation:enter .9s both}@keyframes enter{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}'''
+items=[
+('a',':root{--slide-bg:#faf9f7;--stage-bg:#242424}.slide{color:#151515}h1{font-family:"Noto Serif SC",serif}.eyebrow{color:#c41e3a}.line{width:180px;height:10px;background:#c41e3a;margin-top:70px}', '<div class="eyebrow">AI 基础 · 第二课</div><div class="line"></div><h1 class="reveal">AI 最底层的<br>Raw Model</h1><p class="reveal">理解大模型，从最原始的形态开始。</p><div class="foot">原始模型 / 基础概念</div>'),
+('b',':root{--slide-bg:#111111;--stage-bg:#111111}.slide{color:#f0ece5}h1{font-family:"Barlow","Noto Sans SC",sans-serif;font-size:188px;margin-top:110px;letter-spacing:-4px;color:#e85d26}.eyebrow{border-bottom:1px solid #505048;padding-bottom:35px}.foot{border-top:1px solid #505048;padding-top:30px;width:1704px}', '<div class="eyebrow">AI 基础 / 第二课</div><h1 class="reveal">raw model.</h1><p class="reveal" style="font-size:70px;font-weight:800">AI 最底层的原始模型</p><div class="foot">从原始形态，理解大模型。</div>'),
+('c',':root{--slide-bg:#082d32;--stage-bg:#061e22}.slide{color:#f3eddc;background-image:linear-gradient(#b8d1c51a 1px,transparent 1px),linear-gradient(90deg,#b8d1c51a 1px,transparent 1px);background-size:72px 72px}h1{font-size:116px}.eyebrow{color:#b9e27b}.model{position:absolute;right:140px;top:320px;width:530px;height:380px;border:3px solid #b9e27b;display:grid;place-content:center;text-align:center;font-size:48px;box-shadow:24px 24px 0 #b9e27b22}.model small{font-size:24px;color:#b9e27b;margin-top:25px}h1,p{max-width:1000px}', '<div class="eyebrow">AI 基础 · 第二课</div><h1 class="reveal">AI 最底层的<br>Raw Model</h1><p class="reveal">把模型拆开看，<br>从底层建立直觉。</p><div class="model reveal">RAW MODEL<small>原始模型</small></div><div class="foot">模型 / 机制 / 理解</div>')]
+for key,css,body in items:
+ html='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 最底层的 Raw Model</title><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=Noto+Sans+SC:wght@400;700;900&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet"><style>'+base+common+css+'</style><div class="deck-viewport"><main class="deck-stage" id="stage"><section class="slide active visible">'+body+'</section></main></div><script>function scale(){let s=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById("stage").style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`}onresize=scale;scale()</script></html>'
+ import re
+ html=re.sub(r'<link[^>]+>','',html)
+ (out/f'style-{key}.html').write_text(html,encoding='utf-8')
+print(out)

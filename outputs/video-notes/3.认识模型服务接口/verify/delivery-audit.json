@@ -1,0 +1,25 @@
+{
+  "audio_chunks": 66,
+  "tutorial_sections": 20,
+  "selected_images": 20,
+  "slides": 25,
+  "pdf_pages": 21,
+  "source_immutable": true,
+  "html_references": "pass",
+  "ordered_cue_coverage": true,
+  "deck_visual_bounds": "pass",
+  "navigation": "2 / 25",
+  "speaker_notes": true,
+  "editing": "true",
+  "mobile_16_9": true,
+  "token_usage": null,
+  "cost_usd": null,
+  "limitations": [
+    "ASR chunk timing is approximate, not word alignment.",
+    "Not a word-for-word human listening verification.",
+    "Historical interface and pricing examples are retained without current web fact checking.",
+    "Actual host token counts and cost are unavailable."
+  ],
+  "visual_review": "Final 21 PDF pages and 25 slides reviewed; code chapter orphan page corrected",
+  "usage_warning_resolution": "Actual token counts and cost unavailable; retained as unknown"
+}

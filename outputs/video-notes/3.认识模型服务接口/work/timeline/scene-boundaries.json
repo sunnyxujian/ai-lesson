@@ -1,0 +1,86 @@
+{
+  "mode": "explainer",
+  "timestamp_granularity": "audio_chunk",
+  "scenes": [
+    {
+      "end_cue": 2,
+      "reason": "裸模型回顾和Model Service引入"
+    },
+    {
+      "end_cue": 7,
+      "reason": "三类接口规格及HTTP请求响应"
+    },
+    {
+      "end_cue": 9,
+      "reason": "网络基础要求与课程领取说明"
+    },
+    {
+      "end_cue": 15,
+      "reason": "SDK调用与Kimi兼容OpenAI实操"
+    },
+    {
+      "end_cue": 17,
+      "reason": "Anthropic兼容与SDK选择"
+    },
+    {
+      "end_cue": 21,
+      "reason": "取各服务交集作为学习核心"
+    },
+    {
+      "end_cue": 25,
+      "reason": "输入输出Token计费与包月限制"
+    },
+    {
+      "end_cue": 27,
+      "reason": "前处理三步概览和身份权限认证"
+    },
+    {
+      "end_cue": 30,
+      "reason": "系统提示词注入示例与换牌猜想"
+    },
+    {
+      "end_cue": 35,
+      "reason": "用户系统提示词及角色训练"
+    },
+    {
+      "end_cue": 36,
+      "reason": "Tokenization分词"
+    },
+    {
+      "end_cue": 40,
+      "reason": "伪代码输入和概率分布"
+    },
+    {
+      "end_cue": 45,
+      "reason": "采样结束判断追加输入与自回归例子"
+    },
+    {
+      "end_cue": 49,
+      "reason": "输出成本推导与行业观点"
+    },
+    {
+      "end_cue": 53,
+      "reason": "temperature含义和随机性"
+    },
+    {
+      "end_cue": 56,
+      "reason": "temperature场景选择及默认值"
+    },
+    {
+      "end_cue": 59,
+      "reason": "截断采样和top_k"
+    },
+    {
+      "end_cue": 61,
+      "reason": "top_p数值累加完整例子"
+    },
+    {
+      "end_cue": 64,
+      "reason": "后处理Detokenization及合规检查"
+    },
+    {
+      "end_cue": 66,
+      "reason": "流程复盘与课程收尾"
+    }
+  ]
+}

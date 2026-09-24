@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "default_hidden": true,
+    "O_shows": true,
+    "H_hides": true,
+    "uppercase_O": true,
+    "uppercase_H": true,
+    "editing_ignores_O": true,
+    "next_slide": true,
+    "notes_open": true,
+    "notes_close": true,
+    "export_default_hidden": true,
+    "phone_ratio": true,
+    "phone_O_shows": true,
+    "reload_hides": true,
+    "phone_toolbar_fits": true
+  },
+  "issues": [],
+  "errors": []
+}

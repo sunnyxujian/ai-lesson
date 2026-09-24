@@ -1,0 +1,379 @@
+{
+  "method": "Complete chronological light polish. All 101 raw chunks retained in manifest; intentional and unverified boundary repetitions preserved. No automatic overlap deletion.",
+  "audio_review_limitation": "Runtime cannot accept audio input; source subtitle/diagram comparison performed; review clips are provided for human listening.",
+  "corrections": [
+    {
+      "cue": 1,
+      "from": "A镜子",
+      "to": "Agents",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 2,
+      "from": "A级的开发",
+      "to": "Agents 的开发",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 3,
+      "from": "AI、量子开发",
+      "to": "AI、Agents 开发",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 10,
+      "from": "文声视频",
+      "to": "文生视频",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 13,
+      "from": "一真正的图像",
+      "to": "一帧帧的图像",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 13,
+      "from": "方法沟通",
+      "to": "方法搞通",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 16,
+      "from": "纹身、视频",
+      "to": "文生视频",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 20,
+      "from": "纹身视频",
+      "to": "文生视频",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 20,
+      "from": "GPT六",
+      "to": "GPT Live",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 27,
+      "from": "M P C",
+      "to": "NPC",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 29,
+      "from": "他不认为你这个世界的规则",
+      "to": "他认为这个世界的规则",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 32,
+      "from": "全是former",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 32,
+      "from": "chat GPT",
+      "to": "ChatGPT",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 34,
+      "from": "K P I",
+      "to": "KPI",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 37,
+      "from": "A级产品开发",
+      "to": "Agents 产品开发",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 37,
+      "from": "前段工程师",
+      "to": "前端工程师",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 37,
+      "from": "后段工程师",
+      "to": "后端工程师",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 40,
+      "from": "全是泡沫",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 40,
+      "from": "chat GPT",
+      "to": "ChatGPT",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 41,
+      "from": "掐着D P T",
+      "to": "ChatGPT",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 42,
+      "from": "A P P",
+      "to": "APP",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 42,
+      "from": "T T S",
+      "to": "TTS",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 42,
+      "from": "A S R",
+      "to": "ASR",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 43,
+      "from": "G P T",
+      "to": "GPT",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 44,
+      "from": "纹身视频",
+      "to": "文生视频",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 44,
+      "from": "纹身图",
+      "to": "文生图",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 46,
+      "from": "切分的头痕",
+      "to": "切分成 Token",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 46,
+      "from": "换的头痕",
+      "to": "转换的 Token",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 47,
+      "from": "全时方面",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 48,
+      "from": "人脸识别、声纹识别、文字提取",
+      "to": "人脸识别、指纹识别、文字提取",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 52,
+      "from": "一代注入",
+      "to": "依赖注入",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 53,
+      "from": "全闪方面",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 53,
+      "from": "传输问题",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 53,
+      "from": "就声纹识别，通过声纹识别来识别",
+      "to": "就是文字识别，通过文字识别来识别",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 54,
+      "from": "问 Dog",
+      "to": "问一个模型（此处名称识别不清）",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 55,
+      "from": "只是实现的时间途径",
+      "to": "只是实现途径",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 59,
+      "from": "学习智能这件事儿",
+      "to": "实现智能这件事儿",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 65,
+      "from": "经验意义",
+      "to": "经验 E",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 68,
+      "from": "新媒体要关注什么事情",
+      "to": "性能 P 要关注什么事情",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 70,
+      "from": "就像阿尔法狗",
+      "to": "就像 AlphaGo",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 71,
+      "from": "随着经验益",
+      "to": "随着经验 E",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 74,
+      "from": "公知台",
+      "to": "控制台",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 87,
+      "from": "复数",
+      "to": "负数",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 89,
+      "from": "全是模板",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 89,
+      "from": "敲GPT",
+      "to": "ChatGPT",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 91,
+      "from": "时间网络",
+      "to": "神经网络",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 91,
+      "from": "时间手段",
+      "to": "实现手段",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 91,
+      "from": "一读一的实现手段",
+      "to": "一堆一堆的实现手段",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 96,
+      "from": "全formal",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 96,
+      "from": "得加入手机吧",
+      "to": "得架构设计吧",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 96,
+      "from": "你三个手机有落地吗",
+      "to": "你做架构设计有落地吗",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 98,
+      "from": "加法里叫内设计",
+      "to": "Java 里叫类设计",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 98,
+      "from": "内图设计，内设计",
+      "to": "类图设计、类设计",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 98,
+      "from": "叫内图",
+      "to": "叫类图",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 99,
+      "from": "全系统嘛",
+      "to": "Transformer",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "cue": 99,
+      "from": "全系统过后",
+      "to": "Transformer 过后",
+      "basis": "term on inspected course diagram / original visible caption / unmistakable local context"
+    },
+    {
+      "scene": 15,
+      "removed_from_teaching_text": "Human Rights Watch is a human rights organization that works to protect human rights around the world.",
+      "basis": "The original JSON has an endoftext marker before this unrelated ASR suffix. Original visual captions at 1755, 1758, 1759 and 1761 seconds continue chess and performance. The plain transcript parser had already stripped the marker. Manual polish removes only the unrelated suffix; raw original and service-audio clip retained.",
+      "verification": "visual subtitle comparison, not listening"
+    },
+    {
+      "scene": 4,
+      "from": "GPT六",
+      "to": "GPT Live",
+      "basis": "Original visible caption at 482 seconds reads 叫GPT live对吧. This preserves the source wording, not a claim about a current official product name."
+    },
+    {
+      "scene": 15,
+      "from": "人越少",
+      "to": "人越傻",
+      "basis": "Original video subtitle at 1792 seconds explicitly reads 学的越多人越傻; verified visually, not by listening."
+    },
+    {
+      "scene": 26,
+      "from": "内设计 / 内图",
+      "to": "类设计 / 类图",
+      "basis": "Original visible note at 2466 seconds explicitly lists 类设计 类图."
+    },
+    {
+      "scene": 15,
+      "from": "人越少",
+      "to": "人越傻",
+      "basis": "Original video subtitle at 1792 seconds explicitly reads 学的越多人越傻; verified visually, not by listening."
+    },
+    {
+      "scene": 26,
+      "from": "内设计 / 内图",
+      "to": "类设计 / 类图",
+      "basis": "Original visible note at 2466 seconds explicitly lists 类设计 类图."
+    }
+  ],
+  "final_method": "All 27 scene notes manually light-polished in order. Repeated partial chunk tails joined at their original sentence position; substantive rhetorical repetitions, examples, questions, caveats and argument order retained. No algorithmic overlap deletion. Raw 101 chunks are immutable and exactly mapped."
+}

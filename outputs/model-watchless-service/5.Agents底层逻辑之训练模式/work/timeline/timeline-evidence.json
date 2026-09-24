@@ -1,0 +1,14 @@
+{
+  "mode": "explainer",
+  "segmentation": "audio_first_semantic_review",
+  "packed_transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\video-use\\takes_packed.md",
+  "transcript_json": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\video-use\\transcripts\\5.Agents底层逻辑之训练模式.json",
+  "worksheet": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\timeline\\boundary-review.md",
+  "boundary_verify_dir": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\verify\\boundary-timelines",
+  "timeline_view": "C:\\Users\\micro\\.codex\\skills\\watchless\\vendor\\video-use\\helpers\\timeline_view.py",
+  "video": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\5.Agents底层逻辑之训练模式.mp4",
+  "final_cue_end_sec": 878.3,
+  "conversation_profile": null,
+  "chapter_hints": null,
+  "chapter_count": 0
+}

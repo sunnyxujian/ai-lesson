@@ -1,0 +1,181 @@
+{
+  "all_55_cues_mapped": true,
+  "method": "人工逐段轻润，保留源稿；原始分块上下文重叠合并，明显ASR术语修正，英文生成伪片段排除；非逐词对齐，未声称听音核查。",
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "回顾单个神经元",
+      "source_cues": [
+        1,
+        2
+      ],
+      "source_characters": 372,
+      "edited_characters": 299
+    },
+    {
+      "scene": 2,
+      "title": "网络分层与层编号",
+      "source_cues": [
+        3,
+        4,
+        5
+      ],
+      "source_characters": 594,
+      "edited_characters": 435
+    },
+    {
+      "scene": 3,
+      "title": "隐藏层的规模与识别任务",
+      "source_cues": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_characters": 840,
+      "edited_characters": 517
+    },
+    {
+      "scene": 4,
+      "title": "把图片变成输入向量",
+      "source_cues": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "source_characters": 1305,
+      "edited_characters": 778
+    },
+    {
+      "scene": 5,
+      "title": "隐藏层配置与激活亮度",
+      "source_cues": [
+        16,
+        17,
+        18
+      ],
+      "source_characters": 650,
+      "edited_characters": 474
+    },
+    {
+      "scene": 6,
+      "title": "第一个隐藏神经元的计算",
+      "source_cues": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "source_characters": 1204,
+      "edited_characters": 766
+    },
+    {
+      "scene": 7,
+      "title": "同层参数与逐层计算",
+      "source_cues": [
+        25,
+        26,
+        27
+      ],
+      "source_characters": 653,
+      "edited_characters": 489
+    },
+    {
+      "scene": 8,
+      "title": "输出计算与结果含义",
+      "source_cues": [
+        28,
+        29,
+        30
+      ],
+      "source_characters": 792,
+      "edited_characters": 476
+    },
+    {
+      "scene": 9,
+      "title": "输入尺寸和预处理",
+      "source_cues": [
+        31,
+        32
+      ],
+      "source_characters": 462,
+      "edited_characters": 349
+    },
+    {
+      "scene": 10,
+      "title": "输出定义、Softmax与随机结果",
+      "source_cues": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "source_characters": 906,
+      "edited_characters": 575
+    },
+    {
+      "scene": 11,
+      "title": "前向传播与参数的共同作用",
+      "source_cues": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "source_characters": 754,
+      "edited_characters": 600
+    },
+    {
+      "scene": 12,
+      "title": "逐层计算参数数量",
+      "source_cues": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "source_characters": 1077,
+      "edited_characters": 672
+    },
+    {
+      "scene": 13,
+      "title": "从单神经元到层编号公式",
+      "source_cues": [
+        46,
+        47,
+        48,
+        49
+      ],
+      "source_characters": 715,
+      "edited_characters": 452
+    },
+    {
+      "scene": 14,
+      "title": "矩阵计算与GPU",
+      "source_cues": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "source_characters": 825,
+      "edited_characters": 604
+    },
+    {
+      "scene": 15,
+      "title": "参数公式与训练预告",
+      "source_cues": [
+        54,
+        55
+      ],
+      "source_characters": 333,
+      "edited_characters": 233
+    }
+  ]
+}

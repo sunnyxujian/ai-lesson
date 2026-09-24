@@ -1,0 +1,54 @@
+{
+  "mode": "explainer",
+  "timestamp_granularity": "audio_chunk",
+  "scenes": [
+    {
+      "end_cue": 3,
+      "reason": "开场提问与裸模型、函数及输入引入"
+    },
+    {
+      "end_cue": 5,
+      "reason": "分词和中英文 Token 数量例子"
+    },
+    {
+      "end_cue": 8,
+      "reason": "概率分布和你好续写例子"
+    },
+    {
+      "end_cue": 13,
+      "reason": "上下文窗口含义及容量估算"
+    },
+    {
+      "end_cue": 16,
+      "reason": "长上下文表现与独立任务建议，衔接权重"
+    },
+    {
+      "end_cue": 20,
+      "reason": "权重、参数单位、部署与训练引入"
+    },
+    {
+      "end_cue": 22,
+      "reason": "训练微调与语料作用"
+    },
+    {
+      "end_cue": 24,
+      "reason": "权重调用和架构示意"
+    },
+    {
+      "end_cue": 26,
+      "reason": "适用范围与数学函数抽象"
+    },
+    {
+      "end_cue": 31,
+      "reason": "确定性、拟人化评论与GPU浮点演示"
+    },
+    {
+      "end_cue": 35,
+      "reason": "多模态数字表征与输出解释例子"
+    },
+    {
+      "end_cue": 37,
+      "reason": "体系回顾与模型服务预告"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "pass_with_documented_limitation",
+  "scenes": 15,
+  "source_audio_chunks": 55,
+  "candidate_frames": 90,
+  "images": 15,
+  "pdf_pages": 15,
+  "slides": 16,
+  "html_images_valid": true,
+  "deck_overflow_records": [],
+  "source_unchanged": true,
+  "boundary_timeline_images_reviewed": 14,
+  "desktop_and_phone_screenshots": 32,
+  "token_usage_available": false,
+  "cost_available": false,
+  "zip_members": 25,
+  "zip_crc_and_contents_valid": true
+}

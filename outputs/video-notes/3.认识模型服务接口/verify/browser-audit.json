@@ -1,0 +1,156 @@
+{
+  "errors": [],
+  "slides": 25,
+  "slideChecks": [
+    {
+      "title": "认识模型服务接口",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "从模型计算，到服务接口",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先确认接口规格",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "一次请求，一次回复",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "SDK 把网络请求封装起来",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "兼容接口，主要更换三项",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "同一服务，也能兼容多套规格",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "变化很多，先看交集",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "输入和输出，分别计费",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "服务内部的三个阶段",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先确认身份与权限",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "系统提示词随输入一起进入模型",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "都是 Token，也有角色约定",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Tokenization：准备模型输入",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "模型返回的是概率分布",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "自回归：生成，再追加",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "“你是谁”怎样接成回答？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "输出越长，生成轮次越多",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "采样发生在 pickToken 这一步",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "temperature 调节随机性",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "确定的答案，也可能确定地错",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "top_k：保留概率最高的 K 个",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "top_p：达到累计概率阈值",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "后处理：把 Token 还原成回复",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把新功能放回这张图",
+      "overflow": [],
+      "brokenImages": 0
+    }
+  ],
+  "navigation": "2 / 25",
+  "notesVisible": true,
+  "editing": "true",
+  "mobile": [
+    {
+      "width": 390,
+      "height": 219.375,
+      "ratio": 1.7777777777777777,
+      "left": 0,
+      "top": 312.3125
+    },
+    {
+      "width": 693.3333129882812,
+      "height": 390,
+      "ratio": 1.7777777256109775,
+      "left": 75.33333587646484,
+      "top": 0
+    }
+  ],
+  "tutorial": {
+    "sections": 20,
+    "images": 20,
+    "broken": 0,
+    "anchors": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "mode": "explainer",
+  "timestamp_granularity": "audio_chunk",
+  "scenes": [
+    {
+      "end_cue": 2,
+      "reason": "开场与三层封装"
+    },
+    {
+      "end_cue": 7,
+      "reason": "应用服务边界及底层稳定性"
+    },
+    {
+      "end_cue": 12,
+      "reason": "微调成本案例"
+    },
+    {
+      "end_cue": 16,
+      "reason": "应用开发及框架"
+    },
+    {
+      "end_cue": 19,
+      "reason": "课程体系介绍及工具使用引入"
+    },
+    {
+      "end_cue": 21,
+      "reason": "工具范围与概念寿命"
+    },
+    {
+      "end_cue": 25,
+      "reason": "理解概念的方法和输入输出论点"
+    },
+    {
+      "end_cue": 28,
+      "reason": "前后处理及应用增加消息"
+    },
+    {
+      "end_cue": 32,
+      "reason": "HTTP类比及技能例子"
+    },
+    {
+      "end_cue": 36,
+      "reason": "代理原理与项目准备"
+    },
+    {
+      "end_cue": 39,
+      "reason": "环境配置和代理测试"
+    },
+    {
+      "end_cue": 43,
+      "reason": "Claude Code接入代理"
+    },
+    {
+      "end_cue": 46,
+      "reason": "初始化请求及技能工具约定"
+    },
+    {
+      "end_cue": 51,
+      "reason": "身份回答与提示词注入"
+    },
+    {
+      "end_cue": 54,
+      "reason": "触发技能并定位响应"
+    },
+    {
+      "end_cue": 57,
+      "reason": "SSE与工具调用JSON"
+    },
+    {
+      "end_cue": 60,
+      "reason": "输入封装及调用判断"
+    },
+    {
+      "end_cue": 64,
+      "reason": "读取技能全文及调用闭环"
+    },
+    {
+      "end_cue": 67,
+      "reason": "方法推广与学习核心"
+    },
+    {
+      "end_cue": 70,
+      "reason": "课程收尾及后续安排"
+    }
+  ]
+}

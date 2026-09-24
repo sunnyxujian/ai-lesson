@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "source_video": "4.Agents底层逻辑之梯度下降.mp4",
+  "duration_seconds": 1714.4,
+  "asr_chunks": 70,
+  "scenes": 16,
+  "candidate_images": 96,
+  "selected_images": 16,
+  "boundary_reviews": 15,
+  "pdf_pages": 20,
+  "deck_slides": 17,
+  "html_image_refs_valid": true,
+  "links_checked": 48,
+  "slide_panel_overlap": false,
+  "slide_text_overflow": false,
+  "notes_working": true,
+  "mobile_stage_ratio": 1.7777777777777777,
+  "token_usage": null,
+  "cost_usd": null,
+  "known_limits": [
+    "本地Qwen约25秒分块，不是词级对齐；未直接听音，依据ASR与源字幕/画面复核。",
+    "源讲解最大值判断、平方和/均方公式及演示后续损失数值不一致，已明确保留说明。",
+    "字体联网加载；网络不可用时浏览器采用替代字体。"
+  ]
+}

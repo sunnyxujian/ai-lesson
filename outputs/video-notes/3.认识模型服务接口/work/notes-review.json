@@ -1,0 +1,17 @@
+{
+  "source_audio_chunks": 66,
+  "all_cues_in_order": true,
+  "local_join_rerecognition": "audio-join-review.json: 65 joins plus three terminology/artifact checks; same local Qwen engine",
+  "changes": [
+    "Standardized Raw Model, OpenAI, Claude, Gemini, Kimi, Anthropic, Tokenization, Detokenization, temperature, top_k and top_p using source frames and context.",
+    "Removed ASR-generated English tail after endoftext in cue 50 after local audio re-recognition.",
+    "Joined duplicated context around audio chunk boundaries after local short-window re-recognition; retained introductory teaser and repeated cost claim.",
+    "Preserved original claims and marked simplifications and uncertain/subjective statements separately.",
+    "Added a formatted transcription of visible pseudocode and table form of the narrated top_p calculation."
+  ],
+  "limitations": [
+    "No word-aligned timestamps.",
+    "Local re-recognition is not a human verbatim listening pass.",
+    "Historical interface/price and lecture claims have not been externally fact-checked."
+  ]
+}

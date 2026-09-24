@@ -1,0 +1,10 @@
+{
+  "source": "C:/Users/micro/Desktop/ai-lesson/model/3.Agents底层逻辑之前向传播.mp4",
+  "project_dir": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播",
+  "acquisition": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\work\\acquisition.json",
+  "transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\work\\transcript\\3.Agents底层逻辑之前向传播_transcript.txt",
+  "transcript_json": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\work\\video-use\\transcripts\\3.Agents底层逻辑之前向传播.json",
+  "packed_transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\work\\video-use\\takes_packed.md",
+  "mode_evidence": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\verify\\mode-evidence.json",
+  "suggested_mode": "codex_review_required"
+}

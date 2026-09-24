@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "entries": [],
+  "totals": {
+    "total_tokens": null,
+    "cost_usd": null
+  },
+  "availability": "Host runtime does not expose actual token counts or cost; unknown, not zero."
+}

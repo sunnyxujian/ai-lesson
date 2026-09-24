@@ -1,0 +1,10 @@
+{
+  "source": "C:/Users/micro/Desktop/ai-lesson/model/1.Agents底层逻辑之AI的分类.mp4",
+  "project_dir": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类",
+  "acquisition": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\acquisition.json",
+  "transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\transcript\\1.Agents底层逻辑之AI的分类_transcript.txt",
+  "transcript_json": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\video-use\\transcripts\\1.Agents底层逻辑之AI的分类.json",
+  "packed_transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\work\\video-use\\takes_packed.md",
+  "mode_evidence": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\verify\\mode-evidence.json",
+  "suggested_mode": "codex_review_required"
+}

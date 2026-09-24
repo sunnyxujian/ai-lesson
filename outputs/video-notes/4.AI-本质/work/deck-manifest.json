@@ -1,0 +1,132 @@
+[
+  {
+    "slide": 1,
+    "title": "AI 的本质",
+    "source_scene": 1
+  },
+  {
+    "slide": 2,
+    "title": "每一层，都在封装下一层",
+    "source_scene": 1
+  },
+  {
+    "slide": 3,
+    "title": "边界会移动，事情总要有人做",
+    "source_scene": 2
+  },
+  {
+    "slide": 4,
+    "title": "调用方式稳定，能力仍在变化",
+    "source_scene": 2
+  },
+  {
+    "slide": 5,
+    "title": "微调：别只计算训练时间",
+    "source_scene": 3
+  },
+  {
+    "slide": 6,
+    "title": "应用层有两条学习路线",
+    "source_scene": 4
+  },
+  {
+    "slide": 7,
+    "title": "工具会换，理解方法可以复用",
+    "source_scene": 6
+  },
+  {
+    "slide": 8,
+    "title": "只盯住两个问题",
+    "source_scene": 7
+  },
+  {
+    "slide": 9,
+    "title": "前处理与后处理，是现成例子",
+    "source_scene": 8
+  },
+  {
+    "slide": 10,
+    "title": "用熟悉的 HTTP 帮助理解",
+    "source_scene": 9
+  },
+  {
+    "slide": 11,
+    "title": "新概念到来，追踪三件事",
+    "source_scene": 9
+  },
+  {
+    "slide": 12,
+    "title": "把代理插进消息链路",
+    "source_scene": 10
+  },
+  {
+    "slide": 13,
+    "title": "先验证代理能转发",
+    "source_scene": 11
+  },
+  {
+    "slide": 14,
+    "title": "应用请求代理，代理请求模型",
+    "source_scene": 12
+  },
+  {
+    "slide": 15,
+    "title": "没输入问题，也可能有请求",
+    "source_scene": 13
+  },
+  {
+    "slide": 16,
+    "title": "“你是谁”的答案从哪里来？",
+    "source_scene": 14
+  },
+  {
+    "slide": 17,
+    "title": "技能清单先告诉模型“有哪些”",
+    "source_scene": 14
+  },
+  {
+    "slide": 18,
+    "title": "发出 review UX，触发技能",
+    "source_scene": 15
+  },
+  {
+    "slide": 19,
+    "title": "一句自然语言，还不是整个调用",
+    "source_scene": 16
+  },
+  {
+    "slide": 20,
+    "title": "流式 JSON 要拼接后再理解",
+    "source_scene": 16
+  },
+  {
+    "slide": 21,
+    "title": "模型选择，应用执行下一步",
+    "source_scene": 17
+  },
+  {
+    "slide": 22,
+    "title": "用到技能时，再送入全文",
+    "source_scene": 18
+  },
+  {
+    "slide": 23,
+    "title": "输入与输出，组成完整闭环",
+    "source_scene": 18
+  },
+  {
+    "slide": 24,
+    "title": "真正要带走的是观察方法",
+    "source_scene": 19
+  },
+  {
+    "slide": 25,
+    "title": "按目标，继续自己的学习路线",
+    "source_scene": 20
+  },
+  {
+    "slide": 26,
+    "title": "输入什么？<br>输出之后做什么？",
+    "source_scene": 19
+  }
+]

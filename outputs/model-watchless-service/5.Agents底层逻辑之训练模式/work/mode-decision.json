@@ -1,0 +1,13 @@
+{
+  "selected": "explainer",
+  "requested": "explainer",
+  "visual_strategies": [
+    "document-evidence",
+    "screen-state"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "讲者围绕训练模式在课程文档、神经网络动画和便签之间切换，按概念解释推进，非稳定逐页幻灯片"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,213 @@
+{
+  "htmlImages": [
+    {
+      "src": "keyframes/scene_001_00-00-50.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_002_00-03-21.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_003_00-04-29.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_004_00-07-06.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_005_00-10-18.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_006_00-11-54.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_007_00-13-28.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_008_00-15-27.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_009_00-16-51.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_010_00-19-10.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_011_00-20-45.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_012_00-21-25.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_013_00-23-54.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_014_00-25-07.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_015_00-26-24.jpg",
+      "ok": true
+    },
+    {
+      "src": "keyframes/scene_016_00-27-53.jpg",
+      "ok": true
+    }
+  ],
+  "slideCount": 17,
+  "slideChecks": [
+    {
+      "number": 1,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 2,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 3,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 4,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 5,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 6,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 7,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 8,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 9,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 10,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 11,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 12,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 13,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 14,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 15,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 16,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    },
+    {
+      "number": 17,
+      "stageRatio": 1.7777777777777777,
+      "imageOK": true,
+      "textOverflow": [],
+      "panelOverlap": false,
+      "bottomOK": true
+    }
+  ],
+  "notesWorks": true,
+  "mobile": {
+    "width": 390,
+    "height": 219.375,
+    "ratio": 1.7777777777777777
+  }
+}

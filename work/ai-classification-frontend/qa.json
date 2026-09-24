@@ -1,0 +1,40 @@
+{
+  "slides": 147,
+  "issues": [],
+  "errors": [],
+  "external": [],
+  "parity": [],
+  "keyboard": {
+    "right": 1,
+    "left": 0
+  },
+  "search": {
+    "matches": 5,
+    "jumped": 112
+  },
+  "notesLength": 122,
+  "editing": {
+    "editDidNotNavigate": true,
+    "saved": true,
+    "restored": "AI 的分类（编辑校验）",
+    "exportBytes": 5876108
+  },
+  "fullscreen": true,
+  "phone": {
+    "width": 390.0000305175781,
+    "height": 219.37501525878906,
+    "ratio": 1.7777777932346064,
+    "overflow": false
+  },
+  "original_files": {
+    "checked": 24,
+    "changed": []
+  },
+  "visual_review": "147 slides inspected using complete contact sheets; longest body, diagrams, captions and phone cover checked",
+  "exportReopen": {
+    "slides": 147,
+    "title": "AI 的分类（编辑校验）",
+    "active": 1,
+    "next": 1
+  }
+}

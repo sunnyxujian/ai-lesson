@@ -1,0 +1,10 @@
+{
+  "source": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\5.Agents底层逻辑之训练模式.mp4",
+  "project_dir": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式",
+  "acquisition": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\acquisition.json",
+  "transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\transcript\\5.Agents底层逻辑之训练模式_transcript.txt",
+  "transcript_json": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\video-use\\transcripts\\5.Agents底层逻辑之训练模式.json",
+  "packed_transcript": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\work\\video-use\\takes_packed.md",
+  "mode_evidence": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\verify\\mode-evidence.json",
+  "suggested_mode": "codex_review_required"
+}

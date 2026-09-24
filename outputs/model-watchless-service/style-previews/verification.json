@@ -1,0 +1,79 @@
+{
+  "results": [
+    {
+      "style": "blue-professional",
+      "viewport": [
+        1280,
+        720
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [
+        ""
+      ],
+      "text": "前向传播\n\n一层一层，\n把数字算出来。\n\nAGENTS / 底层逻辑   ·   第三课"
+    },
+    {
+      "style": "blue-professional",
+      "viewport": [
+        390,
+        844
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [
+        ""
+      ],
+      "text": "前向传播\n\n一层一层，\n把数字算出来。\n\nAGENTS / 底层逻辑   ·   第三课"
+    },
+    {
+      "style": "cobalt-grid",
+      "viewport": [
+        1280,
+        720
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [],
+      "text": "前向\n传播\nAGENTS / 底层逻辑 · 第三课\n一层一层，把数字算出来。\n输入\n隐藏层\n输出\n计算路径\n输入 → 隐藏层 → 输出\n核心概念\n参数 · 激活值 · 矩阵运算\n03 / AGENTS"
+    },
+    {
+      "style": "cobalt-grid",
+      "viewport": [
+        390,
+        844
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [],
+      "text": "前向\n传播\nAGENTS / 底层逻辑 · 第三课\n一层一层，把数字算出来。\n输入\n隐藏层\n输出\n计算路径\n输入 → 隐藏层 → 输出\n核心概念\n参数 · 激活值 · 矩阵运算\n03 / AGENTS"
+    },
+    {
+      "style": "cartesian",
+      "viewport": [
+        1280,
+        720
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [
+        ""
+      ],
+      "text": "AGENTS / 底层逻辑 · 第三课\n前向传播\n\n一层一层，\n把数字算出来。"
+    },
+    {
+      "style": "cartesian",
+      "viewport": [
+        390,
+        844
+      ],
+      "ratio": 1.7777777777777777,
+      "titleInside": true,
+      "overflow": [
+        ""
+      ],
+      "text": "AGENTS / 底层逻辑 · 第三课\n前向传播\n\n一层一层，\n把数字算出来。"
+    }
+  ],
+  "errors": []
+}

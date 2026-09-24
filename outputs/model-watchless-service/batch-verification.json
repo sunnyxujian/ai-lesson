@@ -1,0 +1,215 @@
+{
+  "artifacts": [
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\share\\1.Agents底层逻辑之AI的分类-visual-explainer.html",
+      "bytes": 57683,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\share\\1.Agents底层逻辑之AI的分类-visual-explainer.pdf",
+      "bytes": 8995413
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\share\\1.Agents底层逻辑之AI的分类-visual-explainer.md",
+      "bytes": 47381
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\1.Agents底层逻辑之AI的分类-video-notes.zip",
+      "bytes": 20996864,
+      "zip_bad_member": null,
+      "zip_entries": 45
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\slides\\index.html",
+      "bytes": 6022387,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\share\\2.Agents底层逻辑之神经元-visual-explainer.html",
+      "bytes": 36840,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\share\\2.Agents底层逻辑之神经元-visual-explainer.pdf",
+      "bytes": 4522117
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\share\\2.Agents底层逻辑之神经元-visual-explainer.md",
+      "bytes": 28104
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\2.Agents底层逻辑之神经元-video-notes.zip",
+      "bytes": 10587773,
+      "zip_bad_member": null,
+      "zip_entries": 38
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\slides\\index.html",
+      "bytes": 52959,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\share\\3.Agents底层逻辑之前向传播-visual-explainer.html",
+      "bytes": 38469,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\share\\3.Agents底层逻辑之前向传播-visual-explainer.pdf",
+      "bytes": 6359383
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\share\\3.Agents底层逻辑之前向传播-visual-explainer.md",
+      "bytes": 28933
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\3.Agents底层逻辑之前向传播-video-notes.zip",
+      "bytes": 16447962,
+      "zip_bad_member": null,
+      "zip_entries": 25
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\slides\\index.html",
+      "bytes": 8070700,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\share\\4.Agents底层逻辑之梯度下降-visual-explainer.html",
+      "bytes": 39242,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\share\\4.Agents底层逻辑之梯度下降-visual-explainer.pdf",
+      "bytes": 5095026
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\share\\4.Agents底层逻辑之梯度下降-visual-explainer.md",
+      "bytes": 31509
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\4.Agents底层逻辑之梯度下降-video-notes.zip",
+      "bytes": 7534980,
+      "zip_bad_member": null,
+      "zip_entries": 30
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\slides\\index.html",
+      "bytes": 51667,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\share\\5.Agents底层逻辑之训练模式-visual-explainer.html",
+      "bytes": 30399,
+      "missing_local_references": []
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\share\\5.Agents底层逻辑之训练模式-visual-explainer.pdf",
+      "bytes": 4032833
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\share\\5.Agents底层逻辑之训练模式-visual-explainer.md",
+      "bytes": 20530
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\5.Agents底层逻辑之训练模式-video-notes.zip",
+      "bytes": 10270156,
+      "zip_bad_member": null,
+      "zip_entries": 23
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\slides\\index.html",
+      "bytes": 5288383,
+      "missing_local_references": []
+    }
+  ],
+  "source_integrity": [
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\1.Agents底层逻辑之AI的分类.mp4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\2.Agents底层逻辑之神经元.mp4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\3.Agents底层逻辑之前向传播.mp4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\4.Agents底层逻辑之梯度下降.mp4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\micro\\Desktop\\ai-lesson\\model\\5.Agents底层逻辑之训练模式.mp4",
+      "unchanged": true
+    }
+  ],
+  "service_jobs": [
+    {
+      "video": "1.Agents底层逻辑之AI的分类.mp4",
+      "provider": "qwen",
+      "service": "video-mate-pick",
+      "job_id": "20260919-234453-8b3329fb"
+    },
+    {
+      "video": "2.Agents底层逻辑之神经元.mp4",
+      "provider": "qwen",
+      "service": "video-mate-pick",
+      "job_id": "20260919-234508-cd2e7e40"
+    },
+    {
+      "video": "3.Agents底层逻辑之前向传播.mp4",
+      "provider": "qwen",
+      "service": "video-mate-pick",
+      "job_id": "20260919-234517-a8cb2711"
+    },
+    {
+      "video": "4.Agents底层逻辑之梯度下降.mp4",
+      "provider": "qwen",
+      "service": "video-mate-pick",
+      "job_id": "20260920-002223-5a10c9e3"
+    },
+    {
+      "video": "5.Agents底层逻辑之训练模式.mp4",
+      "provider": "qwen",
+      "service": "video-mate-pick",
+      "job_id": "20260920-002223-7129c2e4"
+    }
+  ],
+  "counts": {
+    "1": {
+      "scenes": 27,
+      "images": 27,
+      "pdf_pages": 28,
+      "deck_slides": 18
+    },
+    "2": {
+      "scenes": 15,
+      "images": 15,
+      "pdf_pages": 15,
+      "deck_slides": 15
+    },
+    "3": {
+      "scenes": 15,
+      "images": 15,
+      "pdf_pages": 15,
+      "deck_slides": 16
+    },
+    "4": {
+      "scenes": 16,
+      "images": 16,
+      "pdf_pages": 20,
+      "deck_slides": 17
+    },
+    "5": {
+      "scenes": 12,
+      "images": 12,
+      "pdf_pages": 13,
+      "deck_slides": 13
+    }
+  },
+  "known_limits": [
+    "时间定位为音频块级近似值，未逐句听音核验。",
+    "已依据原画面字幕和上下文修订明显识别问题，不确定项保留说明。",
+    "运行环境不提供真实 token 和费用，均保持未知。"
+  ]
+}

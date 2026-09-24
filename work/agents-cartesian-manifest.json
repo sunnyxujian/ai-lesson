@@ -1,0 +1,37 @@
+[
+  {
+    "course": "1.Agents底层逻辑之AI的分类",
+    "file": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\slides\\index.html",
+    "slides": 18,
+    "images": 15,
+    "content_preserved": true
+  },
+  {
+    "course": "2.Agents底层逻辑之神经元",
+    "file": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\2.Agents底层逻辑之神经元\\slides\\index.html",
+    "slides": 15,
+    "images": 15,
+    "content_preserved": true
+  },
+  {
+    "course": "3.Agents底层逻辑之前向传播",
+    "file": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\3.Agents底层逻辑之前向传播\\slides\\index.html",
+    "slides": 16,
+    "images": 15,
+    "content_preserved": true
+  },
+  {
+    "course": "4.Agents底层逻辑之梯度下降",
+    "file": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\4.Agents底层逻辑之梯度下降\\slides\\index.html",
+    "slides": 17,
+    "images": 16,
+    "content_preserved": true
+  },
+  {
+    "course": "5.Agents底层逻辑之训练模式",
+    "file": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\5.Agents底层逻辑之训练模式\\slides\\index.html",
+    "slides": 13,
+    "images": 12,
+    "content_preserved": true
+  }
+]

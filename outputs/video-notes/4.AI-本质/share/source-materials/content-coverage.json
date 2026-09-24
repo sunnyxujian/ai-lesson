@@ -1,0 +1,148 @@
+{
+  "source_chunks": 70,
+  "ordered_scenes": 20,
+  "body_characters": 13381,
+  "method": "Every raw chunk assigned in order. Bodies retain near-verbatim speech; explicit join edits documented separately. This is a mapping and editorial review, not a word-level accuracy guarantee.",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "从裸模型、模型服务走到 AI 应用",
+      "source_start_sec": 0.0,
+      "source_end_sec": 45.92,
+      "body_characters": 312
+    },
+    {
+      "id": 2,
+      "title": "应用与模型服务的边界为什么会移动",
+      "source_start_sec": 45.92,
+      "source_end_sec": 170.64,
+      "body_characters": 1006
+    },
+    {
+      "id": 3,
+      "title": "微调案例：训练时间之外，还有验证成本",
+      "source_start_sec": 170.64,
+      "source_end_sec": 290.08,
+      "body_characters": 835
+    },
+    {
+      "id": 4,
+      "title": "AI 应用层：应用开发与工具使用",
+      "source_start_sec": 290.08,
+      "source_end_sec": 394.4,
+      "body_characters": 828
+    },
+    {
+      "id": 5,
+      "title": "课程体系说明与工具使用的定位",
+      "source_start_sec": 394.4,
+      "source_end_sec": 472.4,
+      "body_characters": 598
+    },
+    {
+      "id": 6,
+      "title": "先理解概念，再学习具体编程工具",
+      "source_start_sec": 472.4,
+      "source_end_sec": 524.88,
+      "body_characters": 443
+    },
+    {
+      "id": 7,
+      "title": "理解新概念，只盯住输入与输出",
+      "source_start_sec": 524.88,
+      "source_end_sec": 628.56,
+      "body_characters": 699
+    },
+    {
+      "id": 8,
+      "title": "用前处理、后处理检查这两个问题",
+      "source_start_sec": 628.56,
+      "source_end_sec": 698.72,
+      "body_characters": 577
+    },
+    {
+      "id": 9,
+      "title": "HTTP 类比：看消息、格式与后续动作",
+      "source_start_sec": 698.72,
+      "source_end_sec": 794.72,
+      "body_characters": 766
+    },
+    {
+      "id": 10,
+      "title": "搭一层代理，观察请求和响应",
+      "source_start_sec": 794.72,
+      "source_end_sec": 898.4,
+      "body_characters": 902
+    },
+    {
+      "id": 11,
+      "title": "配置 .env，用 curl 验证代理日志",
+      "source_start_sec": 898.4,
+      "source_end_sec": 980.24,
+      "body_characters": 618
+    },
+    {
+      "id": 12,
+      "title": "让 Claude Code 通过代理访问模型",
+      "source_start_sec": 980.24,
+      "source_end_sec": 1077.36,
+      "body_characters": 882
+    },
+    {
+      "id": 13,
+      "title": "还没输入问题，应用已经发送了工具描述",
+      "source_start_sec": 1077.36,
+      "source_end_sec": 1154.08,
+      "body_characters": 536
+    },
+    {
+      "id": 14,
+      "title": "“你是谁”的答案，来自应用添加的提示词",
+      "source_start_sec": 1154.08,
+      "source_end_sec": 1272.4,
+      "body_characters": 959
+    },
+    {
+      "id": 15,
+      "title": "触发一次技能，再去查真实请求",
+      "source_start_sec": 1272.4,
+      "source_end_sec": 1350.08,
+      "body_characters": 523
+    },
+    {
+      "id": 16,
+      "title": "SSE 流里的自然语言与工具调用 JSON",
+      "source_start_sec": 1350.08,
+      "source_end_sec": 1426.48,
+      "body_characters": 582
+    },
+    {
+      "id": 17,
+      "title": "第一轮：封装输入，模型决定是否调用技能",
+      "source_start_sec": 1426.48,
+      "source_end_sec": 1494.24,
+      "body_characters": 520
+    },
+    {
+      "id": 18,
+      "title": "第二轮：读取技能全文，继续调用模型",
+      "source_start_sec": 1494.24,
+      "source_end_sec": 1587.04,
+      "body_characters": 663
+    },
+    {
+      "id": 19,
+      "title": "把观察方法迁移到下一个新概念",
+      "source_start_sec": 1587.04,
+      "source_end_sec": 1661.84,
+      "body_characters": 585
+    },
+    {
+      "id": 20,
+      "title": "抓住核心与后续课程安排",
+      "source_start_sec": 1661.84,
+      "source_end_sec": 1731.4,
+      "body_characters": 547
+    }
+  ]
+}

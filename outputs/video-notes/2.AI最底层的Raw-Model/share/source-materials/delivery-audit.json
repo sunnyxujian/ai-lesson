@@ -1,0 +1,20 @@
+{
+  "content": "37 source audio chunks mapped in exact order to 12 scenes; polished notes retain examples and sequence",
+  "tutorial_sections": 12,
+  "selected_images": 12,
+  "slides": 18,
+  "pdf_pages": 13,
+  "html_references": "pass",
+  "deck_visual_bounds": "pass",
+  "navigation": "2 / 18",
+  "speaker_notes": true,
+  "editing": "true",
+  "mobile_16_9": true,
+  "token_usage": null,
+  "cost_usd": null,
+  "limitations": [
+    "ASR chunk-level timing, not word alignment; no claim of verbatim listening verification",
+    "Original lecture estimates and uncertain statements preserved with notes",
+    "Actual host token usage and cost unavailable"
+  ]
+}

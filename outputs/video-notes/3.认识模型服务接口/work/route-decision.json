@@ -1,0 +1,13 @@
+{
+  "selected": "explainer",
+  "requested": "explainer",
+  "visual_strategies": [
+    "document-evidence",
+    "screen-state"
+  ],
+  "conversation_profile": null,
+  "reasons": [
+    "屏幕讲解以接口文档、白板概念和伪代码推导构成完整论证，按概念与例子分段，直接审阅截图"
+  ],
+  "status": "confirmed"
+}

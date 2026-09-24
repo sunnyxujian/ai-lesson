@@ -1,0 +1,11 @@
+{
+  "restarted_at": "2026-09-19T23:45:20.4515935+08:00",
+  "output_root": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service",
+  "skill_hash": "77580091BC6AD6ACAB3AC0F77A1356D6BE3C08B61343FC7E38746EEBF4A397F9",
+  "setup_hash": "10270147EFAE7901BF348B239F0D2AAA5C5E1F37E12F651D2562F7819544480C",
+  "audio_endpoint": "http://127.0.0.1:8765",
+  "frame_endpoint": "http://127.0.0.1:8766",
+  "status": "complete",
+  "completed_at": "2026-09-20T00:57:15.8589352+08:00",
+  "catalog": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\index.html"
+}

@@ -1,0 +1,127 @@
+[
+  {
+    "slide": 1,
+    "title": "认识模型服务接口",
+    "source_scene": 1
+  },
+  {
+    "slide": 2,
+    "title": "从模型计算，到服务接口",
+    "source_scene": 1
+  },
+  {
+    "slide": 3,
+    "title": "先确认接口规格",
+    "source_scene": 2
+  },
+  {
+    "slide": 4,
+    "title": "一次请求，一次回复",
+    "source_scene": 2
+  },
+  {
+    "slide": 5,
+    "title": "SDK 把网络请求封装起来",
+    "source_scene": 4
+  },
+  {
+    "slide": 6,
+    "title": "兼容接口，主要更换三项",
+    "source_scene": 4
+  },
+  {
+    "slide": 7,
+    "title": "同一服务，也能兼容多套规格",
+    "source_scene": 5
+  },
+  {
+    "slide": 8,
+    "title": "变化很多，先看交集",
+    "source_scene": 6
+  },
+  {
+    "slide": 9,
+    "title": "输入和输出，分别计费",
+    "source_scene": 7
+  },
+  {
+    "slide": 10,
+    "title": "服务内部的三个阶段",
+    "source_scene": 8
+  },
+  {
+    "slide": 11,
+    "title": "先确认身份与权限",
+    "source_scene": 8
+  },
+  {
+    "slide": 12,
+    "title": "系统提示词随输入一起进入模型",
+    "source_scene": 9
+  },
+  {
+    "slide": 13,
+    "title": "都是 Token，也有角色约定",
+    "source_scene": 10
+  },
+  {
+    "slide": 14,
+    "title": "Tokenization：准备模型输入",
+    "source_scene": 11
+  },
+  {
+    "slide": 15,
+    "title": "模型返回的是概率分布",
+    "source_scene": 12
+  },
+  {
+    "slide": 16,
+    "title": "自回归：生成，再追加",
+    "source_scene": 13
+  },
+  {
+    "slide": 17,
+    "title": "“你是谁”怎样接成回答？",
+    "source_scene": 13
+  },
+  {
+    "slide": 18,
+    "title": "输出越长，生成轮次越多",
+    "source_scene": 14
+  },
+  {
+    "slide": 19,
+    "title": "采样发生在 pickToken 这一步",
+    "source_scene": 15
+  },
+  {
+    "slide": 20,
+    "title": "temperature 调节随机性",
+    "source_scene": 15
+  },
+  {
+    "slide": 21,
+    "title": "确定的答案，也可能确定地错",
+    "source_scene": 16
+  },
+  {
+    "slide": 22,
+    "title": "top_k：保留概率最高的 K 个",
+    "source_scene": 17
+  },
+  {
+    "slide": 23,
+    "title": "top_p：达到累计概率阈值",
+    "source_scene": 18
+  },
+  {
+    "slide": 24,
+    "title": "后处理：把 Token 还原成回复",
+    "source_scene": 19
+  },
+  {
+    "slide": 25,
+    "title": "把新功能放回这张图",
+    "source_scene": 20
+  }
+]

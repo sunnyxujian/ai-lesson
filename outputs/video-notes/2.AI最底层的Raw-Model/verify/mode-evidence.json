@@ -1,0 +1,31 @@
+{
+  "suggested_mode": "codex_review_required",
+  "confidence": null,
+  "sample_timestamps_sec": [
+    28.07,
+    86.705,
+    145.34,
+    203.975,
+    262.61,
+    321.246,
+    379.881,
+    438.516,
+    497.151,
+    555.786,
+    614.421,
+    673.056,
+    731.691,
+    790.326,
+    848.962,
+    907.597
+  ],
+  "media": {
+    "width": 1920,
+    "height": 1080,
+    "frame_rate": "30/1",
+    "duration_sec": 935.666667,
+    "size_bytes": 22274131
+  },
+  "overview": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\video-notes\\2.AI最底层的Raw-Model\\verify\\mode-overview.jpg",
+  "decision_rule": "Codex inspects the whole-video overview and transcript, then confirms one route: stable slide-led lectures use slides; scripted visual arguments use explainer; interviews and podcasts use conversation; step-by-step UI or physical workflows use demo. Add composable visual strategies such as speaker, evidence, broll, dense-visual, document-evidence, or screen-state."
+}

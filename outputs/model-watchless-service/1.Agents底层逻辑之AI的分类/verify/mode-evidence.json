@@ -1,0 +1,31 @@
+{
+  "suggested_mode": "codex_review_required",
+  "confidence": null,
+  "sample_timestamps_sec": [
+    75.802,
+    234.144,
+    392.486,
+    550.828,
+    709.17,
+    867.512,
+    1025.854,
+    1184.196,
+    1342.538,
+    1500.88,
+    1659.222,
+    1817.564,
+    1975.905,
+    2134.247,
+    2292.589,
+    2450.931
+  ],
+  "media": {
+    "width": 1920,
+    "height": 1080,
+    "frame_rate": "30/1",
+    "duration_sec": 2526.733333,
+    "size_bytes": 84215246
+  },
+  "overview": "C:\\Users\\micro\\Desktop\\ai-lesson\\outputs\\model-watchless-service\\1.Agents底层逻辑之AI的分类\\verify\\mode-overview.jpg",
+  "decision_rule": "Codex inspects the whole-video overview and transcript, then confirms one route: stable slide-led lectures use slides; scripted visual arguments use explainer; interviews and podcasts use conversation; step-by-step UI or physical workflows use demo. Add composable visual strategies such as speaker, evidence, broll, dense-visual, document-evidence, or screen-state."
+}

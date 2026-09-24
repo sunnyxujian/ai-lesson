@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "stage": "transcription",
+      "model": "local Qwen3-ASR 0.6B INT8",
+      "availability": "unavailable",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "cost_usd": null,
+      "reason": "Local service does not expose token or cost counts."
+    },
+    {
+      "stage": "visual_review_notes_and_slides",
+      "model": "host assistant",
+      "availability": "unavailable",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "cost_usd": null,
+      "reason": "Host runtime does not expose actual per-stage usage to this task."
+    }
+  ],
+  "totals": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "cost_usd": null,
+    "availability": "unavailable"
+  }
+}

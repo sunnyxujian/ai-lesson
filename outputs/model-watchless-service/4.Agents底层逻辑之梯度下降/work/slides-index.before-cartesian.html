@@ -1,0 +1,190 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>梯度下降 · 第四课</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet"><style>/* ===========================================
+   FIXED 16:9 STAGE: MANDATORY BASE STYLES
+   Include this ENTIRE file in every presentation.
+   Slides are authored at 1920×1080 and scaled as a whole.
+   =========================================== */
+
+/* 1. Lock the browser viewport */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 2. Full-window deck viewport */
+.deck-viewport {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 3. Fixed 16:9 design canvas.
+   JavaScript sets transform: translate(...) scale(...). */
+.deck-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background: var(--slide-bg, #fff);
+}
+
+/* 4. Slides stack inside the fixed stage.
+   Content must be laid out at 1920×1080, not reflowed per device. */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--slide-bg, #fff);
+}
+
+.slide.active,
+.slide.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* 5. Keep media inside authored slide bounds */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 6. Presentation chrome stays outside the slide design system */
+.deck-controls {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* 7. Print one fixed-size slide per page */
+@media print {
+    html,
+    body {
+        width: 1920px;
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-viewport {
+        position: static;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-stage {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none !important;
+        background: none;
+    }
+
+    .slide {
+        position: relative;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 1920px;
+        height: 1080px;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .slide:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .deck-controls {
+        display: none !important;
+    }
+}
+
+/* 8. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* === PAPER AND GRAPH THEME === */
+:root{--slide-bg:#f6f3e9;--stage-bg:#171d1b;--ink:#162b2d;--accent:#bc492d}*{box-sizing:border-box}body{font-family:'Noto Sans SC',sans-serif;color:var(--ink)}.slide{background-image:linear-gradient(rgba(32,70,67,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,70,67,.035) 1px,transparent 1px);background-size:48px 48px;padding:80px 96px}.eyebrow{font-size:26px;letter-spacing:4px;font-weight:700;border-top:3px solid var(--ink);padding-top:22px}.copy{position:absolute;left:96px;top:212px;width:640px}h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:60px;line-height:1.45;padding:8px 0;margin:0 0 40px}p.thesis{font-size:36px;font-weight:700;color:var(--accent);line-height:1.5;margin:0 0 35px}ul{padding-left:28px;margin:0;font-size:28px;line-height:1.8}li+li{margin-top:22px}.tutorial{display:inline-block;margin-top:38px;color:var(--ink);font-size:24px;text-underline-offset:8px}figure{position:absolute;left:800px;top:246px;width:1010px;margin:0}figure img{width:1010px;height:569px;object-fit:contain;background:#fff;border:2px solid #d5dace;box-shadow:12px 12px 0 #dddccf}figcaption{margin-top:24px;font-size:25px;color:#506366}.big-number{position:absolute;bottom:30px;left:92px;font-family:Georgia,serif;font-size:150px;opacity:.07;line-height:1}.cover h1{font-family:'Noto Serif SC',serif;font-size:158px;margin:108px 0 30px}.cover-sub{font-size:42px}.path{display:flex;gap:32px;align-items:center;margin-top:92px;font-size:48px}.path span{border-bottom:5px solid var(--accent);padding-bottom:22px}.path b{font-weight:400;color:#78928c}.cover-foot{font-size:27px;margin-top:85px}.reveal{transform:translateY(20px);opacity:0;transition:transform .45s,opacity .45s}.visible .reveal{transform:none;opacity:1}.speaker-notes{display:none}.deck-controls{color:#fff;background:#172522ed;border:1px solid #68726d;border-radius:8px;padding:8px 14px;font-size:14px;display:flex;gap:15px;align-items:center}button{cursor:pointer;border:0;background:#edf0e8;color:#18312e;border-radius:4px;padding:8px 13px}.notes-panel{position:fixed;z-index:2000;inset:8% 8%;background:#f6f3e9;color:#173235;padding:28px 40px;overflow:auto;white-space:pre-wrap;font-size:20px;line-height:1.8;display:none;box-shadow:0 10px 80px #0009}.notes-panel.open{display:block}.edit-hotzone{position:fixed;left:0;top:0;width:80px;height:80px;z-index:2500}.edit-toggle{position:fixed;left:12px;top:12px;z-index:2600;opacity:0;pointer-events:none}.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}[contenteditable=true]{outline:2px dashed #bf5238;outline-offset:5px}@media print{.notes-panel,.edit-hotzone,.edit-toggle{display:none!important}} 
+@media(max-width:600px){.deck-controls{width:360px;gap:8px;font-size:12px;white-space:nowrap;justify-content:center;bottom:14px}.deck-controls span:last-child{display:none}.deck-controls button{white-space:nowrap}} </style></head><body><div class="deck-viewport"><main class="deck-stage" id="deckStage"><section class="slide active visible cover"><div class="eyebrow">AGENTS / 神经网络 · 第四课</div><h1 contenteditable="false">梯度下降</h1><p class="cover-sub">从“哪里错了”，到“参数怎样调整”。</p><div class="path"><span>预测</span><b>→</b><span>损失</span><b>→</b><span>梯度</span><b>→</b><span>更新</span></div><p class="cover-foot">用曲线、山谷和神经元箭头，理解反向传播。</p><aside class="speaker-notes">改善预测需要把误差转化为可计算信息。先用标签和损失衡量结果，再通过反向传播求梯度，最后由优化器更新参数。曲线和山坡帮助理解局部方向，神经元间的箭头帮助理解链式法则，两种图示都需要区分直观类比与精确数值。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 1 === -->
+<section class="slide"><div class="eyebrow">第四课 / 01</div><div class="copy reveal"><h2>先问：什么影响预测？</h2><p class="thesis">参数 = 全部权重 + 全部偏置</p><ul><li>输入固定时，要改变结果，就要调整参数。</li><li>两万多个参数，交给计算机自动调整。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-1" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_001_00-00-50.jpg" alt="先问：什么影响预测？：图示"><figcaption>参数 = 全部权重 + 全部偏置</figcaption></figure><span class="big-number">01</span><aside class="speaker-notes">固定输入和网络设置后，全部权重与偏置共同决定预测。本例有 26,058 个参数，训练需要自动计算更新依据，而不是人工逐个调节。数字识别始终对应 0～9，节点顺序编号“10”不代表多出一个类别。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 2 === -->
+<section class="slide"><div class="eyebrow">第四课 / 02</div><div class="copy reveal"><h2>用标签告诉它正确答案</h2><p class="thesis">图片是“1”，目标位置只亮一格</p><ul><li>预测值来自网络计算；标签来自数据标注。</li><li>最大值为数字 6 的 0.86；输出之和并非 1。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-2" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_002_00-03-21.jpg" alt="用标签告诉它正确答案：图示"><figcaption>图片是“1”，目标位置只亮一格</figcaption></figure><span class="big-number">02</span><aside class="speaker-notes">数字 1 的独热标签只有对应位置为 1。截图预测中最大值是数字 6 的 0.86，而不是数字 4 的 0.76；十个值之和为 5.06，所以也不能当成 Softmax 概率分布。预测与标签的差距需要交给损失函数量化。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 3 === -->
+<section class="slide"><div class="eyebrow">第四课 / 03</div><div class="copy reveal"><h2>把差距变成一个数字</h2><p class="thesis">损失函数 → 损失值</p><ul><li>演示：逐项相减、平方、求和。</li><li>平方和 4.0498；按十项平均为 0.40498。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-3" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_003_00-04-29.jpg" alt="把差距变成一个数字：图示"><figcaption>损失函数 → 损失值</figcaption></figure><span class="big-number">03</span><aside class="speaker-notes">平方误差和把各输出与标签的差平方后相加。按图中两位小数复算，十项之和为 4.0498；除以 10 才是按这十个输出平均的 0.40498。若使用其他损失或跨样本平均，需明确相应定义，不能混用不同缩放约定的数值。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 4 === -->
+<section class="slide"><div class="eyebrow">第四课 / 04</div><div class="copy reveal"><h2>输入和标签固定</h2><p class="thesis">参数 → 输出 → 损失</p><ul><li>把复杂计算记为 y = C(参数)。</li><li>训练要寻找让损失减少的参数变化。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-4" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_004_00-07-06.jpg" alt="输入和标签固定：图示"><figcaption>参数 → 输出 → 损失</figcaption></figure><span class="big-number">04</span><aside class="speaker-notes">固定数据、网络结构和损失定义后，参数决定预测，预测决定损失，所以可以写成 L=C(θ)。θ 是包含所有参数的向量。训练分析的是参数发生变化时损失怎样响应，并不是说数据或结构对结果没有影响。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 5 === -->
+<section class="slide"><div class="eyebrow">第四课 / 05</div><div class="copy reveal"><h2>不必先看清整条曲线</h2><p class="thesis">先求当前点的切线</p><ul><li>局部斜率决定朝左还是朝右。</li><li>方向有了，步幅还需要另外控制。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-5" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_005_00-10-18.jpg" alt="不必先看清整条曲线：图示"><figcaption>先求当前点的切线</figcaption></figure><span class="big-number">05</span><aside class="speaker-notes">单参数曲线的导数描述当前位置附近的斜率。导数为正时，足够小地向左移动可下降；导数为负时，足够小地向右移动可下降。局部切线不能保证远处仍然下坡，导数为零也不一定意味着全局最优。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 6 === -->
+<section class="slide"><div class="eyebrow">第四课 / 06</div><div class="copy reveal"><h2>黑夜下山的比喻</h2><p class="thesis">沿当前最陡的下坡方向走</p><ul><li>两个参数形成曲面上的两个坐标方向。</li><li>高维参数空间遵循同样的直观思路。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-6" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_006_00-11-54.jpg" alt="黑夜下山的比喻：图示"><figcaption>沿当前最陡的下坡方向走</figcaption></figure><span class="big-number">06</span><aside class="speaker-notes">两个参数对应曲面上的水平坐标，高度表示损失。通常欧氏度量下，负梯度是当前点局部最陡的下降方向。高维网络仍可以计算各参数偏导，无需先画出整个损失曲面；方向之外还必须选择合适步幅。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 7 === -->
+<section class="slide"><div class="eyebrow">第四课 / 07</div><div class="copy reveal"><h2>谷底不一定是最低点</h2><p class="thesis">局部最优 ≠ 全局最优</p><ul><li>不同初始位置可能落入不同凹谷。</li><li>噪声可改变轨迹，但不保证全局最优。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-7" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_007_00-13-28.jpg" alt="谷底不一定是最低点：图示"><figcaption>局部最优 ≠ 全局最优</figcaption></figure><span class="big-number">07</span><aside class="speaker-notes">附近谷底可能只是局部最优，另一个区域可能更低。非凸优化还可能遇到鞍点和平坦区域。噪声或动量会影响搜索轨迹，但不保证找到全局最优，最终仍需通过任务和验证表现判断参数是否可用。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 8 === -->
+<section class="slide"><div class="eyebrow">第四课 / 08</div><div class="copy reveal"><h2>为什么每次只走一点？</h2><p class="thesis">学习率缩放梯度</p><ul><li>步子过大，可能跨过谷底跑到上坡。</li><li>继续计算新位置的方向，再走下一步。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-8" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_008_00-15-27.jpg" alt="为什么每次只走一点？：图示"><figcaption>学习率缩放梯度</figcaption></figure><span class="big-number">08</span><aside class="speaker-notes">更新公式为 θ新=θ旧−η∇L。学习率 η 缩放梯度，实际移动距离还取决于梯度大小。学习率过大可能跨过谷底并增大损失，过小则进展缓慢；更新后要在新位置重新计算方向。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 9 === -->
+<section class="slide"><div class="eyebrow">第四课 / 09</div><div class="copy reveal"><h2>参数不会整齐划一地动</h2><p class="thesis">有的多变，有的少变</p><ul><li>下降方向在 x、y 上的分量可以不同。</li><li>高维计算也要得到每个参数的变化信息。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-9" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_009_00-16-51.jpg" alt="参数不会整齐划一地动：图示"><figcaption>有的多变，有的少变</figcaption></figure><span class="big-number">09</span><aside class="speaker-notes">下降指优化损失，而不是让所有参数都减小。各参数更新为对应偏导的负值乘学习率，因而可以有的增加、有的减少，幅度也不同。反向传播的任务就是高效求出这些梯度分量。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 10 === -->
+<section class="slide"><div class="eyebrow">第四课 / 10</div><div class="copy reveal"><h2>从输出层开始</h2><p class="thesis">0 − 0.64；1 − 0.18</p><ul><li>一个希望减少 0.64，一个希望增加 0.82。</li><li>输出差值不是参数梯度，还需链式法则。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-10" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_010_00-19-10.jpg" alt="从输出层开始：图示"><figcaption>0 − 0.64；1 − 0.18</figcaption></figure><span class="big-number">10</span><aside class="speaker-notes">目标减预测分别为 0−0.64=−0.64、1−0.18=0.82，能说明希望输出减少或增加。对平方误差和，输出导数实际为 2(预测−目标)；它还要通过激活和连接传到参数。箭头不是可以直接应用到权重上的梯度。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 11 === -->
+<section class="slide"><div class="eyebrow">第四课 / 11</div><div class="copy reveal"><h2>一个神经元的三个依赖</h2><p class="thesis">权重 · 偏置 · 上层激活</p><ul><li>w₁…w₁₆ 和 b 是可调整的参数。</li><li>隐藏层输出 a₁…a₁₆ 也会影响当前输出。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-11" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_011_00-20-45.jpg" alt="一个神经元的三个依赖：图示"><figcaption>权重 · 偏置 · 上层激活</figcaption></figure><span class="big-number">11</span><aside class="speaker-notes">输出单元依赖自身权重、偏置与上一层激活。原始图片固定，不代表中间激活不受参数影响。反向传播既计算当前层参数梯度，也计算对上一层激活的导数，以便继续追踪更早参数的影响。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 12 === -->
+<section class="slide"><div class="eyebrow">第四课 / 12</div><div class="copy reveal"><h2>如何知道各项该怎么变？</h2><p class="thesis">偏导与链式法则</p><ul><li>按链式法则计算每个参数的梯度。</li><li>先算出各项信息，再统一更新。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-12" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_012_00-21-25.jpg" alt="如何知道各项该怎么变？：图示"><figcaption>偏导与链式法则</figcaption></figure><span class="big-number">12</span><aside class="speaker-notes">令 z=Σwᵢaᵢ+b、δ=∂L/∂z，则权重梯度为 δaᵢ，偏置梯度为 δ，对上一层激活的单路径贡献为 δwᵢ。先基于同一次前向状态计算各项梯度，再乘学习率等更新规则。示意箭头不能替代实际导数运算。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 13 === -->
+<section class="slide"><div class="eyebrow">第四课 / 13</div><div class="copy reveal"><h2>上一层输出没有旋钮</h2><p class="thesis">把激活梯度向前传</p><ul><li>当前层能改自己的权重和偏置。</li><li>将激活梯度交给上一层，继续求参数梯度。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-13" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_013_00-23-54.jpg" alt="上一层输出没有旋钮：图示"><figcaption>把激活梯度向前传</figcaption></figure><span class="big-number">13</span><aside class="speaker-notes">中间激活没有独立的可训练旋钮，它来自更早层的计算。当前层因此把损失对这些激活的导数传回去，由前层继续求其参数梯度。传递的是导数信息，不是给隐藏层重新制作一套标签。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 14 === -->
+<section class="slide"><div class="eyebrow">第四课 / 14</div><div class="copy reveal"><h2>多个箭头合成一个</h2><p class="thesis">汇总同一节点的梯度贡献</p><ul><li>汇总后继续计算参数梯度与前层激活梯度。</li><li>传播到第一个隐藏层，原始输入保持固定。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-14" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_014_00-25-07.jpg" alt="多个箭头合成一个：图示"><figcaption>汇总同一节点的梯度贡献</figcaption></figure><span class="big-number">14</span><aside class="speaker-notes">一个隐藏激活可以影响多个后层单元，链式法则要求将所有路径贡献相加：∂L/∂aᵢ=Σⱼwⱼᵢδⱼ。不同贡献可能同向或抵消。逐层继续后可得到全部参数梯度；本例不利用输入梯度修改训练图片。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 15 === -->
+<section class="slide"><div class="eyebrow">第四课 / 15</div><div class="copy reveal"><h2>一次更新只是一步</h2><p class="thesis">前向 → 反向 → 更新 → 重复</p><ul><li>参数调整可组织成矩阵，结合学习率更新。</li><li>界面是教学示意，不是数值收敛实验。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-15" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_015_00-26-24.jpg" alt="一次更新只是一步：图示"><figcaption>前向 → 反向 → 更新 → 重复</figcaption></figure><span class="big-number">15</span><aside class="speaker-notes">参数梯度可以组织为矩阵或张量，再由优化器统一更新。之后重新前向计算损失并重复循环。截图出现的 5.0068 高于先前 4.0498，因此只能用它理解界面结构，不能把这组状态作为损失下降或收敛的证明。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section><!-- === TEACHING POINT 16 === -->
+<section class="slide"><div class="eyebrow">第四课 / 16</div><div class="copy reveal"><h2>学习与训练的含义</h2><p class="thesis">反复计算，逐步调整参数</p><ul><li>目标是使损失变小，得到较好的状态。</li><li>结合验证表现判断训练效果与泛化能力。</li></ul><a class="tutorial" href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#scene-16" target="_blank">阅读本节教程 ↗</a></div><figure class="reveal"><img src="../share/keyframes/scene_016_00-27-53.jpg" alt="学习与训练的含义：图示"><figcaption>反复计算，逐步调整参数</figcaption></figure><span class="big-number">16</span><aside class="speaker-notes">训练循环包括预测、损失、反向传播和更新。它希望改善训练目标并获得良好泛化，但不保证每一步下降或最终全局最优。课件带 1/m 的式子是均方误差，需与前面平方和区分；后续将把一次样本更新扩展到数据集层面的训练方式。
+
+<a href="../share/4.Agents底层逻辑之梯度下降-visual-explainer.html#references" target="_blank">参考资料 ↗</a></aside></section></main></div><nav class="deck-controls"><button id="prev">←</button><span id="counter"></span><button id="next">→</button><button id="noteButton">讲稿 N</button><span>E 编辑 · Ctrl+S 保存</span></nav><div class="notes-panel" id="notes" aria-label="详细讲稿"></div><div class="edit-hotzone"></div><button class="edit-toggle" id="editToggle">编辑 E</button><script>
+/* === FIXED STAGE AND NAVIGATION === */
+class SlidePresentation{constructor(){this.slides=[...document.querySelectorAll('.slide')];this.index=0;this.stage=document.getElementById('deckStage');this.editing=false;this.notes=document.getElementById('notes');this.scale=()=>{let s=Math.min(innerWidth/1920,innerHeight/1080);this.stage.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`};addEventListener('resize',this.scale);this.scale();this.show(0);document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();this.save();return}if(e.target.isContentEditable)return;if(e.key.toLowerCase()==='e'){this.edit();return}if(e.key.toLowerCase()==='n'){this.toggleNotes();return}if(e.key==='Escape'){this.notes.classList.remove('open');return}if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();this.show(this.index+1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();this.show(this.index-1)}});let start=0;document.addEventListener('touchstart',e=>start=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{let d=e.changedTouches[0].clientX-start;if(Math.abs(d)>45&&!this.editing)this.show(this.index+(d<0?1:-1))},{passive:true});let last=0;document.addEventListener('wheel',e=>{if(this.notes.classList.contains('open')||this.editing)return;let now=Date.now();if(now-last>500&&Math.abs(e.deltaY)>20){this.show(this.index+(e.deltaY>0?1:-1));last=now}},{passive:true});document.getElementById('prev').onclick=()=>this.show(this.index-1);document.getElementById('next').onclick=()=>this.show(this.index+1);document.getElementById('noteButton').onclick=()=>this.toggleNotes();document.getElementById('editToggle').onclick=()=>this.edit();const hot=document.querySelector('.edit-hotzone'),btn=document.getElementById('editToggle');let timer;[hot,btn].forEach(el=>{el.onmouseenter=()=>{clearTimeout(timer);btn.classList.add('show')};el.onmouseleave=()=>timer=setTimeout(()=>{if(!this.editing)btn.classList.remove('show')},400)});hot.onclick=()=>this.edit();this.slides.forEach((s,i)=>s.querySelectorAll('h1,h2,p,li').forEach((n,j)=>{n.dataset.editId=i+'-'+j;let value=localStorage.getItem('gradient-lesson-editorial-v2-'+n.dataset.editId);if(value!==null)n.textContent=value;n.addEventListener('input',()=>localStorage.setItem('gradient-lesson-editorial-v2-'+n.dataset.editId,n.textContent))}))}show(i){this.index=Math.max(0,Math.min(i,this.slides.length-1));this.slides.forEach((s,j)=>{s.classList.toggle('active',j===this.index);s.classList.toggle('visible',j===this.index)});document.getElementById('counter').textContent=(this.index+1)+' / '+this.slides.length;this.notes.innerHTML=this.slides[this.index].querySelector('.speaker-notes').innerHTML}toggleNotes(){this.notes.classList.toggle('open')}edit(){this.editing=!this.editing;document.getElementById('editToggle').classList.toggle('active',this.editing);this.slides.forEach(s=>s.querySelectorAll('h1,h2,p,li').forEach(n=>n.contentEditable=this.editing))}save(){const copy=document.documentElement.cloneNode(true);copy.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));let blob=new Blob(['<!doctype html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gradient-descent-slides.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}}window.deck=new SlidePresentation();
+</script></body></html>
