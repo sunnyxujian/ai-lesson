@@ -1,0 +1,336 @@
+{
+  "errors": [],
+  "external": [],
+  "slides": 58,
+  "slideChecks": [
+    {
+      "title": "封面",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Transformer 是什么？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "从零理解这套架构",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "十个字，六个“拉”",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "关键是理解，才能翻译",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "这个“拉”是 carry 还是 drag？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先把文字变成数字",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "编号还没有语义关系",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把一句话切成词块",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "用二维坐标表示语义",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "再增加一个“是否运货”的维度",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "从三维扩展到多维",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "词语关系也可以计算",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "多义词需要上下文来定位",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Embedding：用一组数字表示",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "语言还有顺序",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "有了向量，怎样结合上下文？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把一句话想成词块数据库",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "拿着查询，逐个寻找参考",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "一个向量，变成三个角色",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Q：我想关注什么",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "K：我能提供什么信息",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "V：被取用的具体内容",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "每一个 Q，遍历所有 K",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "点积：两个向量有多相关",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "“拉不拉”的一行分数",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Scale：先控制数值大小",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Softmax：变成一组权重",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "用权重加权 V",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "H₂：融合上下文后的表示",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把整个过程写成一个公式",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "再理解一次：关注谁",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "再理解一次：为什么要缩放",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "再理解一次：权重与内容",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "词语之间，不止一种关系",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "并行计算，再拼接结果",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Add：把原始输入加回来",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "Norm：统一调整数值",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "为什么还需要 FFN？",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "激活函数，让表达更丰富",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把组件组成一个编码层",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "多个编码层，组成编码器",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "从起始符号开始",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "先得到 Can，再得到 Huolala",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "像成语接龙一样继续",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "第一个问题：怎样衔接英文",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "K、V 来自已有英文",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "预测第 N 个词，只看此前结果",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "第二个问题：该参考中文的哪里",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "为什么接下来更可能是 carry",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "两种注意力，加上熟悉的组件",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "多个解码层逐步加工",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "把输出向量变回可读文字",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "编码器理解，解码器生成",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "只用编码器：理解任务",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "只用解码器：继续生成",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "完整架构的应用取向",
+      "overflow": [],
+      "brokenImages": 0
+    },
+    {
+      "title": "神经网络与人类大脑有什么关系？",
+      "overflow": [],
+      "brokenImages": 0
+    }
+  ],
+  "navigation": "2 / 58",
+  "indexResults": 19,
+  "inputGuard": true,
+  "editing": "true",
+  "fullscreen": {
+    "active": true,
+    "toolbar": "none"
+  },
+  "downloadBytes": 12744126,
+  "mobile": [
+    {
+      "width": 390,
+      "height": 219.375,
+      "ratio": 1.7777777777777777,
+      "left": 0,
+      "top": 312.3125
+    },
+    {
+      "width": 693.3333129882812,
+      "height": 390,
+      "ratio": 1.7777777256109775,
+      "left": 75.33333587646484,
+      "top": 0
+    }
+  ],
+  "article": {
+    "sections": 57,
+    "images": 94,
+    "broken": 0,
+    "anchors": true,
+    "overflow": false
+  },
+  "mobileArticle": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "zoom": true,
+  "sameContent": true,
+  "sourceTraces": null
+}
