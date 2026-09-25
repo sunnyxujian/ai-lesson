@@ -45,6 +45,10 @@ def build():
 <details class="principle"><summary>示例约定与公式依据</summary><p>这是用于理解计算过程的教学示例。分词、低维向量、投影权重及示意概率不代表已训练模型的真实参数或输出。数值面板由当前参数实际计算；架构连线用于说明数据流。</p><p>遵循原始 Transformer 的 Post-LN 顺序：LayerNorm(x + Sublayer(x))。注意力为 softmax(QKᵀ / √dₖ)V。推导依据：<a href="https://arxiv.org/html/1706.03762v7">Attention Is All You Need</a>，<a href="https://arxiv.org/abs/1607.06450">Layer Normalization</a>。教学案例承接小白debug的 Transformer 图解。</p></details>
 <nav class="module-nav">{prev}{nxt}</nav></main><footer>小矩阵，看清每一步。所有演示可离线运行。</footer>
 <script>const CONFIG={config};\n{js}</script></body></html>'''
+        # Place playback adjacent to the visualization, before the mobile settings.
+        import re
+        transport = re.search(r'<div class="transport".*?</output></div>', page).group(0)
+        page = page.replace(transport, '').replace('</section>\n<aside class="settings">', transport + '</section>\n<aside class="settings">')
         (OUT / filename(i, title)).write_text(page, encoding='utf-8')
     cards = ''.join(f'<a class="catalog-card" href="{filename(i,title)}"><span class="eyebrow">{i:02d} / {"详细推导" if key in ("qkv","attention") else "交互动画"}</span><h2>{title}</h2><p>{subtitle}</p><span class="enter">开始探索 ↗</span></a>' for i,(key,title,anchor,subtitle) in enumerate(MODULES,1))
     index = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Transformer · 交互演示目录</title><style>{css}</style></head><body><header class="masthead"><span>TRANSFORMER / 交互实验室</span><a href="Transformer-图文文章.html">阅读图文文章 ↗</a></header><main><div class="intro catalog-intro"><div class="eyebrow">12 个实验 · 一条完整学习路径</div><h1>把抽象原理，<br>变成眼前的变化。</h1><p>选择一个模块，逐步播放；改变一个参数，看信息如何流动。<br>从一个词的向量，走到一句话的生成。</p></div><div class="catalog">{cards}</div><p class="keyboard">每个动画都是独立 HTML，可单独复制、离线打开。建议按编号学习，也可以直接进入感兴趣的模块。</p></main><footer>Transformer · 交互实验室</footer></body></html>'''

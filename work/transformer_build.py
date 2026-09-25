@@ -5,9 +5,11 @@ from transformer_interactive_build import build as build_interactive, ARTICLE_LI
 ROOT=Path(__file__).parents[1]
 WORK=ROOT/'work/transformer'
 OUT=ROOT/'outputs/Transformer';OUT.mkdir(exist_ok=True)
-units=json.loads((WORK/'content.json').read_text(encoding='utf-8'))
-# User-requested article-only omission; keep stable unit IDs and the full deck.
-article_excluded_ids={'u02'}
+source_units=json.loads((WORK/'content.json').read_text(encoding='utf-8'))
+# User-requested omissions; retain source records and stable unit IDs.
+shared_excluded_ids={'u02','u57'}
+units=[u for u in source_units if u['id'] not in shared_excluded_ids]
+article_excluded_ids={'u02'} | shared_excluded_ids
 article_units=[u for u in units if u['id'] not in article_excluded_ids]
 build_interactive()
 E=html.escape
@@ -83,12 +85,16 @@ deck=f'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name=
 (OUT/'Transformer-演示文稿.html').write_text(deck,encoding='utf-8')
 coverage=[]
 asr=json.loads((WORK/'transcript.json').read_text(encoding='utf-8'))['result']['utterances']
-for i,u in enumerate(units):
- coverage.append(dict(unit_id=u['id'],start=u['start'],end=u['end'],kind='口述与视觉图解',transcript='|'.join(u['paragraphs']),asr_chunk_ids=[j+1 for j,a in enumerate(asr) if a['start_time']/1000<u['end'] and a['end_time']/1000>u['start']],visual_evidence=[f'frames/{t:06.1f}.jpg' for t in u['frames']],uncertainty=u['note'],document_target=f'Transformer-图文文章.html#{u["id"]}',slides_target=f'Transformer-演示文稿.html#{i+2}',review_status='已对照全量ASR与画面字幕；未逐字人工听校'))
+slide_pages={u['id']:i+2 for i,u in enumerate(units)}
+for u in source_units:
+ coverage.append(dict(unit_id=u['id'],start=u['start'],end=u['end'],kind='口述与视觉图解',transcript='|'.join(u['paragraphs']),asr_chunk_ids=[j+1 for j,a in enumerate(asr) if a['start_time']/1000<u['end'] and a['end_time']/1000>u['start']],visual_evidence=[f'frames/{t:06.1f}.jpg' for t in u['frames']],uncertainty=u['note'],document_target=f'Transformer-图文文章.html#{u["id"]}',slides_target=f'Transformer-演示文稿.html#{slide_pages[u["id"]]}' if u['id'] in slide_pages else None,review_status='已对照全量ASR与画面字幕；未逐字人工听校'))
 for row in coverage:
  if row['unit_id'] in article_excluded_ids:
   row['document_target']=None
   row['document_status']='用户要求从文章删除；演示文稿保留'
+ if row['unit_id'] in shared_excluded_ids:
+  row['document_status']='用户要求从文章和演示文稿删除'
+  row['slides_status']='用户要求从文章和演示文稿删除'
 (WORK/'coverage.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2),encoding='utf-8')
 (WORK/'review-notes.json').write_text(json.dumps({'visual_review':'全片20255帧变化扫描，635张1秒候选画面接触表全数视觉检查；正式图解保留完整画面与署名。','transcript_review':'全音轨Qwen分块识别（约2秒重叠），人工对照画面字幕整理；保留原讲解复述，删除仅由识别窗口重叠引入的重复。非逐字听校。','asr_corrections':['呼啦啦/霍拉拉→货拉拉','拉布拉/拉布拉多（动词处）→拉不拉','点击→点积','带野马→带掩码','引入→ReLU','查询接口→查询SQL（画面确认）'],'nonteaching_exclusions':[{'range':[25,27],'reason':'彩条与无教学含义的过场音效'},{'range':[657,659],'reason':'文字版笔记见评论区是平台导航；未进入独立教材。'}],'limits':['相似动画帧不等于逐帧人工观看；低于1秒的瞬时信息仍有遗漏风险。','未逐字人工听校；ASR和内嵌字幕交叉校对仍可能有识别误差。'],'technical_notes':'保持讲解意图，并明确标出LayerNorm范围、非线性、QK转置、位置编码等必要说明。'},ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps({'units':len(units),'slides':len(slides),'unique_images':len(images),'files':[{ 'name':p.name,'bytes':p.stat().st_size} for p in OUT.glob('*.html')]},ensure_ascii=False))

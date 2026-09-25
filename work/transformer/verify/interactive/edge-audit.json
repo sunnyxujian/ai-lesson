@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "keyboard": true,
+  "parameterEffects": true,
+  "stableMath": true,
+  "allLinks": true,
+  "mobileSvgTextPx": 13.448275862068966,
+  "playHover": {
+    "bg": "rgb(40, 94, 86)",
+    "fg": "rgb(243, 239, 232)"
+  }
+}

@@ -33,9 +33,10 @@
     ],
     "uncertainty": "",
     "document_target": null,
-    "slides_target": "Transformer-演示文稿.html#3",
+    "slides_target": null,
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校",
-    "document_status": "用户要求从文章删除；演示文稿保留"
+    "document_status": "用户要求从文章和演示文稿删除",
+    "slides_status": "用户要求从文章和演示文稿删除"
   },
   {
     "unit_id": "u03",
@@ -52,7 +53,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u03",
-    "slides_target": "Transformer-演示文稿.html#4",
+    "slides_target": "Transformer-演示文稿.html#3",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -71,7 +72,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u04",
-    "slides_target": "Transformer-演示文稿.html#5",
+    "slides_target": "Transformer-演示文稿.html#4",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -89,7 +90,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u05",
-    "slides_target": "Transformer-演示文稿.html#6",
+    "slides_target": "Transformer-演示文稿.html#5",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -108,7 +109,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u06",
-    "slides_target": "Transformer-演示文稿.html#7",
+    "slides_target": "Transformer-演示文稿.html#6",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -126,7 +127,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u07",
-    "slides_target": "Transformer-演示文稿.html#8",
+    "slides_target": "Transformer-演示文稿.html#7",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -144,7 +145,7 @@
     ],
     "uncertainty": "说明：这里的三词块划分是教学示意；实际 token 边界由分词器决定。",
     "document_target": "Transformer-图文文章.html#u08",
-    "slides_target": "Transformer-演示文稿.html#9",
+    "slides_target": "Transformer-演示文稿.html#8",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -162,7 +163,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u09",
-    "slides_target": "Transformer-演示文稿.html#10",
+    "slides_target": "Transformer-演示文稿.html#9",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -181,7 +182,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u10",
-    "slides_target": "Transformer-演示文稿.html#11",
+    "slides_target": "Transformer-演示文稿.html#10",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -200,7 +201,7 @@
     ],
     "uncertainty": "说明：这些有名称的坐标轴是帮助理解的类比；真实向量维度通常没有这样直接、固定的语义标签。",
     "document_target": "Transformer-图文文章.html#u11",
-    "slides_target": "Transformer-演示文稿.html#12",
+    "slides_target": "Transformer-演示文稿.html#11",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -218,7 +219,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u12",
-    "slides_target": "Transformer-演示文稿.html#13",
+    "slides_target": "Transformer-演示文稿.html#12",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -236,7 +237,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u13",
-    "slides_target": "Transformer-演示文稿.html#14",
+    "slides_target": "Transformer-演示文稿.html#13",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -254,7 +255,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u14",
-    "slides_target": "Transformer-演示文稿.html#15",
+    "slides_target": "Transformer-演示文稿.html#14",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -273,7 +274,7 @@
     ],
     "uncertainty": "说明：图中把语义和位置分开画出以便理解；经典 Transformer 实际将同维度的位置编码与词嵌入相加。[论文 §3.5]",
     "document_target": "Transformer-图文文章.html#u15",
-    "slides_target": "Transformer-演示文稿.html#16",
+    "slides_target": "Transformer-演示文稿.html#15",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -291,7 +292,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u16",
-    "slides_target": "Transformer-演示文稿.html#17",
+    "slides_target": "Transformer-演示文稿.html#16",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -308,7 +309,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u17",
-    "slides_target": "Transformer-演示文稿.html#18",
+    "slides_target": "Transformer-演示文稿.html#17",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -327,7 +328,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u18",
-    "slides_target": "Transformer-演示文稿.html#19",
+    "slides_target": "Transformer-演示文稿.html#18",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -345,7 +346,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u19",
-    "slides_target": "Transformer-演示文稿.html#20",
+    "slides_target": "Transformer-演示文稿.html#19",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -363,7 +364,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u20",
-    "slides_target": "Transformer-演示文稿.html#21",
+    "slides_target": "Transformer-演示文稿.html#20",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -380,7 +381,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u21",
-    "slides_target": "Transformer-演示文稿.html#22",
+    "slides_target": "Transformer-演示文稿.html#21",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -397,7 +398,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u22",
-    "slides_target": "Transformer-演示文稿.html#23",
+    "slides_target": "Transformer-演示文稿.html#22",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -415,7 +416,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u23",
-    "slides_target": "Transformer-演示文稿.html#24",
+    "slides_target": "Transformer-演示文稿.html#23",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -433,7 +434,7 @@
     ],
     "uncertainty": "说明：点积是对应分量乘积之和；它同时受方向和向量长度影响，“越同向越大”是在长度等条件相同的比较下理解。",
     "document_target": "Transformer-图文文章.html#u24",
-    "slides_target": "Transformer-演示文稿.html#25",
+    "slides_target": "Transformer-演示文稿.html#24",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -452,7 +453,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u25",
-    "slides_target": "Transformer-演示文稿.html#26",
+    "slides_target": "Transformer-演示文稿.html#25",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -470,7 +471,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u26",
-    "slides_target": "Transformer-演示文稿.html#27",
+    "slides_target": "Transformer-演示文稿.html#26",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -489,7 +490,7 @@
     ],
     "uncertainty": "说明：这组数为近似示意；不能把 8、11、4 未经缩放直接做 Softmax，就当作图中权重。",
     "document_target": "Transformer-图文文章.html#u27",
-    "slides_target": "Transformer-演示文稿.html#28",
+    "slides_target": "Transformer-演示文稿.html#27",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -506,7 +507,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u28",
-    "slides_target": "Transformer-演示文稿.html#29",
+    "slides_target": "Transformer-演示文稿.html#28",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -525,7 +526,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u29",
-    "slides_target": "Transformer-演示文稿.html#30",
+    "slides_target": "Transformer-演示文稿.html#29",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -542,7 +543,7 @@
     ],
     "uncertainty": "说明：逐对向量计算写作 Q·K；按“每个 token 占矩阵一行”的约定，矩阵公式应写 QKᵀ。[论文 §3.2.1]",
     "document_target": "Transformer-图文文章.html#u30",
-    "slides_target": "Transformer-演示文稿.html#31",
+    "slides_target": "Transformer-演示文稿.html#30",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -559,7 +560,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u31",
-    "slides_target": "Transformer-演示文稿.html#32",
+    "slides_target": "Transformer-演示文稿.html#31",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -577,7 +578,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u32",
-    "slides_target": "Transformer-演示文稿.html#33",
+    "slides_target": "Transformer-演示文稿.html#32",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -596,7 +597,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u33",
-    "slides_target": "Transformer-演示文稿.html#34",
+    "slides_target": "Transformer-演示文稿.html#33",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -613,7 +614,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u34",
-    "slides_target": "Transformer-演示文稿.html#35",
+    "slides_target": "Transformer-演示文稿.html#34",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -632,7 +633,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u35",
-    "slides_target": "Transformer-演示文稿.html#36",
+    "slides_target": "Transformer-演示文稿.html#35",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -650,7 +651,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u36",
-    "slides_target": "Transformer-演示文稿.html#37",
+    "slides_target": "Transformer-演示文稿.html#36",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -669,7 +670,7 @@
     ],
     "uncertainty": "勘误：经典 Transformer 的 Norm 是 LayerNorm，并不把结果限制在 0 到 1；它按均值、方差标准化，再进行可学习的缩放和平移。[Layer Normalization]",
     "document_target": "Transformer-图文文章.html#u37",
-    "slides_target": "Transformer-演示文稿.html#38",
+    "slides_target": "Transformer-演示文稿.html#37",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -687,7 +688,7 @@
     ],
     "uncertainty": "勘误：“此前映射仍然是线性的”不能作为严格结论：注意力中的 Softmax 与 LayerNorm 已含非线性。直线图像只用于引出 FFN 的进一步变换。",
     "document_target": "Transformer-图文文章.html#u38",
-    "slides_target": "Transformer-演示文稿.html#39",
+    "slides_target": "Transformer-演示文稿.html#38",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -706,7 +707,7 @@
     ],
     "uncertainty": "说明：“掰弯成曲线”是直观比喻；ReLU 本身是分段线性的激活函数。",
     "document_target": "Transformer-图文文章.html#u39",
-    "slides_target": "Transformer-演示文稿.html#40",
+    "slides_target": "Transformer-演示文稿.html#39",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -724,7 +725,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u40",
-    "slides_target": "Transformer-演示文稿.html#41",
+    "slides_target": "Transformer-演示文稿.html#40",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -743,7 +744,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u41",
-    "slides_target": "Transformer-演示文稿.html#42",
+    "slides_target": "Transformer-演示文稿.html#41",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -761,7 +762,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u42",
-    "slides_target": "Transformer-演示文稿.html#43",
+    "slides_target": "Transformer-演示文稿.html#42",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -779,7 +780,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u43",
-    "slides_target": "Transformer-演示文稿.html#44",
+    "slides_target": "Transformer-演示文稿.html#43",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -796,7 +797,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u44",
-    "slides_target": "Transformer-演示文稿.html#45",
+    "slides_target": "Transformer-演示文稿.html#44",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -815,7 +816,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u45",
-    "slides_target": "Transformer-演示文稿.html#46",
+    "slides_target": "Transformer-演示文稿.html#45",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -833,7 +834,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u46",
-    "slides_target": "Transformer-演示文稿.html#47",
+    "slides_target": "Transformer-演示文稿.html#46",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -852,7 +853,7 @@
     ],
     "uncertainty": "说明：“当前位置的 Q”来自已有目标序列的表示，不是未知词的向量。解码输入右移后，掩码阻止位置访问未来信息。[论文 §3.1、§3.2.3]",
     "document_target": "Transformer-图文文章.html#u47",
-    "slides_target": "Transformer-演示文稿.html#48",
+    "slides_target": "Transformer-演示文稿.html#47",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -870,7 +871,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u48",
-    "slides_target": "Transformer-演示文稿.html#49",
+    "slides_target": "Transformer-演示文稿.html#48",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -889,7 +890,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u49",
-    "slides_target": "Transformer-演示文稿.html#50",
+    "slides_target": "Transformer-演示文稿.html#49",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -907,7 +908,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u50",
-    "slides_target": "Transformer-演示文稿.html#51",
+    "slides_target": "Transformer-演示文稿.html#50",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -926,7 +927,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u51",
-    "slides_target": "Transformer-演示文稿.html#52",
+    "slides_target": "Transformer-演示文稿.html#51",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -943,7 +944,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u52",
-    "slides_target": "Transformer-演示文稿.html#53",
+    "slides_target": "Transformer-演示文稿.html#52",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -960,7 +961,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u53",
-    "slides_target": "Transformer-演示文稿.html#54",
+    "slides_target": "Transformer-演示文稿.html#53",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -978,7 +979,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u54",
-    "slides_target": "Transformer-演示文稿.html#55",
+    "slides_target": "Transformer-演示文稿.html#54",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -996,7 +997,7 @@
     ],
     "uncertainty": "",
     "document_target": "Transformer-图文文章.html#u55",
-    "slides_target": "Transformer-演示文稿.html#56",
+    "slides_target": "Transformer-演示文稿.html#55",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -1014,7 +1015,7 @@
     ],
     "uncertainty": "说明：这是对应用取向的判断，不是架构的适用范围限制。",
     "document_target": "Transformer-图文文章.html#u56",
-    "slides_target": "Transformer-演示文稿.html#57",
+    "slides_target": "Transformer-演示文稿.html#56",
     "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
   },
   {
@@ -1030,8 +1031,10 @@
       "frames/0663.0.jpg"
     ],
     "uncertainty": "",
-    "document_target": "Transformer-图文文章.html#u57",
-    "slides_target": "Transformer-演示文稿.html#58",
-    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校"
+    "document_target": null,
+    "slides_target": null,
+    "review_status": "已对照全量ASR与画面字幕；未逐字人工听校",
+    "document_status": "用户要求从文章和演示文稿删除",
+    "slides_status": "用户要求从文章和演示文稿删除"
   }
 ]

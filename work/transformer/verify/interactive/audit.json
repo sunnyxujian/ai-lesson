@@ -1,0 +1,92 @@
+{
+  "results": [
+    {
+      "file": "01-Token 与向量-交互演示.html",
+      "steps": 5,
+      "controls": 2,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "02-Q、K、V-交互演示.html",
+      "steps": 7,
+      "controls": 7,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "03-注意力计算-交互演示.html",
+      "steps": 8,
+      "controls": 6,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "04-多头注意力-交互演示.html",
+      "steps": 5,
+      "controls": 3,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "05-Add & Norm-交互演示.html",
+      "steps": 5,
+      "controls": 5,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "06-前馈网络-交互演示.html",
+      "steps": 5,
+      "controls": 4,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "07-编码器-交互演示.html",
+      "steps": 8,
+      "controls": 2,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "08-逐词生成英文-交互演示.html",
+      "steps": 8,
+      "controls": 1,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "09-带掩码的多头自注意力-交互演示.html",
+      "steps": 5,
+      "controls": 3,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "10-多头交叉注意力-交互演示.html",
+      "steps": 5,
+      "controls": 3,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "11-解码器-交互演示.html",
+      "steps": 8,
+      "controls": 1,
+      "errors": [],
+      "network": 0
+    },
+    {
+      "file": "12-Transformer 的经典架构-交互演示.html",
+      "steps": 7,
+      "controls": 2,
+      "errors": [],
+      "network": 0
+    }
+  ],
+  "articleEntries": 12,
+  "articleSections": 56,
+  "deckHash": "ba94544486829e209f0de18ebf64f92af72aca2f379419439c3a897cc99c5e29",
+  "standaloneCopy": true
+}

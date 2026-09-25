@@ -23,3 +23,8 @@ desktop.ini
 *.pem
 *.key
 *.pfx
+agent-build/*
+agent-build.zip
+
+# Local temporary files
+*.tmp
