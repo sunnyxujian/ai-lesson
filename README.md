@@ -4,7 +4,13 @@ AI 课程视频、图文教程、演示文稿和制作脚本。
 
 ## 学习入口
 
-双击项目根目录的 [index.html](index.html)，即可按「AI 基础」「Agents 底层逻辑」「Transformer」浏览全部课程的 HTML 图文文章和演示文稿，也可直接进入 Transformer 交互演示。支持课程搜索，无需启动服务器。
+**[打开在线课程网站 →](https://sunnyxujian.github.io/ai-lesson/)**
+
+按「AI 基础」「Agents 底层逻辑」「Transformer」浏览全部课程的 HTML 图文文章和演示文稿，也可直接进入 Transformer 交互演示，支持课程搜索。
+
+本地使用：下载或克隆仓库后，双击项目根目录的 `index.html`，无需启动服务器。在 GitHub 文件列表中点击 HTML 文件会显示源码；在线阅读请使用上方的网站链接。
+
+网站通过 GitHub Pages 发布。课程网页或发布配置推送到 `main` 后会自动更新；发布内容包含根目录入口和 `outputs/` 中的课程成品及配套素材，排除制作过程、验证截图和风格预览。
 
 ## 目录
 

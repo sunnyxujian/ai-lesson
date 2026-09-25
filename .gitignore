@@ -28,3 +28,6 @@ agent-build.zip
 
 # Local temporary files
 *.tmp
+
+# Generated GitHub Pages website
+/_site/
