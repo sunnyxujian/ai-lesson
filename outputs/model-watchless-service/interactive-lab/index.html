@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080f13" />
+    <title>神经网络 · 交互实验室</title>
+    <link rel="stylesheet" href="assets/lab.css" />
+    <script defer src="assets/core.js"></script>
+    <script defer src="assets/data.js"></script>
+    <script defer src="assets/ui.js"></script>
+    <script defer src="assets/neuron.js"></script>
+    <script defer src="assets/propagation.js"></script>
+    <script defer src="assets/experiments.js"></script>
+    <script defer src="assets/training.js"></script>
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/neuron"
+        ><span class="brand-mark"></span>神经网络
+        <span class="muted">·</span> 交互实验室</a
+      >
+      <nav aria-label="课程导航">
+        <a href="#/neuron" data-route="neuron"><span>02</span> 神经元原理</a>
+        <a href="#/forward" data-route="forward"><span>03</span> 前向传播</a>
+        <a href="#/backward" data-route="backward"
+          ><span>04</span> 梯度与反传</a
+        >
+        <a href="#/training" data-route="training"><span>05</span> 训练模式</a>
+      </nav>
+      <a class="library-link" href="../index.html">课程资料 ↗</a>
+    </header>
+    <main id="app"></main>
+    <footer class="site-footer">
+      <span><i class="status-dot"></i>本地计算 · 离线可用</span
+      ><span>按课程画面重现 · 数值由真实计算产生</span
+      ><button id="help-button" class="text-button">使用说明</button>
+    </footer>
+    <dialog id="help-dialog">
+      <div class="dialog-heading">
+        <h2>把公式变成看得见的过程</h2>
+        <button class="icon-button" id="close-help" aria-label="关闭使用说明">
+          ×
+        </button>
+      </div>
+      <p>
+        从第 2
+        节的单个神经元开始，逐步观察前向传播、反向传播和批次训练。切换页面会停止正在播放或训练的任务。
+      </p>
+      <p>
+        旋钮可上下拖动、使用方向键，或在下方输入精确数值。网络节点可点击查看计算过程；上一步只回看快照，不会重复更新参数。
+      </p>
+      <p>
+        前向和训练网络采用 Sigmoid 隐藏层、Softmax
+        输出与平方和损失。原视频部分箭头是示意，本演示使用真实梯度，所以数值不必与视频相同。
+      </p>
+      <p>
+        数字来自固定种子生成的笔画教学数据，不是
+        MNIST。曲面、拟合和训练模式中的补充实验用于理解概念。
+      </p>
+      <a href="README.md">打开操作验收清单 ↗</a>
+    </dialog>
+    <noscript>请启用 JavaScript，以运行本地神经网络演示。</noscript>
+  </body>
+</html>
