@@ -2,6 +2,10 @@
 
 AI 课程视频、图文教程、演示文稿和制作脚本。
 
+## 学习入口
+
+双击项目根目录的 [index.html](index.html)，即可按「AI 基础」「Agents 底层逻辑」「Transformer」浏览全部课程的 HTML 图文文章和演示文稿，也可直接进入 Transformer 交互演示。支持课程搜索，无需启动服务器。
+
 ## 目录
 
 - `video/`：AI 基础课程视频。
