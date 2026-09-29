@@ -1,0 +1,35 @@
+{
+  "name": "transformer-interactive-slidev",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "dev": "slidev",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "check:types": "vue-tsc --noEmit",
+    "check": "pnpm check:syntax && pnpm check:types"
+  },
+  "dependencies": {
+    "@slidev/cli": "53.0.0",
+    "@slidev/client": "53.0.0",
+    "@slidev/theme-default": "0.25.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@slidev/parser": "53.0.0",
+    "@slidev/types": "53.0.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^22.0.0",
+    "@vue/compiler-sfc": "^3.5.0",
+    "katex": "^0.18.9",
+    "markdown-it": "^14.1.0",
+    "postcss": "^8.5.28",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.1",
+    "vue-router": "^5.3.1",
+    "vue-tsc": "3.3.11"
+  }
+}
